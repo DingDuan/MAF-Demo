@@ -1,0 +1,91 @@
+#results-wrapper {
+    margin: 3% 1.5% 1.5% 3%;
+    width: 35%;
+    height: 600px;
+    display: inline-block;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1%;
+}
+
+#bottom-table {
+    text-align: center;
+}
+
+.result-item {
+    margin: 2% 0;
+}
+
+.machine-item {
+    background-color: rgb(48, 113, 177);
+}
+
+.man-item {
+    background-color: rgb(231, 160, 59);
+}
+
+.user-img {
+    width: 10%;
+    display: inline-block;
+    padding: 1% 5%;
+}
+
+.user-score {
+    color: #FFF;
+    width: 70%;
+    display: inline-block;
+    padding-bottom: 4%;
+}
+
+.name {
+    font-size: 150%;
+}
+
+.bc, .mc {
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.total {
+    float: right;
+    font-size: 200%;
+    margin-top: -8%;
+}
+
+#bottom-table td, #bottom-table th {
+    width: 200px;
+    padding: 1% 3%;
+}
+
+#chart-wrapper {
+    margin: 3% 3% 1.5% 1.5%;
+    float: right;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1%;
+    width: 100%;
+    height: 60%;
+}
+
+#table-wrapper {
+    clear: both;
+    margin: 1.5% 3% 3% 3%;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1%;
+}
+
+#excel-button, #confirm-button {
+    margin: 5% 0 0 45%;
+}
+
+#excel-success-button {
+    margin: 5% 0 0 45%;
+    color: #0080ff;
+}
+
+#excel-path {
+    margin: 1% 0 0 30%;
+}
+
+#excel-path-input {
+    width: 40%;
+}

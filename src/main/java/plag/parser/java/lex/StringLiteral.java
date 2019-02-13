@@ -1,0 +1,15 @@
+package plag.parser.java.lex;
+
+import java_cup.runtime.Symbol;
+import java_cup.runtime.Symbol;
+
+class StringLiteral extends Literal {
+  String val;
+  StringLiteral(String s) { this.val = s; }
+
+  Symbol token() { return new Symbol(Sym.STRING_LITERAL, val); }
+
+  public String toString() { 
+    return "StringLiteral <"+ escape(val)+">";
+  }
+}

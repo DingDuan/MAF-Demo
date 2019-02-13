@@ -1,0 +1,36 @@
+#detail-wrapper {
+    margin: 1.5% 1% 1.5% 1%;
+    width: 96%;
+    height: 700px;
+    background-color: #eee;
+    padding: 1%;
+    color: #555;
+}
+
+.wrapper1{
+    margin: 0% 1% 0% 1%;
+    padding: 1%;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+#src{
+    height: 250px;
+    background-color: rgba(255,212,207,0.19);
+}
+
+#src-code{
+    height:80%;
+}
+
+#frag{
+    height: 52%;
+}
+
+.frag-code-wrapper{
+    float:left;
+    width: 50%;
+    background-color: rgba(255,212,207,0.19);
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 0.5%;
+}
+

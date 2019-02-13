@@ -1,0 +1,39 @@
+#history-task-group-wrapper {
+    display: inline-block;
+    margin: 3% 1% 1.5% 3%;
+    width: 48%;
+    height: 500px;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1%;
+}
+
+#history-task-wrapper {
+    display: inline-block;
+    margin: 3% 3% 1.5% 1%;
+    width: 40%;
+    height: 500px;
+    float: right;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1%;
+}
+
+#history-task-group-table, #history-task-table {
+    text-align: center;
+}
+
+#history-task-group-table th, #history-task-group-table td {
+    width: 150px;
+    padding: 5px 10px;
+}
+
+#history-task-table th, #history-task-table td {
+    width: 100px;
+    padding: 5px 5px;
+}
+
+#history-task-tip {
+    text-align: center;
+    margin-top: 30%;
+}

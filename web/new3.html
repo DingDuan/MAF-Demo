@@ -1,0 +1,518 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>幕测平台抄袭检测系统</title>
+    <!--<meta name="keywords" content="Bootstrap上传, fileinput, 上传插件" />-->
+    <!--<meta name="description" content="本系统可用于检测测试代码抄袭" />-->
+    <!--<link rel="stylesheet" href="http://www.uezxc.com/wp-content/themes/uezxc/style.css" media="screen" />-->
+    <!--<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.uezxc.com/feed/" />-->
+    <!--<link rel="alternate" type="text/xml" title="RSS .92" href="http://www.uezxc.com/feed/rss/" />-->
+    <!--<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.uezxc.com/feed/atom/" />-->
+    <!--<link rel="pingback" href="http://www.uezxc.com/xmlrpc.php" />-->
+
+    <!--<link rel="alternate" type="application/rss+xml" title="UE设工库 &raquo; Feed" href="http://www.uezxc.com/feed/" />-->
+    <!--<link rel="alternate" type="application/rss+xml" title="UE设工库 &raquo; 评论Feed" href="http://www.uezxc.com/comments/feed/" />-->
+    <!--<link rel="alternate" type="application/rss+xml" title="UE设工库 &raquo; 最好用的文件上传组件Bootstrap fileinput.js评论Feed" href="http://www.uezxc.com/archives/3903/feed/" />-->
+    <!--<link rel='stylesheet' id='zilla-likes-css'  href='http://www.uezxc.com/wp-content/plugins/zilla-likes/styles/zilla-likes.css?ver=4.5.16' type='text/css' media='all' />-->
+    <!--<script type='text/javascript' src='//dn-staticfile.qbox.me/jquery/1.11.1/jquery.min.js?ver=1.11.1'></script>-->
+    <!--<script type='text/javascript' src='//dn-staticfile.qbox.me/jquery-migrate/1.2.1/jquery-migrate.min.js?ver=1.2.1'></script>-->
+    <!--<script type='text/javascript'>-->
+        <!--/* <![CDATA[ */-->
+        <!--var zilla_likes = {"ajaxurl":"http:\/\/www.uezxc.com\/wp-admin\/admin-ajax.php"};-->
+        <!--/* ]]> */-->
+    <!--</script>-->
+    <!--<script type='text/javascript' src='http://www.uezxc.com/wp-content/plugins/zilla-likes/scripts/zilla-likes.js?ver=4.5.16'></script>-->
+    <!--<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.uezxc.com/xmlrpc.php?rsd" />-->
+    <!--<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.uezxc.com/wp-includes/wlwmanifest.xml" />-->
+    <!--<link rel='prev' title='基于jQuery UI的调色板插件推荐colorpicker' href='http://www.uezxc.com/archives/3909/' />-->
+    <!--<link rel='next' title='推荐 10 款图片和视频编辑工具，操作简单、制作精美！' href='http://www.uezxc.com/archives/3891/' />-->
+    <!--<meta name="generator" content="WordPress 4.5.16" />-->
+    <!--<link rel="canonical" href="http://www.uezxc.com/archives/3903/" />-->
+    <!--<link rel='shortlink' href='http://www.uezxc.com/?p=3903' />-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+</head>
+<body class="single single-post postid-3903 single-format-aside">
+<!--	<div class="top-bar"></div>-->
+<!--<div class="header clearfix">-->
+    <!--<div class="wrap">-->
+        <!--<h1><a href="http://www.uezxc.com/"><img src="http://www.uezxc.com/wp-content/themes/uezxc/timthumb.php?src=http://www.uezxc.com/uploads/2016/11/logo.png&amp;q=100&amp;h=41" alt="UE设工库" /></a></h1>-->
+        <!--<div class="menu-nav-container"><ul id="menu-nav" class="menu"><li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-9"><a href="http://www.uezxc.com/category/web-template/">模板</a>-->
+            <!--<ul class="sub-menu">-->
+                <!--<li id="menu-item-274" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-274"><a href="http://www.uezxc.com/category/web-template/wordpress/">WordPress主题</a></li>-->
+                <!--<li id="menu-item-277" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-277"><a href="http://www.uezxc.com/category/web-template/rwd-template/">响应式模板</a></li>-->
+                <!--<li id="menu-item-278" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-278"><a href="http://www.uezxc.com/category/web-template/mall-template/">商城模板</a></li>-->
+                <!--<li id="menu-item-279" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-279"><a href="http://www.uezxc.com/category/web-template/wap-template/">手机模板</a></li>-->
+                <!--<li id="menu-item-275" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-275"><a href="http://www.uezxc.com/category/web-template/wordpress-template/">个人博客</a></li>-->
+                <!--<li id="menu-item-280" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-280"><a href="http://www.uezxc.com/category/web-template/manage-template/">管理后台</a></li>-->
+                <!--<li id="menu-item-276" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-276"><a href="http://www.uezxc.com/category/web-template/single-template/">单页模板</a></li>-->
+            <!--</ul>-->
+        <!--</li>-->
+            <!--<li id="menu-item-554" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-554"><a href="http://www.uezxc.com/category/code/">代码</a>-->
+                <!--<ul class="sub-menu">-->
+                    <!--<li id="menu-item-556" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-556"><a href="http://www.uezxc.com/category/code/div-css/">DIV+CSS</a></li>-->
+                    <!--<li id="menu-item-558" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-558"><a href="http://www.uezxc.com/category/code/jquery/">JS特效</a></li>-->
+                    <!--<li id="menu-item-557" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-557"><a href="http://www.uezxc.com/category/code/html5/">HTML5</a></li>-->
+                    <!--<li id="menu-item-555" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-555"><a href="http://www.uezxc.com/category/code/css3/">CSS3</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li id="menu-item-559" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-559"><a href="http://www.uezxc.com/category/ued/">前端</a>-->
+                <!--<ul class="sub-menu">-->
+                    <!--<li id="menu-item-562" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-562"><a href="http://www.uezxc.com/category/ued/front-end-sketch/">前端框架</a></li>-->
+                    <!--<li id="menu-item-561" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-561"><a href="http://www.uezxc.com/category/ued/front-end-plugins/">前端插件</a></li>-->
+                    <!--<li id="menu-item-560" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-560"><a href="http://www.uezxc.com/category/ued/front-end-tools/">前端工具</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li id="menu-item-572" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-572"><a href="http://www.uezxc.com/category/web-code/">源码</a>-->
+                <!--<ul class="sub-menu">-->
+                    <!--<li id="menu-item-574" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-574"><a href="http://www.uezxc.com/category/web-code/open-case/">开源项目</a></li>-->
+                    <!--<li id="menu-item-4463" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4463"><a href="http://www.uezxc.com/category/web-code/source-code/">网站源码</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li id="menu-item-579" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-579"><a href="http://www.uezxc.com/category/design-creative/">设计</a>-->
+                <!--<ul class="sub-menu">-->
+                    <!--<li id="menu-item-582" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-582"><a href="http://www.uezxc.com/category/design-creative/psd-material/">PSD素材</a></li>-->
+                    <!--<li id="menu-item-580" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-580"><a href="http://www.uezxc.com/category/design-creative/ai-material/">AI素材</a></li>-->
+                    <!--<li id="menu-item-584" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-584"><a href="http://www.uezxc.com/category/design-creative/font/">字体</a></li>-->
+                    <!--<li id="menu-item-585" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-585"><a href="http://www.uezxc.com/category/design-creative/web-design/">网页设计</a></li>-->
+                    <!--<li id="menu-item-583" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-583"><a href="http://www.uezxc.com/category/design-creative/online-production/">在线制作</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li id="menu-item-549" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-549"><a href="http://www.uezxc.com/category/vector-material/">GUI</a>-->
+                <!--<ul class="sub-menu">-->
+                    <!--<li id="menu-item-551" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-551"><a href="http://www.uezxc.com/category/vector-material/icon/">图标ICON</a></li>-->
+                    <!--<li id="menu-item-553" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-553"><a href="http://www.uezxc.com/category/vector-material/mobile-apps/">移动应用</a></li>-->
+                    <!--<li id="menu-item-552" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-552"><a href="http://www.uezxc.com/category/vector-material/app-ui/">界面设计</a></li>-->
+                    <!--<li id="menu-item-550" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-550"><a href="http://www.uezxc.com/category/vector-material/ntitype/">原型/UE</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li id="menu-item-563" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-563"><a href="http://www.uezxc.com/category/gallery/">图库</a>-->
+                <!--<ul class="sub-menu">-->
+                    <!--<li id="menu-item-565" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-565"><a href="http://www.uezxc.com/category/gallery/hd-pictures/">高清图片</a></li>-->
+                    <!--<li id="menu-item-564" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-564"><a href="http://www.uezxc.com/category/gallery/beauty-portrait/">摄影美图</a></li>-->
+                    <!--<li id="menu-item-2381" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2381"><a href="http://www.uezxc.com/category/gallery/animation-design/">动画设计</a></li>-->
+                    <!--<li id="menu-item-597" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-597"><a href="http://www.uezxc.com/category/gallery/theme-comics/">主题漫画</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li id="menu-item-575" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-575"><a href="http://www.uezxc.com/category/experience/">经验</a>-->
+                <!--<ul class="sub-menu">-->
+                    <!--<li id="menu-item-578" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-578"><a href="http://www.uezxc.com/category/experience/article/">文章</a></li>-->
+                    <!--<li id="menu-item-577" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577"><a href="http://www.uezxc.com/category/experience/course/">教程</a></li>-->
+                    <!--<li id="menu-item-576" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-576"><a href="http://www.uezxc.com/category/experience/technology/">技术</a></li>-->
+                    <!--<li id="menu-item-1215" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1215"><a href="http://www.uezxc.com/category/experience/essay/">杂文</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li id="menu-item-566" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-566"><a href="http://www.uezxc.com/category/favorites/">收藏夹</a>-->
+                <!--<ul class="sub-menu">-->
+                    <!--<li id="menu-item-569" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-569"><a href="http://www.uezxc.com/category/favorites/search-tools/">搜索工具</a></li>-->
+                    <!--<li id="menu-item-570" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-570"><a href="http://www.uezxc.com/category/favorites/software-resources/">软件资源</a></li>-->
+                    <!--<li id="menu-item-567" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-567"><a href="http://www.uezxc.com/category/favorites/online-tools/">在线工具</a></li>-->
+                    <!--<li id="menu-item-568" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-568"><a href="http://www.uezxc.com/category/favorites/video-resources/">影音资源</a></li>-->
+                    <!--<li id="menu-item-571" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-571"><a href="http://www.uezxc.com/category/favorites/cool-site/">酷站欣赏</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li id="menu-item-4371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4371"><a href="http://www.uezxc.com/category/resources/">干货</a></li>-->
+            <!--<li id="menu-item-4082" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4082"><a href="http://www.uezxc.com/music/">音乐</a></li>-->
+            <!--<li id="menu-item-4434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4434"><a href="http://www.uezxc.com/wallpaper/">壁纸</a></li>-->
+        <!--</ul></div>		<div class="sch"><form method="get" action="http://www.uezxc.com/">-->
+        <!--<input type="text" onblur="if(this.value==''){this.value='搜索';}" onfocus="if(this.value=='搜索'){this.value='';}" name="s" value=""><input type="submit" value="" class="yy-icon yy-so">-->
+
+    <!--</form></div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="main clearfix">-->
+
+    <div class="primary" style="float:left;">
+
+
+        <div class="post">
+
+
+            <!--<div class="post-header clearfix">-->
+                <!--<div class="post-title">-->
+                    <!--<h1>-->
+                        <!--&lt;!&ndash;<span class="prenqi"><span>人气</span>1,068</span>&ndash;&gt;-->
+                        <!--最好用的抄袭检测系统						</h1>-->
+                    <!--<p class="post-meta">-->
+
+                        <!--<span class="yy-icon yy-time">2017-07-01</span>-->
+                        <!--<span class="yy-icon yy-comment">-->
+								<!--<a href="http://www.uezxc.com/archives/3903/#respond">评论 (0)</a>-->
+							<!--</span>-->
+                        <!--<span class="yy-icon yy-cate"><a href="http://www.uezxc.com/category/ued/front-end-plugins/" rel="category tag">前端插件</a></span>-->
+                        <!--<span><a href="#" class="zilla-likes" id="zilla-likes-3903" title="喜欢"><span class="zilla-likes-count">0</span> <span class="zilla-likes-postfix"></span></a></span>-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<div class="clear"></div>-->
+                <!--<div class="plicense" style=" color:#e78170"><p>本篇介绍如何使用bootstrap fileinput.js（最好用的文件上传组件）来进行图片的展示，上传，包括springMVC后端文件保存。</p>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <div class="post-content">
+                <!--<p>本篇介绍如何使用bootstrap fileinput.js（最好用的文件上传组件）来进行图片的展示，上传</p>-->
+                <!--<h3>一、demo</h3>-->
+                <!--<p><img class="aligncenter size-full wp-image-3905" src="http://img.uezxc.com/uploads/2017/09/2017091102185692.jpeg" alt="20151007160128322" srcset="http://img.uezxc.com/uploads/2017/09/2017091102185692.jpeg 599w, http://img.uezxc.com/uploads/2017/09/2017091102185692-280x121.jpeg 280w" sizes="(max-width: 599px) 100vw, 599px" /><br />-->
+                    <!--<img class="aligncenter size-full wp-image-3906" src="http://img.uezxc.com/uploads/2017/09/2017091102185736.jpeg" alt="20151007160136859" srcset="http://img.uezxc.com/uploads/2017/09/2017091102185736.jpeg 531w, http://img.uezxc.com/uploads/2017/09/2017091102185736-280x36.jpeg 280w" sizes="(max-width: 531px) 100vw, 531px" /><br />-->
+                    <!--<img class="aligncenter size-full wp-image-3904" src="http://img.uezxc.com/uploads/2017/09/2017091102185348.jpeg" alt="20151007161043933" srcset="http://img.uezxc.com/uploads/2017/09/2017091102185348.jpeg 439w, http://img.uezxc.com/uploads/2017/09/2017091102185348-280x181.jpeg 280w" sizes="(max-width: 439px) 100vw, 439px" /></p>-->
+                <h3>一、总体描述</h3>
+                <p><span style="color: red;">存在抄袭!</span></p>
+                <br>
+                <div class="otherthreshold">有三个抄袭片段，片段1的相似度为100%，片段2的相似度为95%，片段3的相似度为90%。</div>
+                <div class="threshold1-0">有一个抄袭片段，片段1的相似度为100%。</div>
+                <br>
+                <div style="height:10px"></div>
+                <h4>待测项目基本信息</h4>
+                本次待测项目为Datalog，包括9个类，分别为Argument,Datalog,Fact,Predicate,Program,Rule,Substitution,Value,Variable
+
+                <h3>二、片段展示</h3>
+                <h4>源代码</h4>
+                <pre>public Predicate(String name) {
+return this.head;
+}
+</pre>
+                <!--<p><a href="http://plugins.krajee.com/file-input" target="_blank">http://plugins.krajee.com/file-input</a>,这是其官方文档，里面有下载地址。</p>-->
+                <h3>三、选手相似片段对比</h3>
+                <h4>选手1</h4>
+                <pre>Predicate predicate=new Predicate("predicate1");
+</pre>
+                <!--<p><span style="color: red;"><br />-->
+<!--1. type=file和class=projectfile，指明其为input file类型。<br />-->
+<!--2. name指定其在后台的获取key。<br />-->
+<!--3. value指定其在展示的时候图片路径。</span></p>-->
+                <h4>选手2</h4>
+                <pre>Predicate predicate=new Predicate("predicate2");
+</pre>
+                <!--<p><span style="color: red;"><br />-->
+<!--1. 通过jquery获取对应的input file，然后执行fileinput方法。<br />-->
+<!--2. showUpload 设置是否有上传按钮。<br />-->
+<!--3. language指定汉化<br />-->
+<!--<strong>4. allowedFileTypes 、allowedFileExtensions 不知道为什么没有起到效果？</strong><br />-->
+<!--5. maxFileSize 指定上传文件大小</span></p>-->
+                <!--<h3>五、带file文件的form表单通过ajax提交</h3>-->
+                <!--<p>我们先来看带file的form表单布局。</p>-->
+                <pre>&lt;form class="form-horizontal required-validate" action="${ctx}/save?callbackType=confirmTimeoutForward" enctype="multipart/form-data" method="post" onsubmit="return iframeCallback(this, pageAjaxDone)"&gt;
+
+ &lt;div class="form-group"&gt;
+ &lt;label for="" class="col-md-1 control-label"&gt;项目封面&lt;/label&gt;
+ &lt;div class="col-md-10 tl th"&gt;
+ &lt;input type="file" name="image" class="projectfile" value="${deal.image}" /&gt;
+ &lt;p class="help-block"&gt;支持jpg、jpeg、png、gif格式，大小不超过2.0M&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="form-group text-center "&gt;
+ &lt;div class="col-md-10 col-md-offset-1"&gt;
+ &lt;button type="submit" class="btn btn-primary btn-lg"&gt;保存&lt;/button&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+                <!--<ol>-->
+                    <!--<li>enctype=”multipart/form-data”必不可少。</li>-->
+                    <!--<li>onsubmit=”return iframeCallback(this, pageAjaxDone)”方法，通过ajax提交表单（iframeCallback），并且上传成功后调用回调函数（pageAjaxDone）进行下一步操作。</li>-->
+                <!--</ol>-->
+                <!--<p>关于iframeCallback的介绍，请参照<a href="http://blog.csdn.net/qing_gee/article/details/51027040#t13" target="_blank"> summernote所在form表单的数据提交</a>，这里就不多做介绍了。</p>-->
+                <!--<p>然后我们来介绍一下回调函数pageAjaxDone。</p>-->
+                <!--<pre>function pageAjaxDone(json) {-->
+ <!--YUNM.debug(json);-->
+ <!--YUNM.ajaxDone(json);-->
+
+ <!--if (json[YUNM.keys.statusCode] == YUNM.statusCode.ok) {-->
+ <!--var msg = json[YUNM.keys.message];-->
+ <!--// 弹出消息提示-->
+ <!--YUNM.debug(msg);-->
+
+ <!--if (YUNM.callbackType.confirmTimeoutForward == json.callbackType) {-->
+ <!--$.showSuccessTimeout(msg, function() {-->
+ <!--window.location = json.forwardUrl;-->
+ <!--});-->
+ <!--}-->
+ <!--}-->
+<!--}-->
+<!--</pre>-->
+                <!--<p>其主要的功能就是通过ajaxDone方法处理服务端传递过来的错误消息，假如说服务端操作成功，那么会显示提示信息，进而跳转到对应的url。</p>-->
+                <!--<p style="text-align: center; color: #999999;"><em>-完-</em></p>-->
+
+
+            </div>
+            <!--<div id="project_dw">-->
+
+      <!--<span class="pre">-->
+      <!--<span class="btnbox">-->
+      	<!--<a href="http://plugins.krajee.com/file-input/demo" target="_blank" class="preview"><i class="yy-icon yy-preview"></i>查看演示</a> </span>-->
+      <!--<span class="btnbox">-->
+      	<!--<a href="https://github.com/kartik-v/bootstrap-fileinput" target="_blank" class="down"><i class="yy-icon yy-down"></i>下载资源</a> </span>-->
+      <!--</span>-->
+            <!--</div>-->
+
+
+            <!--<div class="banquan">-->
+
+                <!--<dl>-->
+                    <!--<dd>-->
+                        <!--<p>文章来源： http://blog.csdn.net/qing_gee/article/details/48949701</p>-->
+                    <!--</dd>-->
+                    <!--<dd>-->
+                        <!--<span>文章链接：</span><a href="http://www.uezxc.com/archives/3903/">http://www.uezxc.com/archives/3903/</a> <span>非特殊说明，本文版权归原作者所有，转载请注明出处</span>-->
+                    <!--</dd>-->
+
+                <!--</dl></div>-->
+            <!--<div id="projectfoot">-->
+                <!--<div class="alignright"><span class="single-navigation clearfix">-->
+								<!--<div class="prev-single"><a href="http://www.uezxc.com/archives/3909/" rel="prev"></a></div>-->
+								<!--<div class="next-single"><a href="http://www.uezxc.com/archives/3891/" rel="next"></a></div>-->
+							<!--</span></div>-->
+
+
+                <!--&lt;!&ndash;标签s&ndash;&gt;-->
+                <!--<div id="ptags" class="pctiem"><span class="yy-icon yy-soi2"></span>Tag:&nbsp;-->
+                    <!--<a href="http://www.uezxc.com/tag/bootstrap%e4%b8%8a%e4%bc%a0/" rel="tag">Bootstrap上传</a><a href="http://www.uezxc.com/tag/fileinput/" rel="tag">fileinput</a><a href="http://www.uezxc.com/tag/%e4%b8%8a%e4%bc%a0%e6%8f%92%e4%bb%b6/" rel="tag">上传插件</a>              </div>-->
+
+                <!--&lt;!&ndash;标签e&ndash;&gt;-->
+                <!--<div class="clear"></div>-->
+            <!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+        <!--<div class="comments clearfix" id="comments">-->
+
+
+            <!--<div id="respond comments-header" class="respond">-->
+                <!--<div class="cancel-comment-reply">-->
+                    <!--<small><a rel="nofollow" id="cancel-comment-reply-link" href="/archives/3903/#respond" style="display:none;">点击这里取消回复。</a></small>-->
+                <!--</div>-->
+
+
+                <!--&lt;!&ndash;<form action="http://www.uezxc.com/wp-comments-post.php" method="post" id="commentform">&ndash;&gt;-->
+
+
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<input type="text" class="text" tabindex="1" size="22" value="" id="author" name="author">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<label for="author"><small>昵称	(<span>*</span>)</small> </label>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<input type="text" class="text" tabindex="2" size="22" value="" id="email" name="email" />&ndash;&gt;-->
+                        <!--&lt;!&ndash;<label for="email"><small>邮箱 <php _e( 'Will Not Be Published', 'PhotoBroad' ); ?>(<span>*</span>)</small> </label>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<input type="text" class="text" tabindex="3" size="22" value="" id="url" name="url">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<label for="url"><small>网址 ( http://</small> )</label>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+
+
+                    <!--&lt;!&ndash;<script type="text/javascript">&ndash;&gt;-->
+                        <!--&lt;!&ndash;/* <![CDATA[ */&ndash;&gt;-->
+                        <!--&lt;!&ndash;function grin(tag) {&ndash;&gt;-->
+                            <!--&lt;!&ndash;var myField;&ndash;&gt;-->
+                            <!--&lt;!&ndash;tag = ' ' + tag + ' ';&ndash;&gt;-->
+                            <!--&lt;!&ndash;if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {&ndash;&gt;-->
+                                <!--&lt;!&ndash;myField = document.getElementById('comment');&ndash;&gt;-->
+                            <!--&lt;!&ndash;} else {&ndash;&gt;-->
+                                <!--&lt;!&ndash;return false;&ndash;&gt;-->
+                            <!--&lt;!&ndash;}&ndash;&gt;-->
+                            <!--&lt;!&ndash;if (document.selection) {&ndash;&gt;-->
+                                <!--&lt;!&ndash;myField.focus();&ndash;&gt;-->
+                                <!--&lt;!&ndash;sel = document.selection.createRange();&ndash;&gt;-->
+                                <!--&lt;!&ndash;sel.text = tag;&ndash;&gt;-->
+                                <!--&lt;!&ndash;myField.focus();&ndash;&gt;-->
+                            <!--&lt;!&ndash;}&ndash;&gt;-->
+                            <!--&lt;!&ndash;else if (myField.selectionStart || myField.selectionStart == '0') {&ndash;&gt;-->
+                                <!--&lt;!&ndash;var startPos = myField.selectionStart;&ndash;&gt;-->
+                                <!--&lt;!&ndash;var endPos = myField.selectionEnd;&ndash;&gt;-->
+                                <!--&lt;!&ndash;var cursorPos = endPos;&ndash;&gt;-->
+                                <!--&lt;!&ndash;myField.value = myField.value.substring(0, startPos)&ndash;&gt;-->
+                                    <!--&lt;!&ndash;+ tag&ndash;&gt;-->
+                                    <!--&lt;!&ndash;+ myField.value.substring(endPos, myField.value.length);&ndash;&gt;-->
+                                <!--&lt;!&ndash;cursorPos += tag.length;&ndash;&gt;-->
+                                <!--&lt;!&ndash;myField.focus();&ndash;&gt;-->
+                                <!--&lt;!&ndash;myField.selectionStart = cursorPos;&ndash;&gt;-->
+                                <!--&lt;!&ndash;myField.selectionEnd = cursorPos;&ndash;&gt;-->
+                            <!--&lt;!&ndash;}&ndash;&gt;-->
+                            <!--&lt;!&ndash;else {&ndash;&gt;-->
+                                <!--&lt;!&ndash;myField.value += tag;&ndash;&gt;-->
+                                <!--&lt;!&ndash;myField.focus();&ndash;&gt;-->
+                            <!--&lt;!&ndash;}&ndash;&gt;-->
+                        <!--&lt;!&ndash;}&ndash;&gt;-->
+                    <!--&lt;!&ndash;</script>&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<p class="smilies">&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':?:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_question.gif" width="18" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':razz:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_razz.gif" width="17" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':sad:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_sad.gif" width="16" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':evil:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_evil.gif" width="16" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':!:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_exclaim.gif" width="18" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':smile:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_smile.gif" width="16" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':oops:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_redface.gif" width="17" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':grin:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_biggrin.gif" width="20" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':eek:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_surprised.gif" width="18" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':shock:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_eek.gif" width="16" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':???:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_confused.gif" width="16" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':cool:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_cool.gif" width="18" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':lol:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_lol.gif" width="18" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':mad:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_mad.gif" width="19" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':twisted:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_twisted.gif" width="16" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':roll:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_rolleyes.gif" width="19" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':wink:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_wink.gif" width="19" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':idea:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_idea.gif" width="16" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':arrow:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_arrow.gif" width="16" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':neutral:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_neutral.gif" width="16" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':cry:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_cry.gif" width="16" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="javascript:grin(':mrgreen:');"><img src="http://img.uezxc.com/wp-content/themes/uezxc/images/smilies/icon_mrgreen.gif" width="17" height="16" /></a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</p>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<p>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<textarea tabindex="4" rows="5" id="comment" class="textarea" name="comment"></textarea>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</p>&ndash;&gt;&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;&lt;!&ndash;<p>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<input type="submit" class="submit" value="提交评论" tabindex="5" id="submit" name="submit">&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<input type='hidden' name='comment_post_ID' value='3903' id='comment_post_ID' />&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<input type='hidden' name='comment_parent' id='comment_parent' value='0' />&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;</form>&ndash;&gt;-->
+
+
+            <!--</div>-->
+
+
+
+        <!--</div>-->
+
+
+    </div>
+
+    <!--<div class="sidebar" style="float:right;">-->
+        <!--<div id="sidebar-inner">-->
+            <!--<div id="related-2" class="widget widge_pic"><h3 class="title">相关文章</h3><ul class="clearfix widget_img">			<li>-->
+                <!--<a href="http://www.uezxc.com/archives/2318/" title="10个值得前端收藏的CSS3动效库">-->
+                    <!--<img src="http://www.uezxc.com/wp-content/themes/uezxc/timthumb.php?src=http://www.uezxc.com/uploads/2016/09/2016092516055164-280x124.jpeg&amp;q=100&amp;w=60&amp;h=60" width="60" height="60" alt="10个值得前端收藏的CSS3动效库" title="10个值得前端收藏的CSS3动效库" />-->
+                <!--</a>-->
+            <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="http://www.uezxc.com/archives/2358/" title="移动端相册展示插件 &#8211; PhotoSwipe.js">-->
+                        <!--<img src="http://www.uezxc.com/wp-content/themes/uezxc/timthumb.php?src=http://www.uezxc.com/uploads/2016/09/2016092804305245-280x113.png&amp;q=100&amp;w=60&amp;h=60" width="60" height="60" alt="移动端相册展示插件 &#8211; PhotoSwipe.js" title="移动端相册展示插件 &#8211; PhotoSwipe.js" />-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="http://www.uezxc.com/archives/3067/" title="移动端的日期选择插件 &#8211; Mobiscroll">-->
+                        <!--<img src="http://www.uezxc.com/wp-content/themes/uezxc/timthumb.php?src=http://www.uezxc.com/uploads/2016/11/2016111603573259-280x140.png&amp;q=100&amp;w=60&amp;h=60" width="60" height="60" alt="移动端的日期选择插件 &#8211; Mobiscroll" title="移动端的日期选择插件 &#8211; Mobiscroll" />-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="http://www.uezxc.com/archives/2980/" title="只有响应式网格系统Bootstrap模板">-->
+                        <!--<img src="http://www.uezxc.com/wp-content/themes/uezxc/timthumb.php?src=http://www.uezxc.com/uploads/2016/11/2016111406452518-280x148.jpeg&amp;q=100&amp;w=60&amp;h=60" width="60" height="60" alt="只有响应式网格系统Bootstrap模板" title="只有响应式网格系统Bootstrap模板" />-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="http://www.uezxc.com/archives/4488/" title="jquery轻量级数字动画插件 — jquery.countup.js">-->
+                        <!--<img src="http://www.uezxc.com/wp-content/themes/uezxc/timthumb.php?src=http://www.uezxc.com/uploads/2019/01/2019010707254146-280x181.png&amp;q=100&amp;w=60&amp;h=60" width="60" height="60" alt="jquery轻量级数字动画插件 — jquery.countup.js" title="jquery轻量级数字动画插件 — jquery.countup.js" />-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="http://www.uezxc.com/archives/2406/" title="8种实现页面全屏滚动切换效果 &#8211; velocity.js">-->
+                        <!--<img src="http://www.uezxc.com/wp-content/themes/uezxc/timthumb.php?src=http://www.uezxc.com/uploads/2016/10/2016100115423346-280x135.png&amp;q=100&amp;w=60&amp;h=60" width="60" height="60" alt="8种实现页面全屏滚动切换效果 &#8211; velocity.js" title="8种实现页面全屏滚动切换效果 &#8211; velocity.js" />-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="http://www.uezxc.com/archives/1500/" title="简约的 SVG 线条动画 &#8211; Walkway.js">-->
+                        <!--<img src="http://www.uezxc.com/wp-content/themes/uezxc/timthumb.php?src=http://www.uezxc.com/uploads/2016/08/2016081514205686-280x167.png&amp;q=100&amp;w=60&amp;h=60" width="60" height="60" alt="简约的 SVG 线条动画 &#8211; Walkway.js" title="简约的 SVG 线条动画 &#8211; Walkway.js" />-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="http://www.uezxc.com/archives/936/" title="Bootstrap中文网开源项目免费CDN 服务">-->
+                        <!--<img src="http://www.uezxc.com/wp-content/themes/uezxc/timthumb.php?src=http://www.uezxc.com/uploads/2016/07/2016072713480096-280x107.png&amp;q=100&amp;w=60&amp;h=60" width="60" height="60" alt="Bootstrap中文网开源项目免费CDN 服务" title="Bootstrap中文网开源项目免费CDN 服务" />-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="http://www.uezxc.com/archives/1133/" title="强大的支持多文件上传的jQuery文件上传插件Uploadify">-->
+                        <!--<img src="http://www.uezxc.com/wp-content/themes/uezxc/timthumb.php?src=http://www.uezxc.com/uploads/2016/08/2016080116144982-280x108.png&amp;q=100&amp;w=60&amp;h=60" width="60" height="60" alt="强大的支持多文件上传的jQuery文件上传插件Uploadify" title="强大的支持多文件上传的jQuery文件上传插件Uploadify" />-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul></div><div id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="title">标签云</h3><div class="tagcloud"><a href='http://www.uezxc.com/tag/app-ui/' class='tag-link-783 tag-link-position-1' title='14个话题' style='font-size: 9.0888888888889pt;'>APP UI</a>-->
+            <!--<a href='http://www.uezxc.com/tag/app%e8%ae%be%e8%ae%a1/' class='tag-link-608 tag-link-position-2' title='17个话题' style='font-size: 10.333333333333pt;'>app设计</a>-->
+            <!--<a href='http://www.uezxc.com/tag/bootstrap/' class='tag-link-56 tag-link-position-3' title='31个话题' style='font-size: 14.222222222222pt;'>Bootstrap</a>-->
+            <!--<a href='http://www.uezxc.com/tag/bootstrap%e6%a8%a1%e6%9d%bf/' class='tag-link-1223 tag-link-position-4' title='40个话题' style='font-size: 15.777777777778pt;'>Bootstrap模板</a>-->
+            <!--<a href='http://www.uezxc.com/tag/html5/' class='tag-link-469 tag-link-position-5' title='20个话题' style='font-size: 11.266666666667pt;'>HTML5</a>-->
+            <!--<a href='http://www.uezxc.com/tag/ui%e8%ae%be%e8%ae%a1/' class='tag-link-571 tag-link-position-6' title='15个话题' style='font-size: 9.4pt;'>UI设计</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e4%bc%81%e4%b8%9a%e6%a8%a1%e6%9d%bf/' class='tag-link-37 tag-link-position-7' title='31个话题' style='font-size: 14.222222222222pt;'>企业模板</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e5%85%a8%e5%b1%8f%e6%bb%9a%e5%8a%a8/' class='tag-link-47 tag-link-position-8' title='12个话题' style='font-size: 8pt;'>全屏滚动</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e5%89%8d%e7%ab%af%e6%a1%86%e6%9e%b6/' class='tag-link-372 tag-link-position-9' title='12个话题' style='font-size: 8pt;'>前端框架</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e5%93%8d%e5%ba%94%e5%bc%8f/' class='tag-link-28 tag-link-position-10' title='102个话题' style='font-size: 22pt;'>响应式</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e5%93%8d%e5%ba%94%e5%bc%8f%e6%a8%a1%e6%9d%bf/' class='tag-link-1212 tag-link-position-11' title='39个话题' style='font-size: 15.622222222222pt;'>响应式模板</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e5%9b%bd%e5%86%85%e6%a8%a1%e6%9d%bf/' class='tag-link-30 tag-link-position-12' title='13个话题' style='font-size: 8.6222222222222pt;'>国内模板</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e5%9b%bd%e5%a4%96%e6%a8%a1%e6%9d%bf/' class='tag-link-32 tag-link-position-13' title='61个话题' style='font-size: 18.577777777778pt;'>国外模板</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e5%ae%bd%e5%b1%8f/' class='tag-link-44 tag-link-position-14' title='38个话题' style='font-size: 15.466666666667pt;'>宽屏</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e6%89%81%e5%b9%b3%e5%8c%96%e6%a8%a1%e6%9d%bf/' class='tag-link-1224 tag-link-position-15' title='31个话题' style='font-size: 14.222222222222pt;'>扁平化模板</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e6%89%81%e5%b9%b3%e9%a3%8e%e6%a0%bc/' class='tag-link-33 tag-link-position-16' title='15个话题' style='font-size: 9.4pt;'>扁平风格</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e7%ae%80%e5%8e%86%e6%a8%a1%e6%9d%bf/' class='tag-link-1327 tag-link-position-17' title='12个话题' style='font-size: 8pt;'>简历模板</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e7%ae%80%e6%b4%81/' class='tag-link-43 tag-link-position-18' title='19个话题' style='font-size: 10.955555555556pt;'>简洁</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e7%bb%bf%e8%89%b2/' class='tag-link-58 tag-link-position-19' title='12个话题' style='font-size: 8pt;'>绿色</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e7%bd%91%e9%a1%b5psd%e6%a8%a1%e6%9d%bf/' class='tag-link-702 tag-link-position-20' title='41个话题' style='font-size: 15.933333333333pt;'>网页psd模板</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e7%bd%91%e9%a1%b5%e6%a8%a1%e6%9d%bf/' class='tag-link-705 tag-link-position-21' title='61个话题' style='font-size: 18.577777777778pt;'>网页模板</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e7%bd%91%e9%a1%b5%e8%ae%be%e8%ae%a1/' class='tag-link-380 tag-link-position-22' title='53个话题' style='font-size: 17.644444444444pt;'>网页设计</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e8%93%9d%e8%89%b2/' class='tag-link-45 tag-link-position-23' title='12个话题' style='font-size: 8pt;'>蓝色</a>-->
+            <!--<a href='http://www.uezxc.com/tag/%e9%bb%91%e8%89%b2/' class='tag-link-39 tag-link-position-24' title='13个话题' style='font-size: 8.6222222222222pt;'>黑色</a></div>-->
+        <!--</div>	</div>-->
+    <!--</div>-->
+
+<!--</div>-->
+
+<!--<div class="footer">-->
+    <!--<p>Copyright &copy; 2019 <a href="http://www.uezxc.com/">UE设工库</a> All Rights Reserved </p>-->
+    <!--<p>Powered by <a href="http://wordpress.org/" target="_blank">WordPress 4.5.16</a> | Author by  <a target="_blank" href="http://www.faceks.com">FACEKS</a> - 闽ICP备15002901号-2</p>-->
+<!--</div>-->
+<!--<div class="goTop" id="goTop"><a href="javascript:;"></a></div>-->
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<!--<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>-->
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+<!--baidu push-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/comments-ajax.js"></script>
+<script type='text/javascript' src='http://www.uezxc.com/wp-includes/js/wp-embed.min.js?ver=4.5.16'></script>
+</body>
+</html>
