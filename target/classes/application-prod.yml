@@ -4,10 +4,10 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/TCSA?characterEncoding=utf8&useSSL=true
+    url: jdbc:mysql://localhost:3306/tcsa?characterEncoding=utf8&useSSL=false
     username: root
     password: afd701221cy
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     tomcat:
       max-wait: 1000
       max-idle: 10
