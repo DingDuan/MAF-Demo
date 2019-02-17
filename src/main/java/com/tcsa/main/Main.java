@@ -46,7 +46,7 @@ public class Main {
         //ExperimentDataProcess.analyze(rootPath);
 
         //分析待测程序
-        //PUTAnalysis.analyze(PUTRootPath);
+        PUTAnalysis.analyze(PUTRootPath);
 
 
         //TPAnalysis.analyze(rootPath);

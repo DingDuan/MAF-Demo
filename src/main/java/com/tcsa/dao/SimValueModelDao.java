@@ -5,7 +5,6 @@ import com.tcsa.model.SimValueModel;
 import java.util.List;
 
 /**
-  * @Author sunweisong
   * @Date 2018/6/26 下午7:18
   */
 public interface SimValueModelDao {

@@ -3,7 +3,6 @@ package com.tcsa.dao;
 import com.tcsa.model.PCLabelModel;
 
 /**
- * @Author weisongsun
  * @Date ${date} ${time}
  */
 public interface PCLabelModelDao {

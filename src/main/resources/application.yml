@@ -1,0 +1,38 @@
+spring:
+#  profiles:
+#    active: prod
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  location: 127.0.0.1
+  servlet:
+    session:
+      timeout: 600
+    context-path: /
+## logging config
+#logging:
+#  config: classpath:logback.xml
+
+#message:
+#  app_key: 5cc183cec194dde767d8dc6b16356f3a
+#  # 聚合数据提供的短信模版
+#  tpl_id: 133518
+#
+#wechat:
+#  appid: wx4b5dffbee7fa1af3
+#  secret: c377816e184fb9d963880758b24d4966
+#  grant_type: authorization_code
+#
+#lombok:
+#  equalsAndHashCode:
+#    callSuper: call
+#
+#feign:
+#  client:
+#    wechat:
+#      value: wechat
+#      url: https://api.weixin.qq.com/sns/
+#    message:
+#      value: message
+#      url: http://v.juhe.cn/sms/

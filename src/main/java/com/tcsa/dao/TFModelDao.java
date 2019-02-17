@@ -5,7 +5,6 @@ import com.tcsa.model.TFModel;
 import java.util.List;
 
 /**
-  * @Author sunweisong
   * @Date 2018/6/26 下午3:13
   */
 public interface TFModelDao {

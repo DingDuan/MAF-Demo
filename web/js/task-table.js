@@ -3,6 +3,28 @@ function executeTask() {
         $("#inside").show();
     }
 
+    $.ajax({
+        type: "GET",
+        url: "/TF/simValue",
+        contentType: "application/x-www-form-urlencoded",
+        data: {},
+        dataType: "json",
+        success: function (data) {
+            var length = data.length;
+            var dom = document.getElementById("simValues");
+            var str = "抄袭片段数量为："+length+"，";
+            for(var i=0;i<length;i++){
+                str += "片段"+i+"的相似度为"+data[i]+"%";
+                if(i!=length-1){
+                    str += "，";
+                }else{
+                    str += "。";
+                }
+            }
+            var text = document.createTextNode(str);
+            dom.appendChild(text);
+        }
+    })
 
 
     // getChart();
