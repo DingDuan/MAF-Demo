@@ -1,0 +1,53 @@
+.top-bar {
+    background-color: rgb(48, 113, 177);
+    padding: 1% 20% 1% 5%;
+    width: 100%;
+}
+
+.logo {
+    width: 2%;
+    display: inline-block;
+}
+
+.top-bar p {
+    display: inline-block;
+    color: white;
+    margin-right: 50%;
+    font-size: 18px;
+}
+
+.head-button {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, "PingFang SC", sans-serif;
+    color: #FFF;
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: 300;
+    width: auto;
+}
+
+.top-bar li {
+    display: inline-block;
+}
+
+.top-bar li:hover {
+    background-color: #FFF;
+    color: rgb(48, 113, 177);
+}
+
+.top-bar ul {
+    margin: -2.5% 0 0 5%;
+    list-style-type: none;
+}
+
+.whole-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*background-image: url("../img/bg.jpg");*/
+    background-color: rgba(255,212,207,0);
+    padding: 30% 50%;
+    background-size: 100% 100%;
+    z-index: -1;
+}

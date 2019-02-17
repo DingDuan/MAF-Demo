@@ -1,6 +1,6 @@
 # session默认30min 设置为600s
 server:
-  port: 9999
+  port: 8080
 
 spring:
   datasource:
@@ -19,4 +19,4 @@ spring:
     show-sql: true
     hibernate:
       # 自动建表
-      ddl-auto: updates
+      ddl-auto: update

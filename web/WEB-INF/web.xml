@@ -7,7 +7,7 @@
     <!-- Spring配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:/applicationContext.xml</param-value>
+        <param-value>classpath:/application.yml</param-value>
     </context-param>
     <!-- 把 Spring 容器集成到 Web 应用里面 -->
     <listener>
