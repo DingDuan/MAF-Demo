@@ -43,10 +43,10 @@ public class Main {
         //TPAnalysis.analyze(rootPath);
 
         // 我的 测试程序分析，提取片段
-        TPAnalysis.myAnalyze(rootPath);
+        //TPAnalysis.myAnalyze(rootPath);
 
         // 计算测试片段之间相似度
-        TFAnalysis.analysis();
+        //TFAnalysis.analysis();
 
         // similarity matrix analysis
 //        SimMatrixAnalysis.analysis(rootPath);

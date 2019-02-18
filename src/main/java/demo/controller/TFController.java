@@ -15,13 +15,13 @@ public class TFController {
     @Resource
     private TFService tfService;
 
-    @PostMapping("/detect")
-    public Result detect(@RequestBody Inputs inputs){
-        return tfService.detect(inputs);
+    @GetMapping("/detect")
+    public Result detect(@RequestParam("srcPath") String srcPath){
+        return tfService.detect(srcPath);
     }
 
     @GetMapping("/simValue")
-    public Result getSimValue() {
-        return tfService.getSimValue();
+    public Result getSimValue(@RequestParam("inputs") Inputs inputs) {
+        return tfService.getSimValue(inputs);
     }
 }

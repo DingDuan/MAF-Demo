@@ -19,4 +19,4 @@ spring:
     show-sql: true
     hibernate:
       # 自动建表
-      ddl-auto: update
+#      ddl-auto: update

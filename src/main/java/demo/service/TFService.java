@@ -4,7 +4,7 @@ import demo.com.tcsa.common.Result;
 import demo.com.tcsa.vo.Inputs;
 
 public interface TFService {
-    Result getSimValue();
+    Result getSimValue(Inputs inputs);
 
-    Result detect(Inputs inputs);
+    Result detect(String srcPath);
 }

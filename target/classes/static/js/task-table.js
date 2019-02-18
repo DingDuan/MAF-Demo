@@ -8,10 +8,10 @@ function getInputs() {
     var filesDivTwo = document.querySelector('#upfileTwo');
     var p2Path = filesDivTwo.value;
 
-    var data = [];
+    var data = srcPath;
     // console.log(srcPath);
-    console.log(p1Path);
-    console.log(p2Path);
+    //console.log(p1Path);
+    //console.log(p2Path);
     return data;
 }
 
@@ -20,30 +20,33 @@ function executeTask() {
         $("#inside").show();
     }
 
-    var inputs = getInputs();
+    var srcPath = getInputs();
+    console.log(srcPath);
 
-    // $.ajax({
-    //     type: "POST",
-    //     url: "/TF/detect",
-    //     contentType: "application/json;charset=utf8",
-    //     data: {},
-    //     dataType: "json",
-    //     success: function (data) {
-    //         var length = data.length;
-    //         var dom = document.getElementById("simValues");
-    //         var str = "抄袭片段数量为："+length+"，";
-    //         for(var i=0;i<length;i++){
-    //             str += "片段"+i+"的相似度为"+data[i]+"%";
-    //             if(i!=length-1){
-    //                 str += "，";
-    //             }else{
-    //                 str += "。";
-    //             }
-    //         }
-    //         var text = document.createTextNode(str);
-    //         dom.appendChild(text);
-    //     }
-    // })
+    $.ajax({
+        type: "GET",
+        url: "/TF/detect",
+        contentType: "application/x-www-form-urlencoded",
+        data: {
+            srcPath: srcPath
+        },
+        dataType: "json",
+        success: function (data) {
+            // var length = data.length;
+            // var dom = document.getElementById("simValues");
+            // var str = "抄袭片段数量为："+length+"，";
+            // for(var i=0;i<length;i++){
+            //     str += "片段"+i+"的相似度为"+data[i]+"%";
+            //     if(i!=length-1){
+            //         str += "，";
+            //     }else{
+            //         str += "。";
+            //     }
+            // }
+            // var text = document.createTextNode(str);
+            // dom.appendChild(text);
+        }
+    })
 
 
     // getChart();
