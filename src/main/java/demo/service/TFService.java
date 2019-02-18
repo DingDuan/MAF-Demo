@@ -1,10 +1,10 @@
 package demo.service;
 
 import demo.com.tcsa.common.Result;
-import demo.com.tcsa.vo.ALLPath;
+import demo.com.tcsa.vo.Inputs;
 
 public interface TFService {
     Result getSimValue();
 
-    Result detect(ALLPath paths);
+    Result detect(Inputs inputs);
 }

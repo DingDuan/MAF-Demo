@@ -1,8 +1,8 @@
 package demo.com.tcsa.analysis;
 
 import com.csvreader.CsvReader;
-import demo.com.tcsa.dao.SimValueModelDao;
-import demo.com.tcsa.dao.TFModelDao;
+import demo.dao.SimValueModelDao;
+import demo.dao.TFModelDao;
 import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
 import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.*;

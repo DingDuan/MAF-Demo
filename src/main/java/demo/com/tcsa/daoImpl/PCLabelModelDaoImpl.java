@@ -1,14 +1,11 @@
 package demo.com.tcsa.daoImpl;
 
-import demo.com.tcsa.dao.PCLabelModelDao;
+import demo.dao.PCLabelModelDao;
 import demo.com.tcsa.model.PCLabelModel;
-import demo.com.tcsa.model.SimValueModel;
 import demo.com.tcsa.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-
-import java.util.List;
 
 /**
   * @Date 2018/7/19 下午12:25

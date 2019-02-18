@@ -1,6 +1,6 @@
 package demo.com.tcsa.daoImpl;
 
-import demo.com.tcsa.dao.MUTModelDao;
+import demo.dao.MUTModelDao;
 import demo.com.tcsa.model.MUTModel;
 import demo.com.tcsa.util.HibernateUtil;
 import demo.com.tcsa.util.SqlUtil;

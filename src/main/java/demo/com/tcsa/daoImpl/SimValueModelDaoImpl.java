@@ -1,17 +1,19 @@
 package demo.com.tcsa.daoImpl;
 
-import demo.com.tcsa.dao.SimValueModelDao;
+import demo.dao.SimValueModelDao;
 import demo.com.tcsa.model.SimValueModel;
 import demo.com.tcsa.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
   * @Date 2018/6/26 下午7:20
   */
+@Repository
 public class SimValueModelDaoImpl implements SimValueModelDao {
 
     private static SimValueModelDaoImpl simValueModelDao = new SimValueModelDaoImpl();

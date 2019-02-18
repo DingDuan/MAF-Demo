@@ -24,9 +24,9 @@ server:
 #  secret: c377816e184fb9d963880758b24d4966
 #  grant_type: authorization_code
 #
-#lombok:
-#  equalsAndHashCode:
-#    callSuper: call
+lombok:
+  equalsAndHashCode:
+    callSuper: call
 #
 #feign:
 #  client:

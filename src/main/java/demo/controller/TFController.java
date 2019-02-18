@@ -1,7 +1,7 @@
 package demo.controller;
 
 import demo.com.tcsa.common.Result;
-import demo.com.tcsa.vo.ALLPath;
+import demo.com.tcsa.vo.Inputs;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import demo.service.TFService;
@@ -16,8 +16,8 @@ public class TFController {
     private TFService tfService;
 
     @PostMapping("/detect")
-    public Result detect(@RequestBody ALLPath paths){
-        return tfService.detect(paths);
+    public Result detect(@RequestBody Inputs inputs){
+        return tfService.detect(inputs);
     }
 
     @GetMapping("/simValue")

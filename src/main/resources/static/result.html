@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html style="width: 100%">
+
+<head>
+    <meta charset="UTF-8">
+    <title>慕测平台抄袭检测系统</title>
+    <link rel="stylesheet" href="css/origin.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/button.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <link rel="stylesheet" href="css/result.css">
+    <link rel="stylesheet" href="css/origin.css">
+    <link rel="stylesheet" href="css/button.css">
+</head>
+
+<body>
+<header>
+    <div class="whole-page"></div>
+
+    <div class="top-bar" onselectstart="return false;">
+
+        <img src="img/logo.png" class="logo"/>
+        <ul>
+            <p>慕测平台抄袭检测系统</p>
+            <a href="index.html">
+                <!--<li id="spec-button" class="head-button">配置任务组</li>-->
+            </a>
+            <a href="history.html">
+                <!--<li id="star-button" class="head-button">历史任务组</li>-->
+            </a>
+        </ul>
+    </div>
+
+
+</header>
+
+</body>
+
+</html>
+
+<script src="js/echarts.js"></script>
+<script src="js/result.js"></script>
+<script src="js/report.js"></script>
+
+<script type="text/javascript">
+
+    window.onload = function () {
+        getResult();
+//        getReport();
+        $("#excel-success-button").fadeOut();
+        $("#excel-path").fadeOut();
+        $("#excel-path-input").fadeOut();
+        $("#confirm-button").fadeOut();
+    }
+
+</script>

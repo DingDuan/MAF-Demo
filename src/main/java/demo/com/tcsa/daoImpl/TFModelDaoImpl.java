@@ -1,6 +1,6 @@
 package demo.com.tcsa.daoImpl;
 
-import demo.com.tcsa.dao.TFModelDao;
+import demo.dao.TFModelDao;
 import demo.com.tcsa.model.TFModel;
 import demo.com.tcsa.util.HibernateUtil;
 import org.hibernate.Session;

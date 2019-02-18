@@ -2,14 +2,8 @@ package demo.com.tcsa.main;
 
 import com.csvreader.CsvReader;
 import demo.com.tcsa.analysis.*;
-import demo.com.tcsa.dao.MUTModelDao;
-import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
-import demo.com.tcsa.model.MUTModel;
-import demo.com.tcsa.model.TFModel;
+import demo.dao.MUTModelDao;
 //import demo.com.tcsa.service.plaggie.Plaggie;
-import demo.com.tcsa.util.FileUtil;
-import demo.com.tcsa.util.HibernateUtil;
-import demo.com.tcsa.util.PythonUtil;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 
 import java.io.*;
@@ -18,8 +12,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Queue;
-
 
 
 /**

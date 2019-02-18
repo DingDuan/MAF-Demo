@@ -1,8 +1,8 @@
 package demo.com.tcsa.analysis;
 
-import demo.com.tcsa.dao.MUTModelDao;
-import demo.com.tcsa.dao.SimValueModelDao;
-import demo.com.tcsa.dao.TFModelDao;
+import demo.dao.MUTModelDao;
+import demo.dao.SimValueModelDao;
+import demo.dao.TFModelDao;
 import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
 import demo.com.tcsa.daoImpl.TFModelDaoImpl;

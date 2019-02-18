@@ -1,10 +1,10 @@
 package demo.com.tcsa.analysis;
 
 import com.csvreader.CsvReader;
-import demo.com.tcsa.dao.MUTModelDao;
-import demo.com.tcsa.dao.PCLabelModelDao;
-import demo.com.tcsa.dao.SimValueModelDao;
-import demo.com.tcsa.dao.TFModelDao;
+import demo.dao.MUTModelDao;
+import demo.dao.PCLabelModelDao;
+import demo.dao.SimValueModelDao;
+import demo.dao.TFModelDao;
 import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.daoImpl.PCLabelModelDaoImpl;
 import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;

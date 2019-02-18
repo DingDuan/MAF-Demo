@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html style="width: 100%">
+
+<head>
+    <meta charset="UTF-8">
+    <title>慕测平台源码自动化测试系统</title>
+
+    <link rel="stylesheet" href="css/origin.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/history.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="whole-page"></div>
+
+    <div class="top-bar" onselectstart="return false;">
+
+        <img src="img/logo.png" class="logo"/>
+        <ul>
+            <p>慕测平台源码自动化测试系统</p>
+            <a href="index.html">
+                <li id="spec-button" class="head-button">配置任务组</li>
+            </a>
+            <a href="history.html">
+                <li id="star-button" class="head-button">历史任务组</li>
+            </a>
+        </ul>
+    </div>
+
+    <div id="history-task-group-wrapper">
+        <h2>历史任务组列表</h2>
+        <table id="history-task-group-table">
+        </table>
+
+    </div>
+
+    <div id="history-task-wrapper">
+        <h2>任务组</h2>
+
+        <div id="history-task-table-wrapper">
+            <p id="history-task-tip">选择左侧任务组查看</p>
+        </div>
+    </div>
+</header>
+</body>
+</html>
+
+<script src="js/history.js"></script>
+
+<script type="text/javascript">
+
+    window.onload = function () {
+        loadHistoryTask();
+    }
+
+</script>

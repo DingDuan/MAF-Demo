@@ -1,7 +1,7 @@
 package demo.com.tcsa.analysis;
 
 import demo.com.tcsa.common.Constant;
-import demo.com.tcsa.dao.MUTModelDao;
+import demo.dao.MUTModelDao;
 import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.com.tcsa.util.*;

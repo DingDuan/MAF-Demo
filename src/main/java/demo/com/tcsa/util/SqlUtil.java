@@ -1,6 +1,6 @@
 package demo.com.tcsa.util;
 
-import demo.com.tcsa.dao.TFModelDao;
+import demo.dao.TFModelDao;
 import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.ContestantTFModel;
 import demo.com.tcsa.model.MUTModel;

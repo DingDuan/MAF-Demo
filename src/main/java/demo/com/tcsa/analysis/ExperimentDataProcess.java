@@ -1,15 +1,13 @@
 package demo.com.tcsa.analysis;
 
 import demo.com.tcsa.common.Constant;
-import demo.com.tcsa.dao.MUTModelDao;
+import demo.dao.MUTModelDao;
 import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.com.tcsa.util.FileUtil;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
   * @Date 2018/7/30 下午10:23
