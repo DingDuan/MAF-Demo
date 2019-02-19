@@ -1,4 +1,4 @@
-package demo.com.tcsa.vo;
+package demo.vo;
 
 import lombok.Data;
 

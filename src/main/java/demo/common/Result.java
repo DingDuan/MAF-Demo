@@ -1,4 +1,4 @@
-package demo.com.tcsa.common;
+package demo.common;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

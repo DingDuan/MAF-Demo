@@ -1,7 +1,7 @@
 package demo.controller;
 
-import demo.com.tcsa.common.Result;
-import demo.com.tcsa.vo.Inputs;
+import demo.common.Result;
+import demo.vo.Inputs;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import demo.service.TFService;

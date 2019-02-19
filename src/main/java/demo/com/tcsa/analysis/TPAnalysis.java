@@ -1,8 +1,8 @@
 package demo.com.tcsa.analysis;
 
-import demo.com.tcsa.common.Constant;
+import demo.common.Constant;
 import demo.dao.MUTModelDao;
-import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
+//import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.com.tcsa.util.*;
 
@@ -17,7 +17,7 @@ public class TPAnalysis {
 
     private static List<MUTModel> mutModelList;
 
-    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
+//    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
 
     /**
      * 测试程序分析接口
@@ -29,7 +29,7 @@ public class TPAnalysis {
     public static void analyze(String rootPath) {
 
         //get all MUT from mysql database;
-        mutModelList = mutModelDao.getMUTModelList();
+//        mutModelList = mutModelDao.getMUTModelList();
 
         File rootDirectory = new File(rootPath);
         if (!rootDirectory.exists()) {
@@ -46,7 +46,7 @@ public class TPAnalysis {
     public static void myAnalyze(String rootPath){
 
         //get all MUT from mysql database;
-        mutModelList = mutModelDao.getMUTModelList();
+//        mutModelList = mutModelDao.getMUTModelList();
 
         List<TestFileModel> testFileModelList = null;
         List<ContestantTestModel> contestantTestModelList = null;

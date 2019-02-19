@@ -1,4 +1,4 @@
-package demo.com.tcsa.common;
+package demo.common;
 
 import java.util.ArrayList;
 import java.util.List;

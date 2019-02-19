@@ -3,7 +3,6 @@ package demo.com.tcsa.analysis;
 import demo.dao.MUTModelDao;
 import demo.dao.SimValueModelDao;
 import demo.dao.TFModelDao;
-import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
 import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.*;
@@ -20,7 +19,7 @@ public class TFAnalysis {
 
     private static List<MUTModel> mutModelList;
 
-    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
+//    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
 
     private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
 
@@ -217,24 +216,24 @@ public class TFAnalysis {
      * @date 2018/6/26 下午3:44
      */
     public static void analysis() {
-        mutModelList = mutModelDao.getMUTModelList();
-        int[] mIDArray = new int[mutModelList.size()];
-        int index = 0;
-        for (MUTModel mutModel : mutModelList) {
-            long mid =  mutModel.getMethodId();
-//            if (mid == -373229334 || mid == -561849238|| mid == -576060075
-//                    || mid == -620252230 || mid == -620421252
-//                    || mid == -698809980 || mid == -699150091
-//                    || mid == -715073250 || mid == -717360243
-//                    || mid == -723512252 || mid == -862597736
-//                    || mid == -949293390 ) {
-                mIDArray[index] = mutModel.getMethodId();
-                index++;
-//            }
-        }
-
-        // category: 0-ration; 1-partialRatio;
-        calculateSimilarityBetweenTF(mIDArray, 1);
+//        mutModelList = mutModelDao.getMUTModelList();
+//        int[] mIDArray = new int[mutModelList.size()];
+//        int index = 0;
+//        for (MUTModel mutModel : mutModelList) {
+//            long mid =  mutModel.getMethodId();
+////            if (mid == -373229334 || mid == -561849238|| mid == -576060075
+////                    || mid == -620252230 || mid == -620421252
+////                    || mid == -698809980 || mid == -699150091
+////                    || mid == -715073250 || mid == -717360243
+////                    || mid == -723512252 || mid == -862597736
+////                    || mid == -949293390 ) {
+//                mIDArray[index] = mutModel.getMethodId();
+//                index++;
+////            }
+//        }
+//
+//        // category: 0-ration; 1-partialRatio;
+//        calculateSimilarityBetweenTF(mIDArray, 1);
 
     }
 

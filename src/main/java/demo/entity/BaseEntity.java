@@ -1,24 +1,20 @@
-package demo.com.tcsa.entity;
+package demo.entity;
 
 import lombok.Data;
-import org.joda.time.DateTime;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.domain.Persistable;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Data
 @MappedSuperclass
 @EntityListeners({AuditingEntityListener.class})
-public class BaseEntity implements Persistable<Long> {
+public class BaseEntity implements Persistable<Integer> {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
 //    @Column(name = "f_create_time")
 //    @CreatedDate
@@ -56,7 +52,7 @@ public class BaseEntity implements Persistable<Long> {
 //        this.modifyTime = null == modifyTime ? null : modifyTime.toDate();
 //    }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 

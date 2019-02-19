@@ -1,8 +1,8 @@
 package demo.com.tcsa.analysis;
 
-import demo.com.tcsa.common.Constant;
+import demo.common.Constant;
 import demo.dao.MUTModelDao;
-import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
+//import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.com.tcsa.util.FileUtil;
 
@@ -18,7 +18,7 @@ public class ExperimentDataProcess {
 
     private static List<MUTModel> mutModelList;
 
-    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
+//    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
 
     public static void analyze(String rootPath) {
 

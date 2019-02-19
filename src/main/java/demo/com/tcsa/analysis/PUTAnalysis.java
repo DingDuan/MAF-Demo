@@ -1,7 +1,7 @@
 package demo.com.tcsa.analysis;
 
 import demo.dao.MUTModelDao;
-import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
+//import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.model.MUTModel;
 import demo.com.tcsa.util.FileUtil;
 import demo.com.tcsa.util.ParenthesisUtil;
@@ -16,13 +16,16 @@ import java.util.List;
  */
 public class PUTAnalysis {
 
-    private static MUTModelDao putMethodDao = MUTModelDaoImpl.getInstance();
+//    private static MUTModelDao putMethodDao = MUTModelDaoImpl.getInstance();
 
-    public static void analyze(String rootPath) {
+    public static List<MUTModel> mutModelList = new ArrayList<>();
+
+    public static List<MUTModel> analyze(String rootPath) {
+        MUTModel mutModel = new MUTModel();
         File rootDirectory = new File(rootPath);
         if (!rootDirectory.exists()) {
             System.err.println("The root directory does not exist.");
-            return;
+            return mutModelList;
         }
         String[] fileNames = {"Argument.java","Datalog.java","Fact.java","Predict.java","Program.java","Rule.java","Substitution.java","Value.java","Variable.java"};
         traverseSubjectDirectory(rootDirectory,fileNames);
@@ -30,6 +33,7 @@ public class PUTAnalysis {
         //for (File directory : directories) {
         //    traverseSubjectDirectory(directory);
         //}
+        return mutModelList;
     }
 
     /**
@@ -72,6 +76,7 @@ public class PUTAnalysis {
      *
      */
     private static void traverseSubjectDirectory(File PUTRootDirectory,String[] PUTNames){
+        MUTModel mutModel = new MUTModel();
         File[] files = PUTRootDirectory.listFiles();
         if (files != null && files.length > 0) {
             for (File file : files) {
@@ -90,7 +95,7 @@ public class PUTAnalysis {
         }else {
             System.err.println("The directory \"" + PUTRootDirectory.getAbsolutePath() + "\" is empty.");
         }
-
+//        return mutModel;
 
     }
 
@@ -100,6 +105,7 @@ public class PUTAnalysis {
      * @param subjectFileContentString subject文件内容字符串
      */
     private static void analyzeSubjectFileContentString(String subjectFileContentString) {
+        MUTModel mutModel = new MUTModel();
         int leftBracketsNum = 0;
         int rightBracketsNum = 0;
         int innerLeftBracketsNum = 0;
@@ -209,6 +215,8 @@ public class PUTAnalysis {
      * @author sunzesong
      */
     private static void analyzeClassContentString(String className, String classContentString) {
+        MUTModel putMethod = new MUTModel();
+
         List<String> words = Arrays.asList(classContentString.split(" "));
         int bracketsNum = 0; // 未匹配的"{"个数
         StringBuilder resString = new StringBuilder(); // 处理后的字符串
@@ -244,6 +252,7 @@ public class PUTAnalysis {
                 resString = new StringBuilder();
             }
         }
+//        return putMethod;
     }
 
     /**
@@ -251,7 +260,6 @@ public class PUTAnalysis {
      *
      * @param className           类名
      * @param methodContentString 方法的内容字符串
-     * @author sunzesong
      */
     private static void analyzeMethodContentString(String className, String methodContentString) {
         MUTModel putMethod = new MUTModel();
@@ -313,7 +321,9 @@ public class PUTAnalysis {
 
         String midString = className + putMethod.getMethodName() + argumentsWithoutComa;
         putMethod.setMethodId(midString.hashCode());
-        putMethodDao.saveMUTModel(putMethod);
+        mutModelList.add(putMethod);
+//        putMethodDao.saveMUTModel(putMethod);
+//        return putMethod;
     }
 
     /**

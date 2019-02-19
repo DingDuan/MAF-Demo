@@ -1,4 +1,4 @@
-package demo.com.tcsa.entity;
+package demo.entity;
 
 import lombok.Data;
 
@@ -24,7 +24,7 @@ public class MUTModel extends BaseEntity{
     private String isConstructor;
 
     @Column(name = "method_id")
-    private int methodId;
+    private Integer methodId;
 
     @Column(name = "method_name")
     private String methodName;

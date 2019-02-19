@@ -1,7 +1,7 @@
 package demo.service;
 
-import demo.com.tcsa.common.Result;
-import demo.com.tcsa.vo.Inputs;
+import demo.common.Result;
+import demo.vo.Inputs;
 
 public interface TFService {
     Result getSimValue(Inputs inputs);

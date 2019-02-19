@@ -5,7 +5,7 @@ import demo.dao.MUTModelDao;
 import demo.dao.PCLabelModelDao;
 import demo.dao.SimValueModelDao;
 import demo.dao.TFModelDao;
-import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
+//import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.daoImpl.PCLabelModelDaoImpl;
 import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
 import demo.com.tcsa.daoImpl.TFModelDaoImpl;
@@ -36,7 +36,7 @@ import static org.apache.poi.ss.usermodel.Cell.CELL_TYPE_NUMERIC;
   */
 public class SimMatrixAnalysis {
 
-    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
+//    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
     private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
     private static PCLabelModelDao pcLabelModelDao = PCLabelModelDaoImpl.getInstance();
     private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
@@ -833,14 +833,15 @@ public class SimMatrixAnalysis {
       * @author sunweisong
       */
     private static int[] getAllMUTIDFromDatabase() {
-        List<Integer> midList = mutModelDao.getAllMUTIDList();
-        int[] midArray = new int[midList.size()];
-        int index = 0;
-        for (int mid : midList) {
-            midArray[index] = mid;
-            index++;
-        }
-        return midArray;
+//        List<Integer> midList = mutModelDao.getAllMUTIDList();
+//        int[] midArray = new int[midList.size()];
+//        int index = 0;
+//        for (int mid : midList) {
+//            midArray[index] = mid;
+//            index++;
+//        }
+//        return midArray;
+        return null;
     }
 
     /**
