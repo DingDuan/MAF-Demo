@@ -1,7 +1,7 @@
 package demo.com.tcsa.util;
 
 import demo.dao.TFModelDao;
-import demo.com.tcsa.daoImpl.TFModelDaoImpl;
+//import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.ContestantTFModel;
 import demo.com.tcsa.model.MUTModel;
 import demo.com.tcsa.model.TFModel;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class SqlUtil {
 
-    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
+//    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
 
 
     public SqlUtil() {
@@ -46,7 +46,7 @@ public class SqlUtil {
             int stateNumber = contestantTFModel.getStateNumber();
             int fragLength = contestantTFModel.getFragmentLength();
             TFModel tfModel = new TFModel(testFragment, fragLength, stateNumber, MID, CID);
-            tfModelDao.saveTFModel(tfModel);
+//            tfModelDao.saveTFModel(tfModel);
         }
     }
 

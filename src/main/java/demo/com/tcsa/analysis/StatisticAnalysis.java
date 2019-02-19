@@ -4,7 +4,7 @@ import com.csvreader.CsvReader;
 import demo.dao.SimValueModelDao;
 import demo.dao.TFModelDao;
 import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
-import demo.com.tcsa.daoImpl.TFModelDaoImpl;
+//import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.com.tcsa.util.FileUtil;
 
@@ -23,7 +23,7 @@ import java.util.List;
   */
 public class StatisticAnalysis {
 
-    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
+//    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
 
     private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
 
@@ -315,18 +315,18 @@ public class StatisticAnalysis {
                 }
             }
             System.out.println("<" + CID1 + "," + CID2 + "," + maxSimValue + ">");
-            List<TFModel> tfModelList = tfModelDao.searchTFModelListByParameter(CID1, CID2, MID);
-            int minStateNum = tfModelList.get(0).getStateNum();
-            TFModel tfModelWithMinStateNum = tfModelList.get(0);
-            for (int i = 1; i < tfModelList.size(); i++) {
-                TFModel tfModel = tfModelList.get(i);
-                if (tfModel.getStateNum() < minStateNum) {
-                    minStateNum = tfModel.getStateNum();
-                    tfModelWithMinStateNum = tfModel;
-                }
-            }
-            System.out.println(tfModelWithMinStateNum.toString());
-            cidPairTFModel.setTfModel(tfModelWithMinStateNum);
+//            List<TFModel> tfModelList = tfModelDao.searchTFModelListByParameter(CID1, CID2, MID);
+//            int minStateNum = tfModelList.get(0).getStateNum();
+//            TFModel tfModelWithMinStateNum = tfModelList.get(0);
+//            for (int i = 1; i < tfModelList.size(); i++) {
+//                TFModel tfModel = tfModelList.get(i);
+//                if (tfModel.getStateNum() < minStateNum) {
+//                    minStateNum = tfModel.getStateNum();
+//                    tfModelWithMinStateNum = tfModel;
+//                }
+//            }
+//            System.out.println(tfModelWithMinStateNum.toString());
+//            cidPairTFModel.setTfModel(tfModelWithMinStateNum);
             cidPairTFModelList.add(cidPairTFModel);
         }
         return cidPairTFModelList;

@@ -8,7 +8,12 @@ function getInputs() {
     var filesDivTwo = document.querySelector('#upfileTwo');
     var p2Path = filesDivTwo.value;
 
-    var data = srcPath;
+    var data = {
+        "srcPath":srcPath,
+        "p1Path":p1Path,
+        "p2Path":p2Path
+    };
+
     // console.log(srcPath);
     //console.log(p1Path);
     //console.log(p2Path);
@@ -20,16 +25,14 @@ function executeTask() {
         $("#inside").show();
     }
 
-    var srcPath = getInputs();
-    console.log(srcPath);
+    var data = getInputs();
+    console.log(data);
 
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: "/TF/detect",
-        contentType: "application/x-www-form-urlencoded",
-        data: {
-            srcPath: srcPath
-        },
+        contentType: "application/json",
+        data: JSON.stringify(data),
         dataType: "json",
         success: function (data) {
             // var length = data.length;

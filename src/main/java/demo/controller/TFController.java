@@ -15,9 +15,9 @@ public class TFController {
     @Resource
     private TFService tfService;
 
-    @GetMapping("/detect")
-    public Result detect(@RequestParam("srcPath") String srcPath){
-        return tfService.detect(srcPath);
+    @PostMapping("/detect")
+    public Result detect(@RequestBody Inputs inputs){
+        return tfService.detect(inputs);
     }
 
     @GetMapping("/simValue")

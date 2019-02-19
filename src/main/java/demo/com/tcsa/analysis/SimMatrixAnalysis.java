@@ -8,7 +8,7 @@ import demo.dao.TFModelDao;
 //import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.daoImpl.PCLabelModelDaoImpl;
 import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
-import demo.com.tcsa.daoImpl.TFModelDaoImpl;
+//import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.CIDPairModel;
 import demo.com.tcsa.model.PCLabelModel;
 import demo.com.tcsa.model.SimValueMatrixModel;
@@ -39,7 +39,7 @@ public class SimMatrixAnalysis {
 //    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
     private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
     private static PCLabelModelDao pcLabelModelDao = PCLabelModelDaoImpl.getInstance();
-    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
+//    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
 
     private static final HashSet<Integer> exceptCIDSet = new HashSet<Integer>() {{
         add(82); add(163); add(182); add(248);

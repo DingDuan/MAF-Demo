@@ -55,12 +55,8 @@ public class TFServiceImpl implements TFService {
     }
 
     @Override
-    public Result detect(String srcPath) {
-//        String[] paths = inputs.getPaths();
-//        String srcPath = paths[0];
-        System.out.println("dfsafdsdsfdvdfvsfvsdfv:"+srcPath);
-//        String p1Path = paths[1];
-//        String p2Path = paths[2];
+    public Result detect(Inputs inputs) {
+        String srcPath = inputs.getSrcPath();
         List<MUTModel> mutModelList = new ArrayList<>();
         mutModelList = PUTAnalysis.analyze(srcPath);
         try {

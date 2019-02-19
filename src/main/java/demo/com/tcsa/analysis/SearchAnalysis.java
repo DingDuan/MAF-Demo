@@ -3,7 +3,7 @@ package demo.com.tcsa.analysis;
 import demo.dao.SimValueModelDao;
 import demo.dao.TFModelDao;
 import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
-import demo.com.tcsa.daoImpl.TFModelDaoImpl;
+//import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.com.tcsa.util.FileUtil;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -24,7 +24,7 @@ public class SearchAnalysis {
     private static final String targetFilePath = "/Users/sunweisong/Desktop/cid_pair_by_condition/more_90_label_0_min_info.csv";
 
     private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
-    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
+//    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
     public static void analyze() {
         String filePath = "/Users/sunweisong/Desktop/cid_pair_by_condition/more_90_label_0.xlsx";
         File excelFile = new File(filePath);
@@ -69,22 +69,22 @@ public class SearchAnalysis {
                         continue;
                     }
                     int mid = simValueModel.getMid();
-                    List<TFModel> tfModelList = tfModelDao.searchTFModelListByParameter(cid1
-                            , cid2, mid);
-                    if (tfModelList.size() == 0) {
-                        continue;
-                    }
-                    int minStateNum = tfModelList.get(0).getStateNum();
-                    int minTFLength = tfModelList.get(0).getLength();
+//                    List<TFModel> tfModelList = tfModelDao.searchTFModelListByParameter(cid1
+//                            , cid2, mid);
+//                    if (tfModelList.size() == 0) {
+//                        continue;
+//                    }
+//                    int minStateNum = tfModelList.get(0).getStateNum();
+//                    int minTFLength = tfModelList.get(0).getLength();
                     // search min statement number
-                    for (int index = 1; index < tfModelList.size(); index++) {
-                        TFModel tfModel = tfModelList.get(index);
-                        if (tfModel.getStateNum() < minStateNum) {
-                            minStateNum = tfModel.getStateNum();
-                            minTFLength = tfModel.getLength();
-                        }
-                    }
-                    tfMinInfoList.add(new TFMinInfo(cid1, cid2, mid, minTFLength, minStateNum));
+//                    for (int index = 1; index < tfModelList.size(); index++) {
+//                        TFModel tfModel = tfModelList.get(index);
+//                        if (tfModel.getStateNum() < minStateNum) {
+//                            minStateNum = tfModel.getStateNum();
+//                            minTFLength = tfModel.getLength();
+//                        }
+//                    }
+//                    tfMinInfoList.add(new TFMinInfo(cid1, cid2, mid, minTFLength, minStateNum));
                     break;
                 }
             }
