@@ -1,6 +1,6 @@
 package demo.dao;
 
-import demo.com.tcsa.model.TFModel;
+import demo.entity.TFModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

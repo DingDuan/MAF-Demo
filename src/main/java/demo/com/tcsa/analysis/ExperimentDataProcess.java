@@ -5,6 +5,7 @@ import demo.dao.MUTModelDao;
 //import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.com.tcsa.util.FileUtil;
+import demo.entity.MUTModel;
 
 import java.io.File;
 import java.util.List;

@@ -1,10 +1,11 @@
 package demo.com.tcsa.model;
 
+import demo.entity.TFModel;
+
 import java.math.BigDecimal;
 import java.util.List;
 
 /**
-  * @Author sunweisong
   * @Date 2018/8/8 下午1:57
   */
 public class SVTFModel {

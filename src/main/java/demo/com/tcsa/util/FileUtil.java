@@ -2,6 +2,8 @@ package demo.com.tcsa.util;
 
 import com.csvreader.CsvWriter;
 import demo.com.tcsa.model.*;
+import demo.entity.MUTModel;
+import demo.entity.TFModel;
 
 import java.io.*;
 import java.util.*;

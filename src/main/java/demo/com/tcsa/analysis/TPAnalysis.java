@@ -5,7 +5,9 @@ import demo.dao.MUTModelDao;
 //import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.com.tcsa.util.*;
+import demo.entity.MUTModel;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -17,7 +19,7 @@ public class TPAnalysis {
 
     private static List<MUTModel> mutModelList;
 
-//    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
+    private static MUTModelDao mutModelDao;
 
     /**
      * 测试程序分析接口
@@ -43,7 +45,7 @@ public class TPAnalysis {
     }
 
     //我的新分析测试程序，提取片段
-    public static void myAnalyze(String rootPath){
+    public static Map<Integer, List<ContestantTFModel>> myAnalyze(List<MUTModel> mutModelList,String rootPath){
 
         //get all MUT from mysql database;
 //        mutModelList = mutModelDao.getMUTModelList();
@@ -54,7 +56,7 @@ public class TPAnalysis {
         File rootDirectory = new File(rootPath);
         if (!rootDirectory.exists()) {
             System.err.println("The root directory does not exist.");
-            return;
+            return null;
         }
         File[] testFiles = rootDirectory.listFiles();
         if (testFiles != null) {
@@ -66,7 +68,7 @@ public class TPAnalysis {
                 System.out.println(testFileName);
                 //                    if ("ArgumentTest.java".equals(testFileName)) {
                 TestFileModel testFileModel = new TestFileModel(testFileName);
-                List<InvokeMethodModel> testMethodList = analyzeTestFile(testFile);
+                List<InvokeMethodModel> testMethodList = analyzeTestFile(mutModelList,testFile);
                 if (testMethodList != null) {
                     testFileModel.setTestMethodList(testMethodList);
                     if (testFileModelList == null) {
@@ -115,7 +117,9 @@ public class TPAnalysis {
         buffer.replace(start, end, "tfs_classified_by_mid");
         targetDirectoryPath = buffer.toString();
 //                writeTFsClassifiedByMIDToTargetFile(targetDirectoryPath, testFragmentsByMIDMap);
-        writeTFsClassifiedByMIDToDatabase(testFragmentsByMIDMap);
+        //the part of writing to database deleted,use jpa to write
+//        writeTFsClassifiedByMIDToDatabase(testFragmentsByMIDMap);
+        return testFragmentsByMIDMap;
         /**
          * 2018.06.25
          * Calculate similarity value between two TFs.
@@ -648,7 +652,7 @@ public class TPAnalysis {
                     }
                     System.out.println(testFileName);
                     TestFileModel testFileModel = new TestFileModel(testFileName);
-                    List<InvokeMethodModel> testMethodList = analyzeTestFile(testFile);
+                    List<InvokeMethodModel> testMethodList = analyzeTestFile(mutModelList,testFile);
                     if (testMethodList != null) {
                         testFileModel.setTestMethodList(testMethodList);
                         if (testFileModelList == null) {
@@ -666,7 +670,7 @@ public class TPAnalysis {
                     System.out.println(testFileName);
 //                    if ("ArgumentTest.java".equals(testFileName)) {
                         TestFileModel testFileModel = new TestFileModel(testFileName);
-                        List<InvokeMethodModel> testMethodList = analyzeTestFile(testFile);
+                        List<InvokeMethodModel> testMethodList = analyzeTestFile(mutModelList,testFile);
                         if (testMethodList != null) {
                             testFileModel.setTestMethodList(testMethodList);
                             if (testFileModelList == null) {
@@ -693,7 +697,7 @@ public class TPAnalysis {
      * @date 2018/4/9 下午6:07
      *
      */
-    private static List<InvokeMethodModel> analyzeTestFile(File testFile) {
+    private static List<InvokeMethodModel> analyzeTestFile(List<MUTModel> mutModelList,File testFile) {
         String testFileAbsolutePath = testFile.getAbsolutePath();
         if (!testFile.exists()) {
             System.err.println("The file \"" + testFileAbsolutePath + "\" doesn't exist!");
@@ -709,7 +713,7 @@ public class TPAnalysis {
             System.err.println("The parenthesis in the test file is mismatched!");
             return null;
         }
-        List<InvokeMethodModel> testMethodList = analyzeTestFileContentString(testFileContentString);
+        List<InvokeMethodModel> testMethodList = analyzeTestFileContentString(mutModelList,testFileContentString);
         return testMethodList;
     }
 
@@ -720,7 +724,7 @@ public class TPAnalysis {
       * @throws
       * @date 2018/4/11 下午7:40
       */
-    private static List<InvokeMethodModel> analyzeTestFileContentString(String testFileContentString) {
+    private static List<InvokeMethodModel> analyzeTestFileContentString(List<MUTModel> mutModelList,String testFileContentString) {
 
         List<InvokeMethodModel> allInvokeMethodModelList = null;
         List<String> testCaseStringList = extractMethodWithJUnitAnnotationFromString(testFileContentString);
@@ -762,7 +766,7 @@ public class TPAnalysis {
                     initInvokeMethod(statementContainsInvokeMethodList, testCaseName
                             , invokeMethodModelAmongTryBlockList);
                     if (invokeMethodModelAmongTryBlockList.size() > 0) {
-                        List<InvokeMethodModel> testMethodList = analyzeInvokeMethodFromTryBlockAmongTestFile(invokeMethodModelAmongTryBlockList
+                        List<InvokeMethodModel> testMethodList = analyzeInvokeMethodFromTryBlockAmongTestFile(mutModelList,invokeMethodModelAmongTryBlockList
                                 , testCaseString
                                 , tryCatchBlock
                                 , statementAmongTryCatchBlockList
@@ -796,7 +800,7 @@ public class TPAnalysis {
             initInvokeMethod(sentenceContainsInvokeMethodList, testCaseName
                     , invokeMethodModelList);
             if (invokeMethodModelList.size() > 0) {
-                List<InvokeMethodModel> testMethodList = analyzeInvokeMethodAmongTestFile(invokeMethodModelList
+                List<InvokeMethodModel> testMethodList = analyzeInvokeMethodAmongTestFile(mutModelList,invokeMethodModelList
                         ,testCaseString, testCaseStringList, testFileContentString);
                 if (allInvokeMethodModelList == null) {
                     allInvokeMethodModelList = new ArrayList<>();
@@ -816,7 +820,7 @@ public class TPAnalysis {
      * @throws
      * @date 2018/4/25 下午7:14
      */
-    private static List<InvokeMethodModel> analyzeInvokeMethodFromTryBlockAmongTestFile(List<InvokeMethodModel> invokeMethodModelList
+    private static List<InvokeMethodModel> analyzeInvokeMethodFromTryBlockAmongTestFile(List<MUTModel> mutModelList,List<InvokeMethodModel> invokeMethodModelList
             , String testCaseString
             , String tryCatchBlock
             , List<String> statementAmongTryCatchBlockList
@@ -878,7 +882,7 @@ public class TPAnalysis {
             if (invokeMethodModel.getCutName() == null) {
                 continue;
             }
-            List<Integer> midList = calculateMIDWithInvokeMethodModel(invokeMethodModel);
+            List<Integer> midList = calculateMIDWithInvokeMethodModel(mutModelList,invokeMethodModel);
             for (MUTModel mutModel : mutModelList) {
                 int mutMid = mutModel.getMethodId();
                 for (int mid : midList) {
@@ -1817,9 +1821,8 @@ public class TPAnalysis {
       * @return
       * @throws
       * @date 2018/4/25 下午7:14
-      * @author sunweisong
       */
-    private static List<InvokeMethodModel> analyzeInvokeMethodAmongTestFile(List<InvokeMethodModel> invokeMethodModelList
+    private static List<InvokeMethodModel> analyzeInvokeMethodAmongTestFile(List<MUTModel> mutModelList,List<InvokeMethodModel> invokeMethodModelList
             , String testCaseString, List<String> testCaseStringList
             , String testFileContentString) {
         List<InvokeMethodModel> mutList = new ArrayList<>();
@@ -1878,7 +1881,7 @@ public class TPAnalysis {
             if (invokeMethodModel.getCutName() == null) {
                 continue;
             }
-            List<Integer> midList = calculateMIDWithInvokeMethodModel(invokeMethodModel);
+            List<Integer> midList = calculateMIDWithInvokeMethodModel(mutModelList,invokeMethodModel);
             for (MUTModel mutModel : mutModelList) {
                 int mutMid = mutModel.getMethodId();
                 for (int mid : midList) {
@@ -3242,9 +3245,8 @@ public class TPAnalysis {
       * @return
       * @throws
       * @date 2018/5/3 下午12:40
-      * @author sunweisong
       */
-    private static List<Integer> calculateMIDWithInvokeMethodModel(InvokeMethodModel invokeMethodModel) {
+    private static List<Integer> calculateMIDWithInvokeMethodModel(List<MUTModel> mutModelList,InvokeMethodModel invokeMethodModel) {
         StringBuffer stringBuffer = new StringBuffer();
         String cutName = invokeMethodModel.getCutName();
         String mutName = invokeMethodModel.getMethodName();

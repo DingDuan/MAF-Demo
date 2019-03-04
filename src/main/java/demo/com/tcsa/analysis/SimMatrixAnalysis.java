@@ -7,12 +7,12 @@ import demo.dao.SimValueModelDao;
 import demo.dao.TFModelDao;
 //import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
 import demo.com.tcsa.daoImpl.PCLabelModelDaoImpl;
-import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
+//import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
 //import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.CIDPairModel;
 import demo.com.tcsa.model.PCLabelModel;
 import demo.com.tcsa.model.SimValueMatrixModel;
-import demo.com.tcsa.model.SimValueModel;
+import demo.entity.SimValueModel;
 import demo.com.tcsa.util.FileUtil;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
@@ -37,7 +37,7 @@ import static org.apache.poi.ss.usermodel.Cell.CELL_TYPE_NUMERIC;
 public class SimMatrixAnalysis {
 
 //    private static MUTModelDao mutModelDao = MUTModelDaoImpl.getInstance();
-    private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
+//    private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
     private static PCLabelModelDao pcLabelModelDao = PCLabelModelDaoImpl.getInstance();
 //    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
 
@@ -869,23 +869,23 @@ public class SimMatrixAnalysis {
 //                if (exceptCIDSet.contains(cid2)) {
 //                    continue;
 //                }
-                List<SimValueModel> simValueModelList = simValueModelDao.searchSimValueByParameterByCategory(cid1
-                        , cid2, category);
-                if (simValueModelList.size() == 0) {
-                    // cid1与cid2没有相似的方法
-                    continue;
-                }
+//                List<SimValueModel> simValueModelList = simValueModelDao.searchSimValueByParameterByCategory(cid1
+//                        , cid2, category);
+//                if (simValueModelList.size() == 0) {
+//                     cid1与cid2没有相似的方法
+//                    continue;
+//                }
                 SimValueMatrixModel simValueMatrixModel = new SimValueMatrixModel(cid1, cid2);
                 int midNumber = midArray.length;
                 double[] simValueArray = new double[midNumber];
                 for (int index3 = 0; index3 < midNumber; index3++) {
                     int mid = midArray[index3];
                     double simValue = 0;
-                    for (SimValueModel model : simValueModelList) {
-                        if (model.getMid() == mid) {
-                            simValue = model.getSimValue();
-                        }
-                    }
+//                    for (SimValueModel model : simValueModelList) {
+//                        if (model.getMid() == mid) {
+//                            simValue = model.getSimValue();
+//                        }
+//                    }
                     simValueArray[index3] = simValue;
                 }
                 simValueMatrixModel.setSimValueArray(simValueArray);

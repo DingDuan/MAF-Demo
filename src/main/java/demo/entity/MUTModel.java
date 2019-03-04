@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "mutmodel")
+@Table(name = "mut_model")
 public class MUTModel extends BaseEntity{
 
     @Column(name = "access")

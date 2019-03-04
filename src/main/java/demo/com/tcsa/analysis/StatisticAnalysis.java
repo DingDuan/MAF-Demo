@@ -3,10 +3,11 @@ package demo.com.tcsa.analysis;
 import com.csvreader.CsvReader;
 import demo.dao.SimValueModelDao;
 import demo.dao.TFModelDao;
-import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
+//import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
 //import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.com.tcsa.util.FileUtil;
+import demo.entity.TFModel;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,7 +26,7 @@ public class StatisticAnalysis {
 
 //    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
 
-    private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
+//    private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
 
     private static final HashSet<Integer> exceptCIDSet = new HashSet<Integer>() {{
         add(82); add(163); add(182); add(248);
@@ -304,16 +305,16 @@ public class StatisticAnalysis {
             int CID2 = model.getCID2();
             double maxSimValue = model.getMaxSimValue();
             CIDPairTFModel cidPairTFModel = new CIDPairTFModel(CID1, CID2, maxSimValue,label);
-            List<SimValueModel> simValueModelList = simValueModelDao.searchSimValueByParameter(CID1, CID2);
-            int MID = simValueModelList.get(0).getMid();
-            double maxSV = simValueModelList.get(0).getSimValue();
-            for (int i = 1; i < simValueModelList.size(); i++) {
-                SimValueModel simValueModel = simValueModelList.get(i);
-                if (simValueModel.getSimValue() > maxSV) {
-                    maxSV = simValueModel.getSimValue();
-                    MID = simValueModel.getMid();
-                }
-            }
+//            List<SimValueModel> simValueModelList = simValueModelDao.searchSimValueByParameter(CID1, CID2);
+//            int MID = simValueModelList.get(0).getMid();
+//            double maxSV = simValueModelList.get(0).getSimValue();
+//            for (int i = 1; i < simValueModelList.size(); i++) {
+//                SimValueModel simValueModel = simValueModelList.get(i);
+//                if (simValueModel.getSimValue() > maxSV) {
+//                    maxSV = simValueModel.getSimValue();
+//                    MID = simValueModel.getMid();
+//                }
+//            }
             System.out.println("<" + CID1 + "," + CID2 + "," + maxSimValue + ">");
 //            List<TFModel> tfModelList = tfModelDao.searchTFModelListByParameter(CID1, CID2, MID);
 //            int minStateNum = tfModelList.get(0).getStateNum();

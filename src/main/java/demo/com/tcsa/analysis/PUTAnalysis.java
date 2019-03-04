@@ -2,7 +2,7 @@ package demo.com.tcsa.analysis;
 
 import demo.dao.MUTModelDao;
 //import demo.com.tcsa.daoImpl.MUTModelDaoImpl;
-import demo.com.tcsa.model.MUTModel;
+import demo.entity.MUTModel;
 import demo.com.tcsa.util.FileUtil;
 import demo.com.tcsa.util.ParenthesisUtil;
 

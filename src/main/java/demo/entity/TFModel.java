@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "tfmodel")
+@Table(name = "tf_model")
 public class TFModel extends BaseEntity{
 
     @Column(name = "fragment")
@@ -17,7 +17,7 @@ public class TFModel extends BaseEntity{
     @Column(name = "length")
     private Integer length;
 
-    @Column(name = "stateNum")
+    @Column(name = "state_num")
     private Integer stateNum;
 
     @Column(name = "mid")

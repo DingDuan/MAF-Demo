@@ -2,7 +2,7 @@ package demo.com.tcsa.analysis;
 
 import com.csvreader.CsvReader;
 import demo.com.tcsa.model.CIDFileCompareModel;
-import demo.com.tcsa.model.SimValueModel;
+import demo.entity.SimValueModel;
 import demo.com.tcsa.util.FileUtil;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -80,8 +80,8 @@ public class FuzzywuzzyAnalysis {
                         continue;
                     }
                     int maxSimValue = extractMaxSimValueRecordFromCSVFile(file);
-                    simValueModelList.add(new SimValueModel(Integer.parseInt(cid1)
-                            , Integer.parseInt(cid2), maxSimValue));
+//                    simValueModelList.add(new SimValueModel(Integer.parseInt(cid1)
+//                            , Integer.parseInt(cid2), maxSimValue));
                     break;
                 }
             }

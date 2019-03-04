@@ -2,7 +2,7 @@ package demo.com.tcsa.analysis;
 
 import demo.dao.SimValueModelDao;
 import demo.dao.TFModelDao;
-import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
+//import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
 //import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.com.tcsa.util.FileUtil;
@@ -23,7 +23,7 @@ public class SearchAnalysis {
 
     private static final String targetFilePath = "/Users/sunweisong/Desktop/cid_pair_by_condition/more_90_label_0_min_info.csv";
 
-    private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
+//    private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
 //    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
     public static void analyze() {
         String filePath = "/Users/sunweisong/Desktop/cid_pair_by_condition/more_90_label_0.xlsx";
@@ -53,22 +53,22 @@ public class SearchAnalysis {
             int cid1 = Integer.parseInt(cid1String);
             String cid2String = model.getCID2();
             int cid2 = Integer.parseInt(cid2String);
-            List<SimValueModel> simValueModelList = simValueModelDao.searchSimValueByParameter(cid1, cid2
-                    ,90, 100);
-            System.out.println(simValueModelList.size());
-            if (simValueModelList != null) {
+//            List<SimValueModel> simValueModelList = simValueModelDao.searchSimValueByParameter(cid1, cid2
+//                    ,90, 100);
+//            System.out.println(simValueModelList.size());
+//            if (simValueModelList != null) {
                 double maxSimValue = 0;
                 // search max simValue
-                for (SimValueModel simValueModel : simValueModelList) {
-                    if (simValueModel.getSimValue() > maxSimValue) {
-                        maxSimValue = simValueModel.getSimValue();
-                    }
-                }
-                for (SimValueModel simValueModel : simValueModelList) {
-                    if (simValueModel.getSimValue() != maxSimValue) {
-                        continue;
-                    }
-                    int mid = simValueModel.getMid();
+//                for (SimValueModel simValueModel : simValueModelList) {
+//                    if (simValueModel.getSimValue() > maxSimValue) {
+//                        maxSimValue = simValueModel.getSimValue();
+//                    }
+//                }
+//                for (SimValueModel simValueModel : simValueModelList) {
+//                    if (simValueModel.getSimValue() != maxSimValue) {
+//                        continue;
+//                    }
+//                    int mid = simValueModel.getMid();
 //                    List<TFModel> tfModelList = tfModelDao.searchTFModelListByParameter(cid1
 //                            , cid2, mid);
 //                    if (tfModelList.size() == 0) {
@@ -87,8 +87,8 @@ public class SearchAnalysis {
 //                    tfMinInfoList.add(new TFMinInfo(cid1, cid2, mid, minTFLength, minStateNum));
                     break;
                 }
-            }
-        }
+//            }
+//        }
         if (tfMinInfoList.size() > 0) {
             List<String[]> records = new ArrayList<>(tfMinInfoList.size());
             for (TFMinInfo tfMinInfo : tfMinInfoList) {

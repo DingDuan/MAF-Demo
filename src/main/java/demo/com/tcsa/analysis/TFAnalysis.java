@@ -3,9 +3,10 @@ package demo.com.tcsa.analysis;
 import demo.dao.MUTModelDao;
 import demo.dao.SimValueModelDao;
 import demo.dao.TFModelDao;
-import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
+//import demo.com.tcsa.daoImpl.SimValueModelDaoImpl;
 //import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.*;
+import demo.entity.MUTModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class TFAnalysis {
 
 //    private static TFModelDao tfModelDao = TFModelDaoImpl.getInstance();
 
-    private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
+//    private static SimValueModelDao simValueModelDao = SimValueModelDaoImpl.getInstance();
 
 
     /**
@@ -55,8 +56,8 @@ public class TFAnalysis {
                         tfSimilarityModelList) {
                     int CID2 = tFSimilarityModel.getCID2();
                     int simValue = tFSimilarityModel.getSimValue();
-                    simValueModelDao.saveSimValueModel(new SimValueModel(MID
-                                , CID1, CID2, simValue, category));
+//                    simValueModelDao.saveSimValueModel(new SimValueModel(MID
+//                                , CID1, CID2, simValue, category));
                 }
             }
         }

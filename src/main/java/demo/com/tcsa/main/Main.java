@@ -2,6 +2,7 @@ package demo.com.tcsa.main;
 
 import com.csvreader.CsvReader;
 import demo.com.tcsa.analysis.*;
+import demo.com.tcsa.model.ContestantTFModel;
 import demo.dao.MUTModelDao;
 //import demo.com.tcsa.service.plaggie.Plaggie;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
@@ -12,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -37,13 +39,13 @@ public class Main {
         //ExperimentDataProcess.analyze(rootPath);
 
         //分析待测程序
-        PUTAnalysis.analyze(PUTRootPath);
+//        PUTAnalysis.analyze(PUTRootPath);
 
-
+        //旧的，不用
         //TPAnalysis.analyze(rootPath);
 
         // 我的 测试程序分析，提取片段
-        //TPAnalysis.myAnalyze(rootPath);
+//        Map<Integer, List<ContestantTFModel>> map =  TPAnalysis.myAnalyze(rootPath);
 
         // 计算测试片段之间相似度
         //TFAnalysis.analysis();
