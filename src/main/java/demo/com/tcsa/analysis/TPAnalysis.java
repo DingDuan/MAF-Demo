@@ -111,7 +111,7 @@ public class TPAnalysis {
          * 2018.06.21
          * classify test fragments by mut(mid)
          */
-        Map<Integer, List<ContestantTFModel>> testFragmentsByMIDMap = classifyTFByMID(contestantTestModelList);
+        Map<Integer, List<ContestantTFModel>> testFragmentsByMIDMap = classifyTFByMID(mutModelList,contestantTestModelList);
         int start = buffer.indexOf("tfs_classified_by_cid");
         int end = start + "tfs_classified_by_cid".length();
         buffer.replace(start, end, "tfs_classified_by_mid");
@@ -180,7 +180,7 @@ public class TPAnalysis {
                  * 2018.06.21
                  * classify test fragments by mut(mid)
                  */
-                Map<Integer, List<ContestantTFModel>> testFragmentsByMIDMap = classifyTFByMID(contestantTestModelList);
+                Map<Integer, List<ContestantTFModel>> testFragmentsByMIDMap = classifyTFByMID(mutModelList,contestantTestModelList);
                 int start = buffer.indexOf("tfs_classified_by_cid");
                 int end = start + "tfs_classified_by_cid".length();
                 buffer.replace(start, end, "tfs_classified_by_mid");
@@ -455,7 +455,7 @@ public class TPAnalysis {
      * @param contestantTestModelList
      * @return
      */
-    private static Map<Integer, List<ContestantTFModel>>  classifyTFByMID(List<ContestantTestModel> contestantTestModelList) {
+    private static Map<Integer, List<ContestantTFModel>>  classifyTFByMID(List<MUTModel> mutModelList,List<ContestantTestModel> contestantTestModelList) {
         Map<Integer, List<ContestantTFModel>> testFragmentsByMIDMap = new HashMap<>(mutModelList.size());
         for (MUTModel mutModel : mutModelList) {
             testFragmentsByMIDMap.put(mutModel.getMethodId(), null);

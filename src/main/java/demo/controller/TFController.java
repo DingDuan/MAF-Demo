@@ -18,6 +18,7 @@ public class TFController {
     @PostMapping("/detect")
     public Result detect(@RequestBody Inputs inputs){
         return tfService.detect(inputs);
+//        return null;
     }
 
     @GetMapping("/simValue")
