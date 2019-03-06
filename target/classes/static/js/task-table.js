@@ -26,7 +26,7 @@ function executeTask() {
     }
 
     var data = getInputs();
-    console.log(data);
+    // console.log(data);
 
     $.ajax({
         type: "POST",
@@ -34,20 +34,24 @@ function executeTask() {
         contentType: "application/json",
         data: JSON.stringify(data),
         dataType: "json",
-        success: function (data) {
-            // var length = data.length;
-            // var dom = document.getElementById("simValues");
-            // var str = "抄袭片段数量为："+length+"，";
+        success: function (result) {
+
+            console.log(result.data)
+            // console.log('dasf')
+
+            var length = result.data.length;
+            var dom = document.getElementById("simValues");
+            var str = "抄袭片段数量为："+length+"，抄袭片段相似度详情见下表。";
             // for(var i=0;i<length;i++){
-            //     str += "片段"+i+"的相似度为"+data[i]+"%";
+            //     str += "片段"+i+"的相似度为"+80+"%";
             //     if(i!=length-1){
             //         str += "，";
             //     }else{
             //         str += "。";
             //     }
             // }
-            // var text = document.createTextNode(str);
-            // dom.appendChild(text);
+            var text = document.createTextNode(str);
+            dom.appendChild(text);
         }
     })
 

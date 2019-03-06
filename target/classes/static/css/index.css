@@ -10,7 +10,7 @@
     display: inline-block;
     margin: 1.5% 0.5% 1.5% 1.5%;
     width: 30%;
-    height: 670px;
+    height: 500px;
     color: #555;
     background-color: #eee;
     padding: 1%;
@@ -21,7 +21,7 @@
     display: inline-block;
     margin: 1.5% 3% 1.5% 0.5%;
     width: 63%;
-    height: 670px;
+    height: 500px;
     float: right;
     color: #555;
     background-color: #eee;
@@ -133,7 +133,7 @@
 
 .setting-line{
     display: block;
-    height: 10%;
+    height: 13%;
     margin: 3% 2% 3% 2%;
 }
 
@@ -151,7 +151,7 @@
 
 #setting-button{
     position:relative;
-    bottom: -15%;
+    bottom: -10%;
 }
 
 #src{
@@ -175,13 +175,15 @@
     background-color: #f0fff4;
     border: 1px solid rgba(0,0,0,.125);
     /*width: 99%;*/
-    height: 60%;
+    height: 233px;
 }
 
 #total{
     /*display: none;*/
+    height:110px;
     background-color:#E2FCFF;
     border: 1px solid rgba(0,0,0,.125);
+    overflow: auto;
 }
 
 #inside{

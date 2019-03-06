@@ -18,6 +18,7 @@ import demo.entity.SimValueModel;
 import demo.entity.TFModel;
 import demo.vo.Inputs;
 import demo.vo.MUTInfoVO;
+import demo.vo.SimValueVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import demo.service.TFService;
@@ -63,8 +64,7 @@ public class TFServiceImpl implements TFService {
         Map<Integer, List<ContestantTFModel>> tfMap1 = TPAnalysis.myAnalyze(mutModelList,p1Path);
         Map<Integer, List<ContestantTFModel>> tfMap2 = TPAnalysis.myAnalyze(mutModelList,p2Path);
 
-        // 计算测试片段之间相似度并存入数据库
-        tfAnalysis(mutModelList);
+
 //        String[] p1s = p1Path.split("/");
 //        int cid1 = Integer.parseInt(p1s[p1s.length-1]);
 //        String[] p2s = p2Path.split("/");
@@ -77,19 +77,21 @@ public class TFServiceImpl implements TFService {
 //        }
 
         try {
-            List<MUTInfoVO> resultList = new ArrayList<>();
-//            for(MUTModel mutModel : mutModelList) {
+            List<SimValueVO> resultList = new ArrayList<>();
+            for(MUTModel mutModel : mutModelList) {
 //                MUTModel mutModelEntity = mutModelDao.save(mutModel);
-//                //等写完把result改成simvalue那个
-//                MUTInfoVO result = new MUTInfoVO();
-//                BeanUtils.copyProperties(mutModelEntity, result);
-//                resultList.add(result);
-//            }
+                //等写完把result改成simvalue那个
+
+            }
 
 //            saveTFToDB(tfMap1);
 //            saveTFToDB(tfMap2);
+            // 计算测试片段之间相似度并存入数据库
+            List<List<SimValueVO>> resultLists = tfAnalysis(mutModelList);
 
-            return Result.success().message("检测结果保存成功！").withData(resultList);
+
+
+            return Result.success().message("检测结果保存成功！").withData(resultLists);
         }catch (Exception e){
             return Result.error().message("检测结果保存失败，数据库更新错误！").code(ResponseCode.DB_UPDATE_ERROR);
 
@@ -117,7 +119,7 @@ public class TFServiceImpl implements TFService {
         }
     }
 
-    public void tfAnalysis(List<MUTModel> mutModelList) {
+    public List<List<SimValueVO>> tfAnalysis(List<MUTModel> mutModelList) {
 //        mutModelList = mutModelDao.getMUTModelList();
         int[] mIDArray = new int[mutModelList.size()];
         int index = 0;
@@ -135,12 +137,13 @@ public class TFServiceImpl implements TFService {
         }
 
         // category: 0-ration; 1-partialRatio;
-        calculateSimilarityBetweenTF(mIDArray, 1);
-
+        List<List<SimValueVO>> resultLists = calculateSimilarityBetweenTF(mIDArray, 1);
+        return resultLists;
     }
 
-    public void calculateSimilarityBetweenTF(int[] mIDArray, int category) {
+    public List<List<SimValueVO>> calculateSimilarityBetweenTF(int[] mIDArray, int category) {
         List<ContestantSimilarityByMID> contestantSimilarityByMIDList = new ArrayList<>(mIDArray.length);
+        List<List<SimValueVO>> resultLists = new ArrayList<>();
         for (int mid : mIDArray) {
             if (mid == 0) {
                 continue;
@@ -194,13 +197,15 @@ public class TFServiceImpl implements TFService {
             long endTime=System.currentTimeMillis();
             System.out.println("对比结束时间：" + endTime);
             System.out.println("对比运行耗时：" + (endTime - startTime) + "ms");
-            saveTFSimValueToDatabase(contestantSimilarityByMIDList, category);
+            resultLists.add(saveTFSimValueToDatabase(contestantSimilarityByMIDList, category));
             contestantSimilarityByMIDList.clear();
         }
+        return resultLists;
     }
 
-    private void saveTFSimValueToDatabase(List<ContestantSimilarityByMID> contestantSimilarityByMIDList
+    private List<SimValueVO> saveTFSimValueToDatabase(List<ContestantSimilarityByMID> contestantSimilarityByMIDList
             , int category) {
+        List<SimValueVO> resultList = new ArrayList<>();
         for (ContestantSimilarityByMID contestantSimilarityByMID:
                 contestantSimilarityByMIDList) {
             int MID = contestantSimilarityByMID.getMID();
@@ -228,8 +233,13 @@ public class TFServiceImpl implements TFService {
                     simValueModel.setSimValue(simValue);
                     simValueModel.setCategory(category);
                     simValueModelDao.save(simValueModel);
+
+                    SimValueVO result = new SimValueVO();
+                    BeanUtils.copyProperties(simValueModel, result);
+                    resultList.add(result);
                 }
             }
         }
+        return resultList;
     }
 }
