@@ -7,6 +7,8 @@ import demo.dao.TFModelDao;
 //import demo.com.tcsa.daoImpl.TFModelDaoImpl;
 import demo.com.tcsa.model.*;
 import demo.entity.MUTModel;
+import demo.service.impl.TFServiceImpl;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +16,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
-  * @Date 2018/6/26 下午3:44
+  * @Date 2019/3/6
   */
+@Service
 public class TFAnalysis {
 
     private static List<MUTModel> mutModelList;
@@ -153,7 +156,7 @@ public class TFAnalysis {
      * @date 2018/6/26 下午6:58
      */
     private static void calculateSimilarityBetweenTF(int[] mIDArray, int category) {
-        List<ContestantSimilarityByMID> contestantSimilarityByMIDList = new ArrayList<>(mIDArray.length);
+//        List<ContestantSimilarityByMID> contestantSimilarityByMIDList = new ArrayList<>(mIDArray.length);
 //        for (int mid : mIDArray) {
 //            if (mid == 0) {
 //                continue;
@@ -214,27 +217,28 @@ public class TFAnalysis {
 
     /**
      *
-     * @date 2018/6/26 下午3:44
+     * @date 2019/3/6
      */
-    public static void analysis() {
+    public static void analysis(List<MUTModel> mutModelList) {
 //        mutModelList = mutModelDao.getMUTModelList();
-//        int[] mIDArray = new int[mutModelList.size()];
-//        int index = 0;
-//        for (MUTModel mutModel : mutModelList) {
-//            long mid =  mutModel.getMethodId();
-////            if (mid == -373229334 || mid == -561849238|| mid == -576060075
-////                    || mid == -620252230 || mid == -620421252
-////                    || mid == -698809980 || mid == -699150091
-////                    || mid == -715073250 || mid == -717360243
-////                    || mid == -723512252 || mid == -862597736
-////                    || mid == -949293390 ) {
-//                mIDArray[index] = mutModel.getMethodId();
-//                index++;
-////            }
-//        }
-//
-//        // category: 0-ration; 1-partialRatio;
-//        calculateSimilarityBetweenTF(mIDArray, 1);
+        int[] mIDArray = new int[mutModelList.size()];
+        int index = 0;
+        for (MUTModel mutModel : mutModelList) {
+            long mid =  mutModel.getMethodId();
+//            if (mid == -373229334 || mid == -561849238|| mid == -576060075
+//                    || mid == -620252230 || mid == -620421252
+//                    || mid == -698809980 || mid == -699150091
+//                    || mid == -715073250 || mid == -717360243
+//                    || mid == -723512252 || mid == -862597736
+//                    || mid == -949293390 ) {
+                mIDArray[index] = mutModel.getMethodId();
+                index++;
+//            }
+        }
+
+        // category: 0-ration; 1-partialRatio;
+        TFServiceImpl tfService = new TFServiceImpl();
+        tfService.calculateSimilarityBetweenTF(mIDArray, 1);
 
     }
 

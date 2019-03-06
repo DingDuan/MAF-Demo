@@ -1,8 +1,13 @@
 package demo.service.impl;
 
 import demo.com.tcsa.analysis.PUTAnalysis;
+import demo.com.tcsa.analysis.SimAnalysis;
+import demo.com.tcsa.analysis.TFAnalysis;
 import demo.com.tcsa.analysis.TPAnalysis;
+import demo.com.tcsa.model.ContestantSimilarity;
+import demo.com.tcsa.model.ContestantSimilarityByMID;
 import demo.com.tcsa.model.ContestantTFModel;
+import demo.com.tcsa.model.TFSimilarityModel;
 import demo.common.ResponseCode;
 import demo.common.Result;
 import demo.dao.TFModelDao;
@@ -38,24 +43,7 @@ public class TFServiceImpl implements TFService {
     @Override
     public Result getSimValue(Inputs inputs) {
 
-//        String srcPath = inputs.getSrcPath();
-//        System.out.println(srcPath);
-//        String p1Path = inputs.getP1Path();
-//        String p2Path = inputs.getP2Path();
-//
-//        PUTAnalysis.analyze(srcPath);
-//        TPAnalysis.myAnalyze(p1Path);
-//        TPAnalysis.myAnalyze(p2Path);
-//
-//        // 计算测试片段之间相似度
-//        TFAnalysis.analysis();
-//
-//        String[] p1s = p1Path.split("/");
-//        int cid1 = Integer.parseInt(p1s[p1s.length-1]);
-//        String[] p2s = p2Path.split("/");
-//        int cid2 = Integer.parseInt(p2s[p2s.length-1]);
-//
-//        List<SimValueModel> list = simValueModelDao.searchSimValueByParameter(cid1,cid2);
+
         List<Double> result = new ArrayList<>();
 //        for(SimValueModel simValueModel : list){
 //            result.add(simValueModel.getSimValue());
@@ -70,11 +58,23 @@ public class TFServiceImpl implements TFService {
         String p1Path = inputs.getP1Path();
         String p2Path = inputs.getP2Path();
         List<MUTModel> mutModelList;
-        List<TFModel> tfModelList;
+//        List<TFModel> tfModelList = tfModelDao.g
         mutModelList = PUTAnalysis.analyze(srcPath);
         Map<Integer, List<ContestantTFModel>> tfMap1 = TPAnalysis.myAnalyze(mutModelList,p1Path);
         Map<Integer, List<ContestantTFModel>> tfMap2 = TPAnalysis.myAnalyze(mutModelList,p2Path);
 
+        // 计算测试片段之间相似度并存入数据库
+        tfAnalysis(mutModelList);
+//        String[] p1s = p1Path.split("/");
+//        int cid1 = Integer.parseInt(p1s[p1s.length-1]);
+//        String[] p2s = p2Path.split("/");
+//        int cid2 = Integer.parseInt(p2s[p2s.length-1]);
+//
+//        List<SimValueModel> list = simValueModelDao.searchSimValueByParameter(cid1,cid2);
+//
+//        for(SimValueModel simValueModel : list){
+//            result.add(simValueModel.getSimValue());
+//        }
 
         try {
             List<MUTInfoVO> resultList = new ArrayList<>();
@@ -86,28 +86,14 @@ public class TFServiceImpl implements TFService {
 //                resultList.add(result);
 //            }
 
-            saveTFToDB(tfMap1);
-            saveTFToDB(tfMap2);
+//            saveTFToDB(tfMap1);
+//            saveTFToDB(tfMap2);
 
             return Result.success().message("检测结果保存成功！").withData(resultList);
         }catch (Exception e){
             return Result.error().message("检测结果保存失败，数据库更新错误！").code(ResponseCode.DB_UPDATE_ERROR);
 
         }
-        // 计算测试片段之间相似度
-//        TFAnalysis.analysis();
-
-//        String[] p1s = p1Path.split("/");
-//        int cid1 = Integer.parseInt(p1s[p1s.length-1]);
-//        String[] p2s = p2Path.split("/");
-//        int cid2 = Integer.parseInt(p2s[p2s.length-1]);
-//
-//        List<SimValueModel> list = simValueModelDao.searchSimValueByParameter(cid1,cid2);
-
-//        for(SimValueModel simValueModel : list){
-//            result.add(simValueModel.getSimValue());
-//        }
-//
     }
 
     public void saveTFToDB(Map<Integer, List<ContestantTFModel>> tfMap){
@@ -126,6 +112,122 @@ public class TFServiceImpl implements TFService {
                     tfModel.setStateNum(contestantTFModel.getStateNumber());
                     tfModel.setLength(contestantTFModel.getFragmentLength());
                     TFModel tfModelEntity = tfModelDao.save(tfModel);
+                }
+            }
+        }
+    }
+
+    public void tfAnalysis(List<MUTModel> mutModelList) {
+//        mutModelList = mutModelDao.getMUTModelList();
+        int[] mIDArray = new int[mutModelList.size()];
+        int index = 0;
+        for (MUTModel mutModel : mutModelList) {
+            long mid =  mutModel.getMethodId();
+//            if (mid == -373229334 || mid == -561849238|| mid == -576060075
+//                    || mid == -620252230 || mid == -620421252
+//                    || mid == -698809980 || mid == -699150091
+//                    || mid == -715073250 || mid == -717360243
+//                    || mid == -723512252 || mid == -862597736
+//                    || mid == -949293390 ) {
+            mIDArray[index] = mutModel.getMethodId();
+            index++;
+//            }
+        }
+
+        // category: 0-ration; 1-partialRatio;
+        calculateSimilarityBetweenTF(mIDArray, 1);
+
+    }
+
+    public void calculateSimilarityBetweenTF(int[] mIDArray, int category) {
+        List<ContestantSimilarityByMID> contestantSimilarityByMIDList = new ArrayList<>(mIDArray.length);
+        for (int mid : mIDArray) {
+            if (mid == 0) {
+                continue;
+            }
+            int compareNumber = 0;
+            System.out.println("MID：" + mid);
+            ContestantSimilarityByMID contestantSimilarityByMID = new ContestantSimilarityByMID(mid);
+            List<TFModel> tfModelList = tfModelDao.getTFModelListByMID(mid);
+            if (tfModelList == null) {
+                contestantSimilarityByMIDList.add(contestantSimilarityByMID);
+                continue;
+            }
+            int count = tfModelList.size();
+            System.out.println("对比人数：" + count);
+            if (count < 2) {
+                contestantSimilarityByMIDList.add(contestantSimilarityByMID);
+                continue;
+            }
+            long startTime=System.currentTimeMillis();
+            System.out.println("对比开始时间：" + startTime);
+            List<ContestantSimilarity> contestantSimilarityList = new ArrayList<>(count);
+            for (int index = 0; index < count; index++) {
+                TFModel baseTFModel = tfModelList.get(index);
+                int CID1 = baseTFModel.getCid();
+                ContestantSimilarity contestantSimilarity = new ContestantSimilarity(CID1);
+                String baseTestFragment = baseTFModel.getFragment();
+                if (baseTestFragment != null) {
+                    List<TFSimilarityModel> tfSimilarityModelList = new ArrayList<>(count - index - 1);
+                    for (int index1 = index + 1; index1 < count; index1++) {
+                        TFModel tfModel = tfModelList.get(index1);
+                        int CID2 = tfModel.getCid();
+                        String testFragment = tfModel.getFragment();
+                        int simValue = 0;
+//                        if (category == 0) {
+//                            simValue = SimAnalysis.getSimValue(baseTestFragment, testFragment);
+//                        }
+                        if (category == 1) {
+                            simValue = SimAnalysis.fuzzyPartialRatio(baseTestFragment, testFragment);
+                        }
+                        compareNumber++;
+                        TFSimilarityModel tfSimilarityModel = new TFSimilarityModel(CID1, CID2, simValue);
+                        tfSimilarityModelList.add(tfSimilarityModel);
+                    }
+                    contestantSimilarity.setTfSimilarityModelList(tfSimilarityModelList);
+                }
+                contestantSimilarityList.add(contestantSimilarity);
+            }
+            contestantSimilarityByMID.setContestantSimilarityList(contestantSimilarityList);
+            contestantSimilarityByMIDList.add(contestantSimilarityByMID);
+            System.out.println("对比次数：" + compareNumber);
+            long endTime=System.currentTimeMillis();
+            System.out.println("对比结束时间：" + endTime);
+            System.out.println("对比运行耗时：" + (endTime - startTime) + "ms");
+            saveTFSimValueToDatabase(contestantSimilarityByMIDList, category);
+            contestantSimilarityByMIDList.clear();
+        }
+    }
+
+    private void saveTFSimValueToDatabase(List<ContestantSimilarityByMID> contestantSimilarityByMIDList
+            , int category) {
+        for (ContestantSimilarityByMID contestantSimilarityByMID:
+                contestantSimilarityByMIDList) {
+            int MID = contestantSimilarityByMID.getMID();
+            List<ContestantSimilarity> contestantSimilarityList = contestantSimilarityByMID.getContestantSimilarityList();
+            if (contestantSimilarityList == null) {
+                // no contestant testing this MUT.
+                continue;
+            }
+            for (ContestantSimilarity contestantSimilarity :
+                    contestantSimilarityList) {
+                int CID1 = contestantSimilarity.getCID();
+                List<TFSimilarityModel> tfSimilarityModelList = contestantSimilarity.getTfSimilarityModelList();
+                if (tfSimilarityModelList == null) {
+                    // no more than one contestant testing this MUT.
+                    continue;
+                }
+                for (TFSimilarityModel tFSimilarityModel:
+                        tfSimilarityModelList) {
+                    int CID2 = tFSimilarityModel.getCID2();
+                    int simValue = tFSimilarityModel.getSimValue();
+                    SimValueModel simValueModel = new SimValueModel();
+                    simValueModel.setMid(MID);
+                    simValueModel.setCid1(CID1);
+                    simValueModel.setCid2(CID2);
+                    simValueModel.setSimValue(simValue);
+                    simValueModel.setCategory(category);
+                    simValueModelDao.save(simValueModel);
                 }
             }
         }
