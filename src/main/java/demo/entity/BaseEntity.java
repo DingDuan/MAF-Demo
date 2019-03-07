@@ -6,15 +6,15 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 
-@Data
-@MappedSuperclass
-@EntityListeners({AuditingEntityListener.class})
-public class BaseEntity implements Persistable<Integer> {
+//@Data
+//@MappedSuperclass
+//@EntityListeners({AuditingEntityListener.class})
+//public class BaseEntity implements Persistable<Integer> {
 
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+//    @Id
+//    @Column(name = "id")
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Integer id;
 
 //    @Column(name = "f_create_time")
 //    @CreatedDate
@@ -27,10 +27,10 @@ public class BaseEntity implements Persistable<Integer> {
 //    private Date modifyTime;
 
 
-    @Override
-    public boolean isNew() {
-        return null == id;
-    }
+//    @Override
+//    public boolean isNew() {
+//        return null == id;
+//    }
 
 //    public DateTime getcreateTime() {
 //
@@ -52,8 +52,8 @@ public class BaseEntity implements Persistable<Integer> {
 //        this.modifyTime = null == modifyTime ? null : modifyTime.toDate();
 //    }
 
-    public Integer getId() {
-        return id;
-    }
+//    public Integer getId() {
+//        return id;
+//    }
 
-}
+//}

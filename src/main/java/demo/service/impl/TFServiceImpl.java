@@ -79,13 +79,12 @@ public class TFServiceImpl implements TFService {
         try {
             List<SimValueVO> resultList = new ArrayList<>();
             for(MUTModel mutModel : mutModelList) {
-//                MUTModel mutModelEntity = mutModelDao.save(mutModel);
-                //等写完把result改成simvalue那个
-
+                System.out.println(mutModelList.size());
+                MUTModel mutModelEntity = mutModelDao.save(mutModel);
             }
 
-//            saveTFToDB(tfMap1);
-//            saveTFToDB(tfMap2);
+            saveTFToDB(tfMap1);
+            saveTFToDB(tfMap2);
             // 计算测试片段之间相似度并存入数据库
             List<List<SimValueVO>> resultLists = tfAnalysis(mutModelList);
 

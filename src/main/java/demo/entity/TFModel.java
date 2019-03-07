@@ -1,15 +1,19 @@
 package demo.entity;
 
 import lombok.Data;
+import org.springframework.data.domain.Persistable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "tf_model")
-public class TFModel extends BaseEntity{
+public class TFModel implements Persistable<Integer> {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name = "fragment")
     private String fragment;
@@ -26,4 +30,8 @@ public class TFModel extends BaseEntity{
     @Column(name = "cid")
     private Integer cid;
 
+    @Override
+    public boolean isNew() {
+        return null == id;
+    }
 }

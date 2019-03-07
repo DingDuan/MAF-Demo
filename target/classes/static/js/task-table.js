@@ -41,7 +41,7 @@ function executeTask() {
 
             var length = result.data.length;
             var dom = document.getElementById("simValues");
-            var str = "抄袭片段数量为："+length+"，抄袭片段相似度详情见下表。";
+            var str = "抄袭片段数量为："+length+"，抄袭片段相似度详情见对应表。";
             // for(var i=0;i<length;i++){
             //     str += "片段"+i+"的相似度为"+80+"%";
             //     if(i!=length-1){

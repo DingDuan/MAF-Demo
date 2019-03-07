@@ -1,15 +1,19 @@
 package demo.entity;
 
 import lombok.Data;
+import org.springframework.data.domain.Persistable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "sim_value_model")
-public class SimValueModel extends BaseEntity{
+public class SimValueModel implements Persistable<Integer> {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name = "mid")
     private int mid;
@@ -25,4 +29,9 @@ public class SimValueModel extends BaseEntity{
 
     @Column(name = "category")
     private int category;
+
+    @Override
+    public boolean isNew() {
+        return null == id;
+    }
 }

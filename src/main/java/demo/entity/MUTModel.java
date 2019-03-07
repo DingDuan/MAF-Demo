@@ -1,15 +1,19 @@
 package demo.entity;
 
 import lombok.Data;
+import org.springframework.data.domain.Persistable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "mut_model")
-public class MUTModel extends BaseEntity{
+public class MUTModel implements Persistable<Integer> {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name = "access")
     private String access;
@@ -28,4 +32,9 @@ public class MUTModel extends BaseEntity{
 
     @Column(name = "method_name")
     private String methodName;
+
+    @Override
+    public boolean isNew() {
+        return null == id;
+    }
 }
