@@ -79,7 +79,7 @@ public class TFServiceImpl implements TFService {
         try {
             List<SimValueVO> resultList = new ArrayList<>();
             for(MUTModel mutModel : mutModelList) {
-                System.out.println(mutModelList.size());
+//                System.out.println(mutModelList.size());
                 MUTModel mutModelEntity = mutModelDao.save(mutModel);
             }
 
