@@ -20,6 +20,32 @@ function getInputs() {
     return data;
 }
 
+function displayDataOfTable(result) {
+    var tbodyNode = document.getElementById("correspond");
+    for(var i=0;i<result.data.length;i++) {
+        var trNode = tbodyNode.insertRow();
+        // console.log(trNode);
+        // console.log(trNode.innerHTML);
+        var tdNode = trNode.insertCell();
+        tdNode.innerHTML = result.data[i].methodId;
+        var tdNode = trNode.insertCell();
+        tdNode.innerHTML = result.data[i].methodName;
+        var tdNode = trNode.insertCell();
+        tdNode.innerHTML = result.data[i].tfid1;
+        var tdNode = trNode.insertCell();
+        tdNode.innerHTML = result.data[i].tfid2;
+        var tdNode = trNode.insertCell();
+        tdNode.innerHTML = result.data[i].simValue;
+        var tdNode = trNode.insertCell();
+        if(result.data[i].plag == true){
+            tdNode.innerHTML = "是";
+        }else{
+            tdNode.innerHTML = "否";
+        }
+
+    }
+}
+
 function executeTask() {
     if($("#inside").css("display")=="none"){
         $("#inside").show();
@@ -52,6 +78,8 @@ function executeTask() {
             // }
             var text = document.createTextNode(str);
             dom.appendChild(text);
+
+            displayDataOfTable(result);
         }
     })
 

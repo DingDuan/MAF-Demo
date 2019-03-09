@@ -7,11 +7,15 @@ import java.util.List;
 @Data
 public class IndexDisplayVO {
 
-    private List<List<SimValueVO>> simValueList;
+    private int methodId;
 
-    private String method_name;
+    private String methodName;
 
     private int tfid1;
 
     private int tfid2;
+
+    private double simValue;
+
+    private boolean isPlag;
 }

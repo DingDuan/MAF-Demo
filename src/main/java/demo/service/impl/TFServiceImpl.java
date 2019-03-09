@@ -16,6 +16,7 @@ import demo.dao.MUTModelDao;
 import demo.dao.SimValueModelDao;
 import demo.entity.SimValueModel;
 import demo.entity.TFModel;
+import demo.vo.IndexDisplayVO;
 import demo.vo.Inputs;
 import demo.vo.MUTInfoVO;
 import demo.vo.SimValueVO;
@@ -86,11 +87,39 @@ public class TFServiceImpl implements TFService {
             saveTFToDB(tfMap1);
             saveTFToDB(tfMap2);
             // 计算测试片段之间相似度并存入数据库
-            List<List<SimValueVO>> resultLists = tfAnalysis(mutModelList);
+            List<List<SimValueVO>> simValueList = tfAnalysis(mutModelList);
+            //11个list，每个里面一个元素
+
+            List<IndexDisplayVO> indexDisplayVOList = new ArrayList<>();
+            for(int i=0;i<simValueList.size();i++){
+//                System.out.println("List"+i+":");
+                List<SimValueVO> list = simValueList.get(i);
+                for(int j=0;j<list.size();j++){
+//                    System.out.println(list.get(j).getSimValue());
+                    IndexDisplayVO indexDisplayVO = new IndexDisplayVO();
+                    indexDisplayVO.setMethodId(i+1);
+
+                    SimValueVO simValueVO = list.get(j);
+                    int mid = simValueVO.getMid();
+                    indexDisplayVO.setMethodName(mutModelDao.getMethodNameByMID(mid));
+
+                    indexDisplayVO.setTfid1(tfModelDao.getIdByMIDAndCid(mid,1));
+                    indexDisplayVO.setTfid2(tfModelDao.getIdByMIDAndCid(mid,2));
+
+                    double simValue = simValueVO.getSimValue();
+                    indexDisplayVO.setSimValue(simValue);
+                    if(simValue > 70){
+                        indexDisplayVO.setPlag(true);
+                    }else{
+                        indexDisplayVO.setPlag(false);
+                    }
+
+                    indexDisplayVOList.add(indexDisplayVO);
+                }
+            }
 
 
-
-            return Result.success().message("检测结果保存成功！").withData(resultLists);
+            return Result.success().message("检测结果保存成功！").withData(indexDisplayVOList);
         }catch (Exception e){
             return Result.error().message("检测结果保存失败，数据库更新错误！").code(ResponseCode.DB_UPDATE_ERROR);
 
