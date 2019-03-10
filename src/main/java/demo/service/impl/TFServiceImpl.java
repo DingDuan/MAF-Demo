@@ -56,59 +56,32 @@ public class TFServiceImpl implements TFService {
 
     @Override
     public Result detect(Inputs inputs) {
+        List<IndexDisplayVO> indexDisplayVOList = new ArrayList<>();
         String srcPath = inputs.getSrcPath();
         String p1Path = inputs.getP1Path();
         String p2Path = inputs.getP2Path();
+        double threshold = inputs.getThreshold();
         List<MUTModel> mutModelList;
-//        List<TFModel> tfModelList = tfModelDao.g
-        mutModelList = PUTAnalysis.analyze(srcPath);
-        Map<Integer, List<ContestantTFModel>> tfMap1 = TPAnalysis.myAnalyze(mutModelList,p1Path);
-        Map<Integer, List<ContestantTFModel>> tfMap2 = TPAnalysis.myAnalyze(mutModelList,p2Path);
-
-
-//        String[] p1s = p1Path.split("/");
-//        int cid1 = Integer.parseInt(p1s[p1s.length-1]);
-//        String[] p2s = p2Path.split("/");
-//        int cid2 = Integer.parseInt(p2s[p2s.length-1]);
-//
-//        List<SimValueModel> list = simValueModelDao.searchSimValueByParameter(cid1,cid2);
-//
-//        for(SimValueModel simValueModel : list){
-//            result.add(simValueModel.getSimValue());
-//        }
-
+        String[] p1s = p1Path.split("/");
+        int cid1 = Integer.parseInt(p1s[p1s.length-1]);
+        String[] p2s = p2Path.split("/");
+        int cid2 = Integer.parseInt(p2s[p2s.length-1]);
         try {
-            List<SimValueVO> resultList = new ArrayList<>();
-            for(MUTModel mutModel : mutModelList) {
-//                System.out.println(mutModelList.size());
-                MUTModel mutModelEntity = mutModelDao.save(mutModel);
-            }
-
-            saveTFToDB(tfMap1);
-            saveTFToDB(tfMap2);
-            // 计算测试片段之间相似度并存入数据库
-            List<List<SimValueVO>> simValueList = tfAnalysis(mutModelList);
-            //11个list，每个里面一个元素
-
-            List<IndexDisplayVO> indexDisplayVOList = new ArrayList<>();
-            for(int i=0;i<simValueList.size();i++){
-//                System.out.println("List"+i+":");
-                List<SimValueVO> list = simValueList.get(i);
-                for(int j=0;j<list.size();j++){
-//                    System.out.println(list.get(j).getSimValue());
+            List<SimValueModel> simValueModelList = simValueModelDao.searchSimValueByPair(cid1,cid2);
+            if(simValueModelList.size() != 0){
+                for(int i=0;i<simValueModelList.size();i++){
                     IndexDisplayVO indexDisplayVO = new IndexDisplayVO();
                     indexDisplayVO.setMethodId(i+1);
-
-                    SimValueVO simValueVO = list.get(j);
-                    int mid = simValueVO.getMid();
+                    SimValueModel simValueModel = simValueModelList.get(i);
+                    int mid = simValueModel.getMid();
                     indexDisplayVO.setMethodName(mutModelDao.getMethodNameByMID(mid));
 
-                    indexDisplayVO.setTfid1(tfModelDao.getIdByMIDAndCid(mid,1));
-                    indexDisplayVO.setTfid2(tfModelDao.getIdByMIDAndCid(mid,2));
+                    indexDisplayVO.setTfid1(tfModelDao.getIdByMIDAndCid(mid,cid1));
+                    indexDisplayVO.setTfid2(tfModelDao.getIdByMIDAndCid(mid,cid2));
 
-                    double simValue = simValueVO.getSimValue();
+                    double simValue = simValueModel.getSimValue();
                     indexDisplayVO.setSimValue(simValue);
-                    if(simValue > 70){
+                    if(simValue >= threshold*100){
                         indexDisplayVO.setPlag(true);
                     }else{
                         indexDisplayVO.setPlag(false);
@@ -116,15 +89,70 @@ public class TFServiceImpl implements TFService {
 
                     indexDisplayVOList.add(indexDisplayVO);
                 }
+            }else {
+                mutModelList = PUTAnalysis.analyze(srcPath);
+                Map<Integer, List<ContestantTFModel>> tfMap1 = TPAnalysis.myAnalyze(mutModelList, p1Path);
+                Map<Integer, List<ContestantTFModel>> tfMap2 = TPAnalysis.myAnalyze(mutModelList, p2Path);
+
+
+                //
+                //        for(SimValueModel simValueModel : list){
+                //            result.add(simValueModel.getSimValue());
+                //        }
+
+
+                List<SimValueVO> resultList = new ArrayList<>();
+                for (MUTModel mutModel : mutModelList) {
+                    //                System.out.println(mutModelList.size());
+                    MUTModel mutModelEntity = mutModelDao.save(mutModel);
+                }
+
+                saveTFToDB(tfMap1);
+                saveTFToDB(tfMap2);
+                // 计算测试片段之间相似度并存入数据库
+                List<List<SimValueVO>> simValueList = tfAnalysis(mutModelList);
+                //11个list，每个里面一个元素
+
+
+                for (int i = 0; i < simValueList.size(); i++) {
+                    //                System.out.println("List"+i+":");
+                    List<SimValueVO> list = simValueList.get(i);
+                    for (int j = 0; j < list.size(); j++) {
+                        //                    System.out.println(list.get(j).getSimValue());
+                        IndexDisplayVO indexDisplayVO = new IndexDisplayVO();
+                        indexDisplayVO.setMethodId(i + 1);
+
+                        SimValueVO simValueVO = list.get(j);
+                        int mid = simValueVO.getMid();
+                        indexDisplayVO.setMethodName(mutModelDao.getMethodNameByMID(mid));
+
+                        indexDisplayVO.setTfid1(tfModelDao.getIdByMIDAndCid(mid, cid1));
+                        indexDisplayVO.setTfid2(tfModelDao.getIdByMIDAndCid(mid, cid2));
+
+                        double simValue = simValueVO.getSimValue();
+                        indexDisplayVO.setSimValue(simValue);
+                        if (simValue >= threshold * 100) {
+                            indexDisplayVO.setPlag(true);
+                        } else {
+                            indexDisplayVO.setPlag(false);
+                        }
+
+                        indexDisplayVOList.add(indexDisplayVO);
+                    }
+                }
             }
 
 
-            return Result.success().message("检测结果保存成功！").withData(indexDisplayVOList);
+                return Result.success().message("检测结果保存成功！").withData(indexDisplayVOList);
         }catch (Exception e){
             return Result.error().message("检测结果保存失败，数据库更新错误！").code(ResponseCode.DB_UPDATE_ERROR);
 
         }
     }
+
+//    public List<IndexDisplayVO> prepareIndexDisplay(List<SimValueVO> list){
+//
+//    }
 
     public void saveTFToDB(Map<Integer, List<ContestantTFModel>> tfMap){
         Iterator<Map.Entry<Integer,List<ContestantTFModel>>> entries = tfMap.entrySet().iterator();

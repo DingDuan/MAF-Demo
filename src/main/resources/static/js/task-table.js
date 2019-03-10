@@ -8,20 +8,26 @@ function getInputs() {
     var filesDivTwo = document.querySelector('#upfileTwo');
     var p2Path = filesDivTwo.value;
 
+    var amount = document.querySelector('#amount');
+    var threshold = amount.value;
+
     var data = {
         "srcPath":srcPath,
         "p1Path":p1Path,
-        "p2Path":p2Path
+        "p2Path":p2Path,
+        "threshold":threshold
     };
 
     // console.log(srcPath);
     //console.log(p1Path);
     //console.log(p2Path);
+    // console.log(threshold);
     return data;
 }
 
 function displayDataOfTable(result) {
     var tbodyNode = document.getElementById("correspond");
+    tbodyNode.innerHTML = "";
     for(var i=0;i<result.data.length;i++) {
         var trNode = tbodyNode.insertRow();
         // console.log(trNode);
@@ -65,9 +71,22 @@ function executeTask() {
             console.log(result.data)
             // console.log('dasf')
 
+            var plagNum = 0;
             var length = result.data.length;
-            var dom = document.getElementById("simValues");
-            var str = "抄袭片段数量为："+length+"，抄袭片段相似度详情见对应表。";
+            var dom = document.getElementById("plagNum");
+            var resDes = document.getElementById("resDescription");
+            for(var i=0;i<length;i++){
+                if(result.data[i].plag == true){
+                    plagNum++;
+                }
+            }
+            var str = "";
+            if(plagNum>0){
+                resDes.innerHTML = "存在抄袭！";
+                str = "抄袭片段数量为："+plagNum+"，片段相似度详情见对应表。";
+            }else{
+                resDes.innerHTML = "不存在抄袭！";
+            }
             // for(var i=0;i<length;i++){
             //     str += "片段"+i+"的相似度为"+80+"%";
             //     if(i!=length-1){
@@ -77,6 +96,9 @@ function executeTask() {
             //     }
             // }
             var text = document.createTextNode(str);
+            // console.log("text:"+text);
+            // console.log("dom:"+dom);
+            dom.innerHTML = "";
             dom.appendChild(text);
 
             displayDataOfTable(result);
