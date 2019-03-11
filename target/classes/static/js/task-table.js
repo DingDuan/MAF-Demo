@@ -102,76 +102,59 @@ function executeTask() {
             dom.appendChild(text);
 
             displayDataOfTable(result);
+
+            var simValues = new Array();
+            for(var i=0;i<length;i++){
+                simValues[i] = result.data[i].simValue;
+            }
+
+            function sortNumber(a,b)
+            {
+                return b - a
+            }
+            simValues = simValues.sort(sortNumber)
+
+            var option1 = {
+                value:simValues[0],//百分比,必填
+                name:'相似度',//必填
+                title:'相似度最高的三个片段',
+
+                backgroundColor:'#f0fff4',
+                color:['#38a8da','#d4effa'],
+                fontSize:32,
+                domEle:document.getElementById("chart1")//必填
+            }
+            percentPie1 = new PercentPie(option1);
+            percentPie1.init();
+
+            var option2 = {
+                value:simValues[1],//百分比,必填
+                name:'相似度',//必填
+                // title:'相似度第一',
+                backgroundColor:'#f0fff4',
+                color:['#38a8da','#d4effa'],
+                fontSize:32,
+                domEle:document.getElementById("chart2")//必填
+            }
+            percentPie2 = new PercentPie(option2);
+            percentPie2.init();
+
+            var option3 = {
+                value:simValues[2],//百分比,必填
+                name:'相似度',//必填
+                // title:'相似度第一',
+                backgroundColor:'#f0fff4',
+                color:['#38a8da','#d4effa'],
+                fontSize:32,
+                domEle:document.getElementById("chart3")//必填
+            }
+            percentPie3 = new PercentPie(option3);
+            percentPie3.init();
         }
     })
 
-
     // getChart();
 
-    var option1 = {
-        value:100,//百分比,必填
-        name:'相似度',//必填
-        title:'相似度最高的三个片段',
-
-        backgroundColor:'#f0fff4',
-        color:['#38a8da','#d4effa'],
-        fontSize:32,
-        domEle:document.getElementById("chart1")//必填
-    }
-    percentPie1 = new PercentPie(option1);
-    percentPie1.init();
-
-    var option2 = {
-        value:95,//百分比,必填
-        name:'相似度',//必填
-        // title:'相似度第一',
-        backgroundColor:'#f0fff4',
-        color:['#38a8da','#d4effa'],
-        fontSize:32,
-        domEle:document.getElementById("chart2")//必填
-    }
-    percentPie2 = new PercentPie(option2);
-    percentPie2.init();
-
-    var option3 = {
-        value:93,//百分比,必填
-        name:'相似度',//必填
-        // title:'相似度第一',
-        backgroundColor:'#f0fff4',
-        color:['#38a8da','#d4effa'],
-        fontSize:32,
-        domEle:document.getElementById("chart3")//必填
-    }
-    percentPie3 = new PercentPie(option3);
-    percentPie3.init();
-    var myselect = document.getElementById("setting-threshold");
-    // var index = myselect.selectedIndex;
-    // console.log(myselect.options[index].value);
-    // if(myselect.options[index].value=="1.0"){
-    //     $(".threshold1-0").show();
-        // $(".otherthreshold").css("display")
-    // }
-    // var taskGroup = getTableContent("task-table");
-    //
-    // console.log(taskGroup)
-    // var longestTime = 0;
-    // for (var i = 0; i < taskGroup.length; i++) {
-    //     longestTime = longestTime > parseInt(taskGroup[i][3]) ? longestTime : parseInt(taskGroup[i][3]);
-    // }
-    // localStorage.setItem("longestTime", longestTime);
-    // console.log("longestTime:"+longestTime);
-    // $.ajax({
-    //     method: "POST",
-    //     url: "/api/start",
-    //     contentType: "application/json;charset=utf8",
-    //     data: JSON.stringify({
-    //         taskGroup: taskGroup
-    //     }),
-    //     dataType: "json",
-    //     success: function (data) {
-    //         window.open("./result.html");
-    //     }
-    // });
 }
 
 // $(function() {

@@ -46,3 +46,7 @@ function next(){
     console.log(current);
     testA(current+1);
 }
+
+function display(index){
+    
+}
