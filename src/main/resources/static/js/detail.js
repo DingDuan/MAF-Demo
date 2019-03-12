@@ -48,5 +48,5 @@ function next(){
 }
 
 function display(index){
-    
+
 }

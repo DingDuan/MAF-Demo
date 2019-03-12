@@ -10,7 +10,7 @@
     display: inline-block;
     margin: 1.5% 0.5% 1.5% 1.5%;
     width: 30%;
-    height: 500px;
+    height: 532px;
     color: #555;
     background-color: #eee;
     padding: 1%;
@@ -21,7 +21,7 @@
     display: inline-block;
     margin: 1.5% 0.5% 1.5% 0.5%;
     width: 63%;
-    height: 500px;
+    height: 532px;
     float: right;
     color: #555;
     background-color: #eee;
@@ -152,14 +152,15 @@
 }
 
 .setting-right{
-    width:290px;
+    /*width:290px;*/
+    width:70%;
     float:left;
     display: inline-block;
 }
 
 #setting-button{
     position:relative;
-    bottom: -10%;
+    bottom: -5%;
 }
 
 #src{
@@ -208,6 +209,10 @@
     width: 160px;
     border: 1px solid blue;
     background-color: #fff;
+}
+
+body {
+    font: normal 100% Helvetica, Arial, sans-serif;
 }
 
 
