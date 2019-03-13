@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>慕测平台开发者测试抄袭检测系统</title>
+
+    <link rel="stylesheet" href="css/config.css">
+    <link rel="stylesheet" href="css/component.css">
+
+    <script src="js/fileUpload.js"></script>
+
+</head>
+<body>
+    <div class="background"></div>
+    <div class="context">
+        <img src="img/mooctest.png" class="logo-config" />
+        <h2 class="config-heading">慕测平台开发者测试抄袭检测系统</h2>
+        <div class="setting-line">
+            <div class="setting-left">
+                题目路径
+            </div>
+
+            <div class="setting-right">
+                <div style="display: inline-block; float: left;"><input type="text" style="position: relative; display: inline-block; height:30px" size="31" name="upfile" id="upfileSrc" ></div>
+                <div style="display: inline-block; float: left;">
+                    <a href="javascript:;" class="file">选择文件
+                        <input type="button" value="上传文件" onclick="fileUploadSrc();" class="smt" >
+                    </a>
+
+                    <input type="file" id="fileEleSrc" class="smt" style="margin-right:255px; display:none" formmethod="POST"
+                           value="上传文件" onchange="upfileSrc.value=this.value" webkitdirectory directory />
+                </div>
+            </div>
+        </div>
+        <div class="contestant-list">
+            <div class="setting-left">
+                选手列表
+            </div>
+            <div id="mut-tf-wrapper" >
+                <div class="container">
+                    <div class="component">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>选手编号</th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="correspond">
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!-- /container -->
+            </div><!-- /table-wrapper -->
+        </div>
+    </div>
+</body>
+</html>
