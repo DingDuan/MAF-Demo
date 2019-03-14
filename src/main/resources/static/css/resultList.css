@@ -1,0 +1,36 @@
+.wrapper{
+    background-color: #eee;
+    width: 100%;
+    height: 864px;
+    padding: 1%;
+
+}
+
+.threshold-line{
+    display: block;
+    height: 6%;
+    padding: 0.5%;
+    /*margin: 3% 2% 3% 2%;*/
+}
+
+.threshold-left{
+    width: 5%;
+    float:left;
+    display: inline-block;
+}
+
+.threshold-right{
+    /*width:290px;*/
+    width:20%;
+    float:left;
+    display: inline-block;
+}
+
+.statistic{
+    /*display: none;*/
+    width: 98%;
+    height:110px;
+    background-color:#E2FCFF;
+    border: 1px solid rgba(0,0,0,.125);
+    overflow: auto;
+}
