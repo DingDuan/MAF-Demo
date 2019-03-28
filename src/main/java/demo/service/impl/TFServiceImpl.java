@@ -2,7 +2,6 @@ package demo.service.impl;
 
 import demo.com.tcsa.analysis.PUTAnalysis;
 import demo.com.tcsa.analysis.SimAnalysis;
-import demo.com.tcsa.analysis.TFAnalysis;
 import demo.com.tcsa.analysis.TPAnalysis;
 import demo.com.tcsa.model.ContestantSimilarity;
 import demo.com.tcsa.model.ContestantSimilarityByMID;
@@ -18,7 +17,6 @@ import demo.entity.SimValueModel;
 import demo.entity.TFModel;
 import demo.vo.IndexDisplayVO;
 import demo.vo.Inputs;
-import demo.vo.MUTInfoVO;
 import demo.vo.SimValueVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -47,9 +45,6 @@ public class TFServiceImpl implements TFService {
 
 
         List<Double> result = new ArrayList<>();
-//        for(SimValueModel simValueModel : list){
-//            result.add(simValueModel.getSimValue());
-//        }
 
         return Result.success().code(200).withData(result);
     }
@@ -94,16 +89,8 @@ public class TFServiceImpl implements TFService {
                 Map<Integer, List<ContestantTFModel>> tfMap1 = TPAnalysis.myAnalyze(mutModelList, p1Path);
                 Map<Integer, List<ContestantTFModel>> tfMap2 = TPAnalysis.myAnalyze(mutModelList, p2Path);
 
-
-                //
-                //        for(SimValueModel simValueModel : list){
-                //            result.add(simValueModel.getSimValue());
-                //        }
-
-
                 List<SimValueVO> resultList = new ArrayList<>();
                 for (MUTModel mutModel : mutModelList) {
-                    //                System.out.println(mutModelList.size());
                     MUTModel mutModelEntity = mutModelDao.save(mutModel);
                 }
 
@@ -115,10 +102,8 @@ public class TFServiceImpl implements TFService {
 
 
                 for (int i = 0; i < simValueList.size(); i++) {
-                    //                System.out.println("List"+i+":");
                     List<SimValueVO> list = simValueList.get(i);
                     for (int j = 0; j < list.size(); j++) {
-                        //                    System.out.println(list.get(j).getSimValue());
                         IndexDisplayVO indexDisplayVO = new IndexDisplayVO();
                         indexDisplayVO.setMethodId(i + 1);
 
@@ -149,10 +134,6 @@ public class TFServiceImpl implements TFService {
 
         }
     }
-
-//    public List<IndexDisplayVO> prepareIndexDisplay(List<SimValueVO> list){
-//
-//    }
 
     public void saveTFToDB(Map<Integer, List<ContestantTFModel>> tfMap){
         Iterator<Map.Entry<Integer,List<ContestantTFModel>>> entries = tfMap.entrySet().iterator();

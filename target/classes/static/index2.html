@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html style="width: 100%" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>慕测平台开发者测试抄袭检测系统</title>
+
+    <link rel="stylesheet" href="css/origin.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/index2.css">
+    <link rel="stylesheet" href="css/button.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script src="js/setting-table.js"></script>
+    <script src="js/task-table.js"></script>
+    <script src="js/fileUpload.js"></script>
+
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+
+    <script>
+        $(function() {
+            $( "#slider-range-min" ).slider({
+                range: "min",
+                value: 0.8,
+                min: 0.1,
+                max: 1.0,
+                step: 0.1,
+                slide: function( event, ui ) {
+                    $( "#amount" ).val( ui.value );
+                }
+            });
+            $( "#amount" ).val( $( "#slider-range-min" ).slider( "value" ) );
+
+            var option1 = {
+                value:81,//百分比,必填
+                name:'相似度',//必填
+                title:'相似度最高的三个片段',
+
+                backgroundColor:'#f0fff4',
+                color:['#38a8da','#d4effa'],
+                fontSize:32,
+                domEle:document.getElementById("chart1")//必填
+            }
+            percentPie1 = new PercentPie(option1);
+            percentPie1.init();
+
+            var option2 = {
+                value:80,//百分比,必填
+                name:'相似度',//必填
+                // title:'相似度第一',
+                backgroundColor:'#f0fff4',
+                color:['#38a8da','#d4effa'],
+                fontSize:32,
+                domEle:document.getElementById("chart2")//必填
+            }
+            percentPie2 = new PercentPie(option2);
+            percentPie2.init();
+
+            var option3 = {
+                value:69,//百分比,必填
+                name:'相似度',//必填
+                // title:'相似度第一',
+                backgroundColor:'#f0fff4',
+                color:['#38a8da','#d4effa'],
+                fontSize:32,
+                domEle:document.getElementById("chart3")//必填
+            }
+            percentPie3 = new PercentPie(option3);
+            percentPie3.init();
+
+        });
+    </script>
+
+    <!--<link rel="stylesheet" type="text/css" href="css/normalize.css" />-->
+
+    <!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+
+
+
+    <!--必要样式-->
+
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <!--<script>-->
+    <!--$(function() {-->
+    <!--var select = $( "#setting-threshold" );-->
+    <!--var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({-->
+    <!--min: 0.1,-->
+    <!--max: 1.0,-->
+    <!--range: "min",-->
+    <!--value: parseFloat(select[ 0 ].selectedIndex)/10 + 0.1,-->
+    <!--step: 0.1,-->
+    <!--slide: function( event, ui ) {-->
+    <!--select[ 0 ].selectedIndex = ui.value*10 - 1;-->
+    <!--}-->
+    <!--});-->
+    <!--console.log(value);-->
+    <!--$( "#setting-threshold" ).change(function() {-->
+    <!--slider.slider( "value", parseFloat(this.selectedIndex)/10 + 0.1 );-->
+    <!--});-->
+    <!--});-->
+    <!--</script>-->
+</head>
+
+<body>
+<header>
+    <div class="whole-page"></div>
+
+    <div class="top-bar" onselectstart="return false;">
+
+        <!--<img src="http://mooctest-webide.oss-cn-hangzhou.aliyuncs.com/logo.svg" class="logo" />-->
+        <img src="img/logo.png" class="logo" />
+
+        <ul>
+            <p>慕测平台开发者测试抄袭检测系统</p>
+            <a href="index.html">
+                <!--<li id="spec-button" class="head-button">配置任务组</li>-->
+            </a>
+            <a href="history.html">
+                <!--<li id="star-button" class="head-button">历史任务组</li>-->
+            </a>
+        </ul>
+    </div>
+
+
+    <div style="height:80%">
+
+
+        <!--<div id="setting-wrapper">-->
+            <!--<h1>检测配置</h1>-->
+
+            <!--<div style="height:20px"></div>-->
+
+            <!--<div class="setting-line">-->
+                <!--<div class="setting-left">-->
+                    <!--<h2>题目路径</h2>-->
+                <!--</div>-->
+
+                <!--<div class="setting-right">-->
+                    <!--<div style="display: inline-block; float: left;"><input type="text" style="position: relative; display: inline-block; height:30px" size="31" name="upfile" id="upfileSrc" ></div>-->
+                    <!--<div style="display: inline-block; float: left;">-->
+                        <!--<a href="javascript:;" class="file">选择文件-->
+                            <!--<input type="button" value="上传文件" onclick="fileUploadSrc();" class="smt" >-->
+                        <!--</a>-->
+
+                        <!--<input type="file" id="fileEleSrc" class="smt" style="margin-right:255px; display:none" formmethod="POST"-->
+                               <!--value="上传文件" onchange="upfileSrc.value=this.value" webkitdirectory directory />-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+            <!--</div>-->
+
+            <!--<div class="setting-line">-->
+                <!--<div class="setting-left">-->
+                    <!--<h2>选手一</h2>-->
+                <!--</div>-->
+
+                <!--<div class="setting-right">-->
+                    <!--<div style="display: inline-block; float: left;"><input type="text" style="position: relative; display: inline-block; height:30px" size="31" name="upfile" id="upfileOne" ></div>-->
+                    <!--<div style="display: inline-block; float: left;">-->
+                        <!--<a href="javascript:" class="file">选择文件-->
+                            <!--<input type="button" value="上传文件" onclick="fileUploadOne();" class="smt">-->
+                        <!--</a>-->
+
+                        <!--<input type="file" id="fileEleOne" class="smt" style="margin-right:255px; display:none" formmethod="POST"-->
+                               <!--value="上传文件" onchange="upfileOne.value=this.value" webkitdirectory directory>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+
+
+            <!--</div>-->
+
+            <!--<div class="setting-line">-->
+                <!--<div class="setting-left">-->
+                    <!--<h2>选手二</h2>-->
+                <!--</div>-->
+
+                <!--<div class="setting-right">-->
+                    <!--<div style="display: inline-block; float: left;"><input type="text" style="position: relative; display: inline-block; height:30px" size="31" name="upfile" id="upfileTwo" ></div>-->
+                    <!--<div style="display: inline-block; float: left;">-->
+                        <!--<a href="javascript:" class="file">选择文件-->
+                            <!--<input type="button" value="上传文件" onclick="fileUploadTwo()" class="smt">-->
+                        <!--</a>-->
+
+
+                        <!--<input type="file" id="fileEleTwo" class="smt" style="margin-right:255px; display:none" formmethod="POST"-->
+                               <!--value="上传文件" onchange="upfileTwo.value=this.value" webkitdirectory directory>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+            <!--</div>-->
+
+            <!--<div class="setting-line">-->
+                <!--<div class="setting-left">-->
+                    <!--<h2>阈值</h2>-->
+                <!--</div>-->
+
+                <!--<div style="margin-top: 7px" class="setting-right">-->
+                    <!--<div style="display: inline-block; float:left;"><input style="width: 30px; height: 15px" type="text" id="amount" class="smt"></div>-->
+
+                    <!--<div id="slider-range-min" style="display: inline-block; float:left; width: 85%; height: 15px"></div>-->
+                    <!--&lt;!&ndash;<form>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<select style="" id="setting-threshold">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="0.1">0.1</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="0.2">0.2</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="0.3">0.3</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="0.4">0.4</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="0.5">0.5</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="0.6">0.6</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="0.7">0.7</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="0.8">0.8</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="0.9">0.9</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="1.0">1.0</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</form>&ndash;&gt;-->
+                <!--</div>-->
+
+
+            <!--</div>-->
+
+            <!--<div id="setting-button">-->
+                <!--&lt;!&ndash;<button class="button-red" id="clear" style="font-size: 25px; margin: 2% 15% 2% 5%;" onclick="">清空</button>&ndash;&gt;-->
+                <!--<button class="button-blue" id="begin" style="font-size: 25px; margin: 2% 15% 2% 15%;" onclick="executeTask()">开始检测</button>-->
+            <!--</div>-->
+
+
+
+            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+            <!--&lt;!&ndash;<td></td>&ndash;&gt;-->
+            <!--&lt;!&ndash;<td></td>&ndash;&gt;-->
+            <!--&lt;!&ndash;<td></td>&ndash;&gt;-->
+            <!--&lt;!&ndash;<td colspan="2">&ndash;&gt;-->
+            <!--&lt;!&ndash;<p id="setting-tip"></p>&ndash;&gt;-->
+            <!--&lt;!&ndash;</td>&ndash;&gt;-->
+            <!--&lt;!&ndash;<td></td>&ndash;&gt;-->
+            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+        <!--</div>-->
+
+        <div id="result-wrapper" class="result">
+            <h1>检测结果</h1>
+            <div id="inside" style="">
+                <div id = "total"  class="result">
+                    <h3>总体描述</h3>
+                    <div class="result">
+                        <div id="resDescription"style="font-size: 1em;font-weight:bold;color:red;">存在抄袭！</div>
+                        <div id="plagNum" class="thresholds">抄袭片段数量为：2，片段相似度详情见对应表。</div>
+                        <br>
+                        <!--<div>以下为相似度最高的三个片段</div>-->
+                    </div>
+                    <!--<div class="result">-->
+                    <!--<h4>待测项目基本信息</h4>-->
+                    <!--本次待测项目为Datalog，包括9个类，分别为Argument,Datalog,Fact,Predicate,Program,Rule,Substitution,Value,Variable-->
+                    <!--</div>-->
+                </div>
+
+                <div id="chart-wrapper" class="result">
+                    <div id="chart1" style="float:left; width:33%;height: 233px;"></div>
+                    <div id="chart2" style="float:left; width:33%;height: 233px;"></div>
+                    <div id="chart3" style="float:left; width:33%;height: 233px;"></div>
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <button class="button-blue" id="detail-button" style="float: right;font-size: 25px" onclick="{location.href='detail.html'}">片段详情</button>
+                </div>
+
+            </div>
+            <br style='clear:both'/>
+        </div>
+    </div>
+
+    <div id="mut-tf-wrapper" >
+        <h1>待测方法与测试片段对应表</h1>
+        <div class="container">
+
+            <div class="component">
+
+                <table>
+
+                    <thead>
+
+                    <tr>
+
+                        <th>方法编号</th>
+
+                        <th>方法名</th>
+
+                        <th>选手一片段编号</th>
+
+                        <th>选手二片段编号</th>
+
+                        <th>相似度</th>
+
+                        <th>是否抄袭</th>
+
+                    </tr>
+
+                    </thead>
+                    <tbody id="correspond"><tr><td>1</td><td>value</td><td>3</td><td>22</td><td>48</td><td>否</td></tr><tr><td>2</td><td>variable</td><td>8</td><td>39</td><td>46</td><td>否</td></tr><tr><td>3</td><td>extend</td><td>12</td><td>45</td><td>63</td><td>否</td></tr><tr><td>4</td><td>applyOn</td><td>5</td><td>29</td><td>57</td><td>否</td></tr><tr><td>5</td><td>getIdentifier</td><td>11</td><td>42</td><td>80</td><td>是</td></tr><tr><td>6</td><td>equals</td><td>1</td><td>16</td><td>68</td><td>否</td></tr><tr><td>7</td><td>getValue</td><td>4</td><td>24</td><td>81</td><td>是</td></tr><tr><td>8</td><td>equals</td><td>7</td><td>38</td><td>69</td><td>否</td></tr><tr><td>9</td><td>getHead</td><td>6</td><td>31</td><td>59</td><td>否</td></tr><tr><td>10</td><td>getBody</td><td>10</td><td>41</td><td>59</td><td>否</td></tr><tr><td>11</td><td>deriveOnce</td><td>2</td><td>18</td><td>63</td><td>否</td></tr></tbody>
+
+
+                </table>
+
+            </div>
+
+
+
+        </div><!-- /container -->
+    </div><!-- /table-wrapper -->
+    <!--<script src="js/jquery.min.js"></script>-->
+
+    <script src="js/jquery.ba-throttle-debounce.min.js"></script>
+
+    <script src="js/jquery.stickyheader.js"></script>
+
+    <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+
+
+
+    </div>
+</header>
+
+<!--<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>-->
+<!--<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>-->
+<!--<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>-->
+<!--<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>-->
+
+<!--<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>-->
+<!--<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--jQuery(document).ready(function () {-->
+<!--jQuery("pre").addClass("prettyprint linenums");-->
+<!--prettyPrint();-->
+<!--});-->
+<!--</script>-->
+
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>-->
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+</body>
+
+</html>
+
+<script src="js/echarts.js"></script>
+<!--<script src="js/similarity.js"></script>-->
+<script src="js/PercentPie.js"></script>
+<script type="text/javascript">
+
+</script>
+
+<script>
+
+</script>
+

@@ -1,0 +1,222 @@
+/*.title-wrapper {*/
+/*text-align: center;*/
+/*background-color: rgba(255, 255, 255, 0.3);*/
+/*color: #555;*/
+/*margin: 2% 3% 0 3%;*/
+/*padding: 1%;*/
+/*}*/
+
+#setting-wrapper {
+    display: inline-block;
+    margin: 1.5% 0.5% 1.5% 1.5%;
+    width: 30%;
+    height: 532px;
+    color: #555;
+    background-color: #eee;
+    padding: 1%;
+    text-align: center;
+}
+
+#result-wrapper {
+    display: inline-block;
+    margin: 1% 1% 1% 1%;
+    width: 96%;
+    height: 532px;
+    /*float: right;*/
+    color: #555;
+    background-color: #eee;
+    padding: 1%;
+    /*position: absolute;*/
+}
+
+#mut-tf-wrapper {
+    width: 96%;
+    color: #555;
+    background-color: #eee;
+    padding: 1%;
+    margin: 1% 1% 1% 1%;
+}
+
+#description{
+    /*position:absolute;*/
+    /*bottom: 10px;*/
+}
+
+#setting-table, #task-table {
+    text-align: left;
+}
+
+#setting-table td, #setting-table th {
+    /*width: 500px;*/
+    /*height:50px;*/
+    padding: 0 5px;
+    /*font-size:30px;*/
+}
+
+#task-table td, #task-table th{
+    width: 100px;
+    padding: 5px 5px;
+}
+
+#task-table td input {
+    width: auto;
+    float: right;
+}
+
+#setting-tip {
+    color: red;
+    font-size: 12px;
+}
+
+/*input {*/
+/*width: 200px;*/
+/*}*/
+
+/*select{*/
+/*width: 160px;*/
+/*}*/
+
+.button-wrapper {
+    margin: 10% 22%;
+}
+
+.left, .right{
+    width: 10%;
+    display: inline-block;
+}
+
+.frag-table{
+    width:800px;
+    height: 150px;
+    overflow-y:scroll;
+    position: relative
+}
+
+.threshold1-0{
+    /*display: none;*/
+}
+
+/*#focus {width:800px; height:380px; overflow:hidden; position:relative;}*/
+/*#focus ul {height:380px; overflow:scroll;position:absolute;}*/
+/*#focus ul li {float:left; overflow:scroll; position:relative; }*/
+/*#focus ul li div {position:absolute; overflow:scroll;}*/
+/*#focus table{overflow: scroll}*/
+/*#focus .btnBg {position:absolute; width:800px; height:20px; left:0; bottom:0; }*/
+/*#focus .btn {position:absolute; width:780px; height:10px; padding:5px 10px; right:0; bottom:0; text-align:right;}*/
+/*#focus .btn span {display:inline-block; _display:inline; _zoom:1; width:25px; height:10px; _font-size:0; margin-left:5px; cursor:pointer; background:#fff;}*/
+/*#focus .btn span.on {background:#fff;}*/
+/*#focus .preNext {width:45px; height:100px; position:absolute; top:90px; background:url(img/sprite.png) no-repeat 0 0; cursor:pointer;}*/
+/*#focus .pre {left:0;}*/
+/*#focus .next {right:0; background-position:right top;}*/
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #0080ff;
+    /*border: 2px solid #0080ff;*/
+    border-radius: 4px;
+    padding: 4px 12px;
+    /*overflow: hidden;*/
+    color: #FFF;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 26px;
+    float: left;
+    height: 26px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    /*background-color: transparent;*/
+    border-color: #78C3F3;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.setting-line{
+    display: block;
+    height: 13%;
+    margin: 3% 2% 3% 2%;
+}
+
+.setting-left{
+    width: 30%;
+    float:left;
+    display: inline-block;
+}
+
+.setting-right{
+    /*width:290px;*/
+    width:70%;
+    float:left;
+    display: inline-block;
+}
+
+#setting-button{
+    position:relative;
+    bottom: -5%;
+}
+
+#src{
+    width: 900px;
+}
+
+#contestant-one, #contestant-two{
+    width: 440px;
+    display: inline-block;
+    float: left;
+}
+
+.result{
+    padding: 1%;
+    /*border:1px solid rgba(59, 59, 59, 0.55)*/
+}
+
+#chart-wrapper {
+    /*float: right;*/
+    /*display: none;*/
+    background-color: #f0fff4;
+    border: 1px solid rgba(0,0,0,.125);
+    /*width: 99%;*/
+    height: 233px;
+}
+
+#total{
+    /*display: none;*/
+    height:110px;
+    background-color:#E2FCFF;
+    border: 1px solid rgba(0,0,0,.125);
+    overflow: auto;
+}
+
+#inside{
+    /*display: none;*/
+    width: 99%;
+    height: 90%;
+    margin-top: 1.5%;
+}
+
+.filetext{
+    position: relative;
+    display: inline-block;
+    height:30px;
+    width: 160px;
+    border: 1px solid blue;
+    background-color: #fff;
+}
+
+body {
+    font: normal 100% Helvetica, Arial, sans-serif;
+}
+
+
+
+
+
+
