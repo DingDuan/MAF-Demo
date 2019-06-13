@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 2</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+public class ALUTest {
+	/**
+	 * Run the char andGate(char,char) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testAndGate_1()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		char a = '1';
+		char b = '1';
+
+		char result = fixture.andGate(a, b);
+
+		// add additional test code here
+		assertEquals('1', result);
+	}
+
+	/**
+	 * Run the char andGate(char,char) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testAndGate_2()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		char a = '';
+		char b = '';
+
+		char result = fixture.andGate(a, b);
+
+		// add additional test code here
+		assertEquals('0', result);
+	}
+
+	/**
+	 * Run the char andGate(char,char) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testAndGate_3()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		char a = '1';
+		char b = '';
+
+		char result = fixture.andGate(a, b);
+
+		// add additional test code here
+		assertEquals('0', result);
+	}
+
+	/**
+	 * Run the String claAdder(String,String,char) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testClaAdder_1()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		String operand1 = "aaaaa";
+		String operand2 = "aaaaa";
+		char c = '';
+
+		String result = fixture.claAdder(operand1, operand2, c);
+
+		// add additional test code here
+		assertEquals("00001", result);
+	}
+
+	/**
+	 * Run the String fullAdder(char,char,char) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testFullAdder_1()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		char x = '';
+		char y = '';
+		char c = '';
+
+		String result = fixture.fullAdder(x, y, c);
+
+		// add additional test code here
+		assertEquals("01", result);
+	}
+
+	/**
+	 * Run the String ieee754(String,int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testIeee754_3()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		String number = "";
+		int length = 1;
+
+		String result = fixture.ieee754(number, length);
+
+		// add additional test code here
+		assertEquals("", result);
+	}
+
+	/**
+	 * Run the String integerRepresentation(String,int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test(expected = java.lang.NumberFormatException.class)
+	public void testIntegerRepresentation_4()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		String number = "aa";
+		int length = 1;
+
+		String result = fixture.integerRepresentation(number, length);
+
+		// add additional test code here
+		assertNotNull(result);
+	}
+
+	/**
+	 * Run the String integerTrueValue(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testIntegerTrueValue_1()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		String operand = "aa";
+
+		String result = fixture.integerTrueValue(operand);
+
+		// add additional test code here
+		assertEquals("-49", result);
+	}
+
+	/**
+	 * Run the String integerTrueValue(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testIntegerTrueValue_2()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		String operand = "aa";
+
+		String result = fixture.integerTrueValue(operand);
+
+		// add additional test code here
+		assertEquals("-49", result);
+	}
+
+	/**
+	 * Run the String integerTrueValue(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testIntegerTrueValue_3()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		String operand = "";
+
+		String result = fixture.integerTrueValue(operand);
+
+		// add additional test code here
+		assertEquals("0", result);
+	}
+
+	/**
+	 * Run the String negation(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testNegation_1()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		String operand = "aa";
+
+		String result = fixture.negation(operand);
+
+		// add additional test code here
+		assertEquals("00", result);
+	}
+
+	/**
+	 * Run the String negation(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 18-6-9 上午11:16
+	 */
+	@Test
+	public void testNegation_2()
+		throws Exception {
+		ALU fixture = ALUFactory.createALU();
+		String operand = "aa";
+
+		String result = fixture.negation(operand);
+
+		// add additional test code here
+		assertEquals("00", result);
+	}
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

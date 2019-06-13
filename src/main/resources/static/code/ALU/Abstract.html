@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Abstract.java</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+public class Abstract {
+
+
+
+	public String claAdder(String operand1, String operand2, char c) {
+		char[] p = new char[5];
+		char[] g = new char[5];
+		for (int i = 1; i <= 4; i++) {
+			p[i] = orGate(operand1.charAt(4 - i), operand2.charAt(4 - i));
+			g[i] = andGate(operand1.charAt(4 - i), operand2.charAt(4 - i));
+		}
+		char[] ci = new char[5];
+		ci[0] = c;
+		ci[1] = orGate(g[1], andGate(p[1], c));
+		ci[2] = orGate(orGate(g[2], andGate(p[2], g[1])), andGate(c, andGate(p[2], p[1])));
+		ci[3] = orGate(orGate(orGate(g[3], andGate(p[3], g[2])), andGate(g[1], andGate(p[3], p[2]))),
+				andGate(c, andGate(p[3], andGate(p[2], p[1]))));
+		ci[4] = orGate(
+				orGate(orGate(orGate(g[4], andGate(p[4], g[3])), andGate(g[2], andGate(p[4], p[3]))),
+						andGate(g[1], andGate(p[4], andGate(p[3], p[2])))),
+				andGate(c, andGate(p[4], andGate(p[3], andGate(p[2], p[1])))));
+		String result = "";
+		for (int i = 1; i <= 4; i++) {
+			result = fullAdder(operand1.charAt(4 - i), operand2.charAt(4 - i), ci[i - 1]).charAt(1) + result;
+		}
+		return ci[4] + result;
+	}
+
+
+	public String integerSubtraction(String operand1, String operand2, int length) {
+		return adder(operand1, negation(operand2), '1', length);
+	}
+
+	public char andGate(char a, char b) {
+		if (a == '1' && b == '1') {
+			return '1';
+		} else {
+			return '0';
+		}
+	}
+
+	public char xorGate(char a, char b) {
+		if (a - b == 0) {
+			return '0';
+		} else {
+			return '1';
+		}
+	}
+
+	private String allZeroWithLength(int n) {
+		StringBuilder result = new StringBuilder();
+		while (result.length() < n) {
+			result.append("0");
+		}
+		return result.toString();
+	}
+
+	private String allOneWithLength(int n) {
+		StringBuilder result = new StringBuilder();
+		while (result.length() < n) {
+			result.append("1");
+		}
+		return result.toString();
+	}
+
+	private char orGate(char a, char b) {
+		if (a == '1' || b == '1') {
+			return '1';
+		} else {
+			return '0';
+		}
+	}
+
+	public int normalize(String num) {
+		int i = 0;
+		char c = '0';
+		while (i < num.length()) {
+			if (num.charAt(i) == c) {
+				c = num.charAt(i);
+				i++;
+			} else {
+				i++;
+				break;
+			}
+		}
+		return i;
+	}
+}
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

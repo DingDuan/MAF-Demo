@@ -40,6 +40,7 @@ td, th {
 th {
     background-color: #1c94c4;
     font-weight: bold;
+	font-size: 18px;
     color: #fff;
     white-space: nowrap;
 }
@@ -59,7 +60,7 @@ tbody tr:hover {
 	overflow-x: auto;
 	overflow-y: hidden;
 	position: relative;
-	margin: 3em 0;
+	margin: 2em 0;
 	width: 100%;
 }
 .sticky-wrap .sticky-thead,

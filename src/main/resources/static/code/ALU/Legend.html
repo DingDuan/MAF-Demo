@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend.java</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+package net.mooctest;
+public class Legend {
+	public String floatRepresentation(String number, int eLength, int sLength) {
+		StringBuilder result = new StringBuilder();
+		int n;
+		String strs[] = number.split("\\.");
+		if (strs[0].charAt(0) != '-') {
+			result.insert(0, "0");
+			n = Integer.valueOf(strs[0]);
+		} else {
+			result.insert(0, "1");
+			n = Integer.valueOf(strs[0].substring(1));
+		}
+		boolean isZero = true;
+		for (String str : strs) {
+			if (Integer.valueOf(str) != 0) {
+				isZero = false;
+				break;
+			}
+		}
+		if (isZero) {
+			while (result.length() < 1 + eLength + sLength) {
+				result.append("0");
+			}
+			return result.toString();
+		}
+		StringBuilder beforeDot = new StringBuilder();
+		if (n != 0) {
+			while (n >= 1) {
+				beforeDot.insert(0, String.valueOf(n % 2));
+				n = (n - n % 2) / 2;
+			}
+		}
+		StringBuilder afterDot = new StringBuilder();
+		if (strs.length > 1) {
+			float m = (float) (Integer.valueOf(strs[1])) * (float) Math.pow(10, -strs[1].length());
+			if (m == 0) {
+				afterDot = new StringBuilder(allZeroWithLength(eLength + sLength + 1));
+			} else {
+				do {
+					if ((m *= 2) >= 1) {
+						m -= 1;
+						afterDot.append("1");
+					} else {
+						afterDot.append("0");
+					}
+				} while (m != 1 && beforeDot.length() + afterDot.length() <= eLength + sLength + 1 + 1);
+			}
+		}
+
+		int e;
+		String exponent;
+		int bias = (int) Math.pow(2, eLength - 1) - 1;
+		if (beforeDot.toString().equals("")) {
+			e = normalize(afterDot.toString());
+			if (bias - e < 0) {
+				// 反规格化
+				System.out.println(bias - e);
+				System.out.println(afterDot);
+				afterDot = new StringBuilder(afterDot.substring(normalize(afterDot.toString()) - 1));
+				while (afterDot.length() < sLength) {
+					afterDot.append("0");
+				}
+				return result + allZeroWithLength(eLength) + afterDot;
+			}
+			exponent = integerRepresentation((bias - e) + "", eLength);
+		} else {
+			e = beforeDot.length() - 1;
+			exponent = integerRepresentation((bias + e) + "", eLength);
+		}
+		if (strs.length > 1) {
+			if (beforeDot.toString().equals("")) {
+				afterDot = new StringBuilder(leftShift(afterDot.toString(), e));
+				result.append(exponent).append(afterDot);
+			} else {
+				result.append(exponent).append(beforeDot.substring(1)).append(afterDot);
+			}
+		} else {
+			result.append(exponent).append(beforeDot.toString().equals("") ? "" : beforeDot.substring(1));
+		}
+		if (result.length() > 1 + eLength + sLength) {
+			result = new StringBuilder(result.substring(0, 1 + eLength + sLength));
+		}
+		// +-Inf,NaN
+		if (exponent.equals(allOneWithLength(exponent.length()))) {
+			if (result.substring(1 + eLength, result.length()).equals(allZeroWithLength(1 + eLength + sLength))) {
+				return result.charAt(0) == '0' ? "+Inf" : "-Inf";
+			} else {
+				return "NaN";
+			}
+		}
+		return result.toString();
+	}
+
+
+	public String ieee754(String number, int length) {
+		if (length == 32) {
+			return floatRepresentation(number, 8, 23);
+		} else if (length == 64) {
+			return floatRepresentation(number, 11, 52);
+		} else {
+			return "";
+		}
+	}
+
+
+	public String integerTrueValue(String operand) {
+		int num = 0;
+		for (int i = 0; i < operand.length(); i++) {
+			if (i == 0) {
+				num -= (operand.charAt(i) - 48) * Math.pow(2, operand.length() - 1);
+			} else {
+				num += (operand.charAt(i) - 48) * Math.pow(2, operand.length() - 1 - i);
+			}
+		}
+		return String.valueOf(num);
+	}
+
+
+	public String floatTrueValue(String operand, int eLength, int sLength) {
+		boolean isMinus = false;
+		if (operand.charAt(0) == '1') {
+			isMinus = true;
+		}
+		String exponent = operand.substring(1, 1 + eLength);
+		String tailNum = operand.substring(1 + eLength);
+		// System.out.println(exponent);
+		// System.out.println(tailNum);
+		// /NaN
+		if (exponent.equals(allOneWithLength(eLength))) {
+			if (tailNum.equals(allZeroWithLength(sLength))) {
+				if (operand.charAt(0) == '0') {
+					return "+Inf";
+				} else {
+					return "-Inf";
+				}
+			} else {
+				return "NaN";
+			}
+		}
+		String bias = integerRepresentation(String.valueOf((int) Math.pow(2, eLength - 1) - 1), eLength);
+		if (exponent.equals(allZeroWithLength(eLength))) {
+			// 0
+			if (tailNum.equals(allZeroWithLength(sLength))) {
+				return "0";
+			} else {
+				String exp = integerSubtraction(allZeroWithLength(eLength - 1) + "1", bias, eLength).substring(1);
+				tailNum = "0" + tailNum;
+				double result = 0;
+				int dotPos = tailNum.length();
+				for (int i = dotPos - 1; i >= 0; i--) {
+					result += (Math.pow(2, -i) * (tailNum.charAt(i) - 48));
+				}
+				result *= Math.pow(2.0, Integer.valueOf(integerTrueValue(exp)));
+				return isMinus ? "-" + String.valueOf(result) : String.valueOf(result);
+			}
+		}
+		exponent = adder(exponent, negation(bias), '1', eLength).substring(1);
+		tailNum = "1" + tailNum;
+		int dotPos = 1;
+		if (exponent.charAt(0) == '0') {
+			dotPos += Integer.valueOf(integerTrueValue(exponent));
+		}
+		float result = 0;
+		while (tailNum.length() < dotPos) {
+			tailNum = tailNum + "0";
+		}
+		for (int i = dotPos - 1; i >= 0; i--) {
+			result += (float) (Math.pow(2, dotPos - 1 - i) * (tailNum.charAt(i) - 48));
+		}
+		for (int i = dotPos; i < sLength; i++) {
+			result += (float) (Math.pow(2, dotPos - 1 - i) * (tailNum.charAt(i) - 48));
+		}
+		return isMinus ? "-" + String.valueOf(result) : String.valueOf(result);
+	}
+
+	public String leftShift(String operand, int n) {
+		StringBuilder result = new StringBuilder(operand.substring(n, operand.length()));
+		while (result.length() < operand.length()) {
+			result.append("0");
+		}
+		return result.toString();
+	}
+
+
+	public String negation(String operand) {
+		StringBuilder result = new StringBuilder();
+		for (int i = 0; i < operand.length(); i++) {
+			if (operand.charAt(i) == '0') {
+				result.append("1");
+			} else {
+				result.append("0");
+			}
+		}
+		return result.toString();
+	}
+
+
+	public String oneAdder(String operand) {
+		StringBuilder result = new StringBuilder();
+		char si;
+		char ci = '1';
+		for (int i = 0; i < operand.length(); i++) {
+			si = xorGate(operand.charAt(operand.length() - i - 1), ci);
+			result.insert(0, si);
+			ci = andGate(ci, operand.charAt(operand.length() - i - 1));
+		}
+		// 判断是否溢出
+		if (ci == '1') {
+			result.insert(0, "1");
+		} else {
+			result.insert(0, "0");
+		}
+		return result.toString();
+	}
+
+
+	public String adder(String operand1, String operand2, char c, int length) {
+		StringBuilder tmpO1 = new StringBuilder(operand1);
+		StringBuilder tmpO2 = new StringBuilder(operand2);
+		while (tmpO1.length() < length) {
+			if (tmpO1.charAt(0) == '1') {
+				tmpO1.insert(0, "1");
+			} else {
+				tmpO1.insert(0, "0");
+			}
+		}
+		while (tmpO2.length() < length) {
+			if (tmpO2.charAt(0) == '1') {
+				tmpO2.insert(0, "1");
+			} else {
+				tmpO2.insert(0, "0");
+			}
+		}
+		StringBuilder result = new StringBuilder();
+		char ci = c;
+		int i = 0;
+		do {
+			String ts = claAdder(tmpO1.substring(length - i - 4, length - i),
+					tmpO2.substring(length - i - 4, length - i), ci);
+			result.insert(0, ts.substring(1, 5));
+			ci = ts.charAt(0);
+			i += 4;
+		} while (i <= length - 4);
+		while (result.length() < length) {
+			if (result.charAt(0) == '1') {
+				result.insert(0, "1");
+			} else {
+				result.insert(0, "0");
+			}
+		}
+		boolean isOverflow = false;
+		if (result.charAt(0) != tmpO1.charAt(0) && result.charAt(0) != tmpO2.charAt(0)
+				&& tmpO1.charAt(0) == tmpO2.charAt(0)) {
+			isOverflow = true;
+		}
+		if (isOverflow) {
+			result.insert(0, "1");
+		} else {
+			result.insert(0, "0");
+		}
+		return result.toString();
+	}
+
+
+
+}
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 3</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+package net.mooctest;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class RedBlackTreeTest {
+
+    @Test
+    public void testInsert() {
+        RedBlackTree tree = new RedBlackTree();
+        RedBlackTree tree1 = new RedBlackTree();
+        RedBlackTree tree2 = new RedBlackTree();
+        Node node = new Node(9, null, null, null);
+        node.isLeaf();
+        tree.createNode(9, null, null, null);
+        int element1[] = {11, -2, 1, -7, 5, -4, 8, 14, -15};
+        int element2[] = {7, -2, 1, 5, -4, -11, 8, 14, -15};
+        int element3[] = {19, 44, 8, 90, 76, 75, 95, 28, 54, 35, 24, 37, 63, 58, 73, 74, 50, 30, 11, 71, 17, 85, 41, 59, 74, 21, 21, 50, 26, 12, 61, 26, 67, 49, 97, 15, 98, 6, 55, 61, 56, 81, 84, 83, 35, 90, 94, 53, 49, 39, 62, 74, 70, 74, 52, 35, 61, 84, 97, 25, 89, 45, 52, 30, 68, 68, 4, 21, 5, 14, 49, 52, 77, 63, 100, 39, 80, 96, 77, 62, 57, 70, 51, 3, 69, 77, 18, 97, 93, 41, 39, 38, 85, 91, 59, 18, 82, 44, 39, 48};
+        for (int e : element1) {
+            tree.insert(e);
+        }
+        tree.getMaximum();
+        tree.getMinimum();
+        tree.getSize();
+        tree.rotateRight(tree.rotateLeft(tree.search(11)));
+        tree.rotateLeft(tree.rotateLeft(tree.search(5)));
+        tree.delete(tree.search(1));
+        tree.printTree();
+        tree.getMinimum(tree.search(5));
+        tree.getMinimum(tree.search(11));
+
+        for (int e : element2) {
+            tree1.insert(e);
+        }
+        tree1.printTreeInOrder();
+        tree1.printTreePreOrder();
+        tree1.printTreePostOrder();
+        tree1.contains(-15);
+        tree1.getSuccessor(8);
+        tree1.delete(8);
+
+        for (int e : element3) {
+            tree2.insert(e);
+        }
+    }
+}
+
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

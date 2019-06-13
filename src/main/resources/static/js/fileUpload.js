@@ -16,9 +16,21 @@ function fileUploadSrc() {
         // }
         // // filesDiv.innerHTML = fileList.join('');
         // filesDiv.value=fileList.join(' ');
-        filesDiv.value='/Users/dd/Desktop/MAF-Data/'+files[0].webkitRelativePath.substring(0,3);
+        filesDiv.value='/Users/dd/Desktop/MAF-Data/Datalog/'+files[0].webkitRelativePath.substring(0,3);
     });
-    // });
+
+
+}
+
+function choose() {
+    if($(".component").css("display")=="none"){
+        setTimeout( function(){
+            $(".component").show();
+            // window.open("result.html");
+        }, 0.5 * 1000 )
+
+    }
+
 }
 
 function fileUploadOne() {

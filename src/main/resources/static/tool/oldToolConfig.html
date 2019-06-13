@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html style="width: 100%" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>Platform for Test Code Plagiarism Detection</title>
+
+    <link rel="stylesheet" href="../css/origin.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/toolConfig.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+
+    <script src="../js/setting-table.js"></script>
+    <script src="../js/task-table.js"></script>
+    <script src="../js/fileUpload.js"></script>
+
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+
+
+    <link rel="stylesheet" type="text/css" href="../css/component.css" />
+
+</head>
+
+<body>
+<header>
+    <div class="whole-page"></div>
+
+    <div class="top-bar navbar-fixed-top" onselectstart="return false;">
+
+        <!--<img src="http://mooctest-webide.oss-cn-hangzhou.aliyuncs.com/logo.svg" class="logo" />-->
+        <img src="../img/logo.png" class="logo" />
+
+        <ul style="width: 1200px">
+            <!--<p>MAF</p>-->
+
+            <a href="contact.html">
+                <li id="contact-button" class="head-button">CONTACT</li>
+            </a>
+            <a href="help.html">
+                <li id="help-button" class="head-button">HELP</li>
+            </a>
+            <a href="oldToolConfig.html">
+                <li id="home-button" class="head-button">HOME</li>
+            </a>
+        </ul>
+    </div>
+
+
+    <div style="height:80%">
+        <section id="home-sec">
+            <div class="overlay text-center">
+                <h1 >Platform for Test Code Plagiarism Detection</h1>
+                <hr class="hr-set"/>
+
+                <p>Provides Java Test Code Plagiarism Detection </p>
+            </div>
+        </section>
+
+
+        <div id="setting-wrapper">
+            <!--<h1>Subjects</h1>-->
+
+            <div style="height:20px"></div>
+
+            <!--<div class="projectName"><button class="button-blue" id="Datalog" style="font-size: 20px; margin: 2% 15% 2% 15%;" onclick="datalog()">Datalog</button></div>-->
+            <!--<div class="projectName"><button class="button-blue" id="ALU" style="font-size: 20px; margin: 2% 15% 2% 15%;" onclick="alu()">ALU</button></div>-->
+            <!--<div class="projectName"><button class="button-blue" id="RBT" style="font-size: 20px; margin: 2% 15% 2% 15%;" onclick="rbt()">RBT</button></div>-->
+
+            <div class="setting-right">
+                <div style="display: inline-block; float: left;"><input type="text" placeholder="Project Path" style="position: relative; display: inline-block; font-size:15px; height:40px" size="85" name="upfile" id="upfileSrc" ></div>
+                <div style="display: inline-block; float: left;">
+                    <a href="javascript:;" class="file">search
+                        <input type="button" value="上传文件" onclick="fileUploadSrc();" class="smt" >
+                    </a>
+
+                    <input type="file" id="fileEleSrc" class="smt" style="margin-right:255px; display:none" formmethod="POST"
+                           value="上传文件" onchange="upfileSrc.value=this.value" webkitdirectory directory />
+                </div>
+                <div style="display: inline-block; float: left;">
+                    <button class="file" onclick="choose()">choose</button>
+                </div>
+            </div>
+
+            <div style="clear: both">
+                <div class="layui-tab layui-tab-card">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">Project Details</li>
+                        <li>Student Codes</li>
+                    </ul>
+                    <div class="layui-tab-content" style="height: 400px;">
+                        <div class="layui-tab-item layui-show">
+                            <div class="container">
+
+                                <div class="component" style="display: none">
+
+                                    <table>
+
+                                        <thead>
+
+                                        <tr>
+
+                                            <th>No.</th>
+
+                                            <th>Class Name</th>
+
+                                            <th>Methods Number</th>
+
+                                            <th>Details</th>
+
+
+                                        </tr>
+
+                                        </thead>
+
+                                        <tbody id="correspond1">
+
+                                        <!--<tr><td class="user-name">gary coleman</td><td class="user-email">gary.coleman21@example.com</td><td class="user-phone">(398)-332-5385</td><td class="user-mobile">(888)-677-3719</td><td class="user-mobile">(888)-677-3719</td><td class="user-mobile">(888)-677-3719</td></tr>-->
+
+                                        <tr><td>1</td><td>Argument</td><td>8</td>
+                                            <td>
+                                            <!-- <div style="display: inline-block;">-->
+                                                <!--<a href="javascript:" class="file">detail-->
+                                                    <!--<input type="button" value="上传文件" onclick="fileUploadTwo()" class="smt">-->
+                                                <!--</a>-->
+
+
+                                                <!--<input type="file" id="fileEleTwo" class="smt" style="margin-right:255px; display:none" formmethod="POST"-->
+                                                       <!--value="上传文件" onchange="upfileTwo.value=this.value">-->
+                                            <!--</div>-->
+                                                <button class="button-blue" id="Argument" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Argument.html'}">detail</button></td>
+                                        </tr>
+                                        <tr><td>2</td><td>Datalog</td><td>8</td><td><button class="button-blue" id="Datalog1" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Datalog.html'}">detail</button></td></tr>
+                                        <tr><td>3</td><td>Fact</td><td>6</td><td><button class="button-blue" id="Fact" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Fact.html'}">detail</button></td></tr>
+                                        <tr><td>4</td><td>Predicate</td><td>5</td><td><button class="button-blue" id="Predicate" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Predicate.html'}">detail</button></td></tr>
+                                        <tr><td>5</td><td>Program</td><td>6</td><td><button class="button-blue" id="Program" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Program.html'}">detail</button></td></tr>
+                                        <tr><td>6</td><td>Rule</td><td>6</td><td><button class="button-blue" id="Rule" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Rule.html'}">detail</button></td></tr>
+                                        <tr><td>7</td><td>Substitution</td><td>5</td><td><button class="button-blue" id="Substitution" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Substitution.html'}">detail</button></td></tr>
+
+                                        </tbody>
+
+                                    </table>
+
+                                </div>
+
+
+
+                            </div><!-- /container -->
+                        </div>
+                        <div class="layui-tab-item">
+                            <div id="mut-tf-wrapper" >
+                                <div class="container">
+                                    <div class="component" style="display: none">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th><input  id="checkAll" type="checkbox" onclick="clickAll()"></th>
+                                                <th>Student No</th>
+                                                <th>Student Score</th>
+                                                <th>Details</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody id="correspond2">
+                                            <tr>
+                                                <td><input name="selectFlag" type="checkbox"></td>
+                                                <td>1</td>
+                                                <td>90</td>
+                                                <td><button class="button-blue" id="Stu1" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Stu1.html'}">detail</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="selectFlag" type="checkbox"></td>
+                                                <td>2</td>
+                                                <td>89</td>
+                                                <td><button class="button-blue" id="Stu2" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Stu2.html'}">detail</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="selectFlag" type="checkbox"></td>
+                                                <td>3</td>
+                                                <td>84</td>
+                                                <td><button class="button-blue" id="Stu3" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Stu3.html'}">detail</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="selectFlag" type="checkbox"></td>
+                                                <td>4</td>
+                                                <td>74</td>
+                                                <td><button class="button-blue" id="Stu4" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Stu4.html'}">detail</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="selectFlag" type="checkbox"></td>
+                                                <td>5</td>
+                                                <td>75</td>
+                                                <td><button class="button-blue" id="Stu5" style="font-size: 20px;" onclick="{location.href='../code/Datalog/Stu5.html'}">detail</button></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div><!-- /container -->
+                            </div><!-- /table-wrapper -->
+                            <div id="setting-button">
+                                <!--<button class="button-red" id="clear" style="font-size: 25px; margin: 2% 15% 2% 5%;" onclick="">清空</button>-->
+                                <button class="button-blue2" id="begin" style="float:right; font-size: 25px; margin: 2% 15% 2% 15%;" onclick="check()">check
+                                    <!--<a href="tool/result.html" target="view_window"></a>-->
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td colspan="2">-->
+            <!--<p id="setting-tip"></p>-->
+            <!--</td>-->
+            <!--<td></td>-->
+            <!--</tr>-->
+        </div>
+
+
+
+    <script src="../js/jquery.ba-throttle-debounce.min.js"></script>
+
+    <script src="../js/jquery.stickyheader.js"></script>
+
+    <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+
+
+
+    </div>
+    <footer style="text-align: center">
+        <div class="container">
+            <p> &copy;2019 Mooctest Copyright: Nanjing Mooctest Co. Ltd.</p>
+        </div>
+    </footer>
+</header>
+
+<!--<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>-->
+<!--<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>-->
+<!--<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>-->
+<!--<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>-->
+
+<!--<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>-->
+<!--<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--jQuery(document).ready(function () {-->
+<!--jQuery("pre").addClass("prettyprint linenums");-->
+<!--prettyPrint();-->
+<!--});-->
+<!--</script>-->
+
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>-->
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+</body>
+
+</html>
+<script src="../layui/layui.js"></script>
+<script>
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //一些事件监听
+        element.on('tab(demo)', function(data){
+            console.log(data);
+        });
+    });
+</script>
+<script src="../js/echarts.js"></script>
+<!--<script src="js/similarity.js"></script>-->
+<script src="../js/PercentPie.js"></script>
+<script type="text/javascript">
+</script>
+<script src="../js/toolConfig.js"></script>
+<script>
+
+</script>
+

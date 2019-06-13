@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 3</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+	@Test
+	public void test() {
+
+		// Variable
+
+		try {
+			Variable va1 = new Variable("test0001");
+			assertNotNull(va1.getIdentifier());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Variable va1 = new Variable(null);
+			assertNotNull(va1.getIdentifier());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Variable va1 = new Variable("test0001");
+			assertEquals("test0001",va1.getIdentifier());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Variable va1 = new Variable("test0001");
+			Variable va2 = new Variable("test0001");
+			assertTrue(va1.equals(va2));
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Variable va1 = new Variable("test0001");
+			Variable va2 = null;
+			assertFalse(va1.equals(va2));
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Variable va1 = new Variable("test0001");
+			Variable va2 = new Variable("test0002");
+			assertFalse(va1.equals(va2));
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Variable va1 = new Variable("test0001");
+			assertNotNull(va1.hashCode());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Variable va1 = new Variable("test0001");
+			assertNotNull(va1.toString());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+
+		// value
+
+		try {
+			Value va1 = new Value("test0001");
+			assertNotNull(va1.getValue());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Value va1 = new Value(null);
+			assertNotNull(va1.getValue());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Value va1 = new Value("test0001");
+			assertEquals("test0001",va1.getValue());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Value va1 = new Value("test0001");
+			Value va2 = new Value("test0001");
+			assertTrue(va1.equals(va2));
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Value va1 = new Value("test0001");
+			Variable va2 = null;
+			assertFalse(va1.equals(va2));
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Value va1 = new Value("test0001");
+			Value va2 = new Value("test0002");
+			assertFalse(va1.equals(va2));
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Value va1 = new Value("test0001");
+			assertNotNull(va1.hashCode());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Value va1 = new Value("test0001");
+			assertNotNull(va1.toString());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+
+		// Argument
+
+		try {
+			Value va1 = new Value("value0001");
+			/*Variable var1 = new Variable("variable");*/
+			Argument ag1 = Argument.value(va1);
+			assertNotNull(ag1.getValue());
+			assertNull(ag1.getVariable());
+			assertTrue(ag1.isValue());
+			assertFalse(ag1.isVariable());
+			assertNotNull(ag1.toString());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			/*Value va1 = new Value("value0001");*/
+			Variable var1 = new Variable("variable");
+			Argument ag1 = Argument.variable(var1);
+			assertNull(ag1.getValue());
+			assertNotNull(ag1.getVariable());
+			assertFalse(ag1.isValue());
+			assertTrue(ag1.isVariable());
+			assertNotNull(ag1.toString());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+
+		// Predicate
+
+		try {
+			Predicate va1 = new Predicate("test0001");
+			assertNotNull(va1.getName());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Predicate va1 = new Predicate(null);
+			assertNotNull(va1.getName());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Predicate va1 = new Predicate("test0001");
+			assertEquals("test0001",va1.getName());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Predicate va1 = new Predicate("test0001");
+			Predicate va2 = new Predicate("test0001");
+			assertTrue(va1.equals(va2));
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Predicate va1 = new Predicate("test0001");
+			Variable va2 = null;
+			assertFalse(va1.equals(va2));
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Predicate va1 = new Predicate("test0001");
+			Predicate va2 = new Predicate("test0002");
+			assertFalse(va1.equals(va2));
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Predicate va1 = new Predicate("test0001");
+			assertNotNull(va1.hashCode());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Predicate va1 = new Predicate("test0001");
+			assertNotNull(va1.toString());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+
+		// fact
+
+		try {
+			Value va1 = new Value("value0001");
+			Value va2 = new Value("value0002");
+			Predicate pd1 = new Predicate("test0001");
+			Value[] vas1 = {va1,va2};
+			Value[] vas2 = {va1};
+			Fact fa1 = new Fact(pd1,vas1);
+			Fact fa2 = new Fact(pd1,vas1);
+			Fact fa3 = new Fact(pd1,vas2);
+			Fact fa4 = null;
+			assertNotNull(fa1.getPredicate());
+			assertNotNull(fa1.getValues());
+			assertNotNull(fa1.hashCode());
+			assertNotNull(fa1.toString());
+			assertTrue(fa1.equals(fa2));
+			assertFalse(fa1.equals(fa3));
+			assertFalse(fa1.equals(fa4));
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+
+		// fact
+
+		try {
+			Value va1 = new Value("value0001");
+			Value va2 = new Value("value0002");
+			Predicate pd1 = new Predicate("test0001");
+			Value[] vas1 = null;
+			Fact fa1 = new Fact(pd1,vas1);
+			assertNotNull(fa1);
+
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		try {
+			Value va1 = new Value("value0001");
+			Value va2 = new Value("value0002");
+			Predicate pd1 = null;
+			Value[] vas1 = {va1,va2};
+			Fact fa1 = new Fact(pd1,vas1);
+			assertNotNull(fa1);
+
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+		// Datalog
+
+		try {
+			Value va1 = new Value("value0001");
+			Argument ag1 = Argument.value(va1);
+			Argument ag2 = Argument.value(va1);
+			Predicate pd1 = new Predicate("test0001");
+			Argument[] ags1 = {ag1,ag2};
+			Datalog dl1 = new Datalog(pd1,ags1);
+			assertNotNull(dl1.getArguments());
+			assertNotNull(dl1.getPredicate());
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof NullPointerException);
+		}
+	}
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

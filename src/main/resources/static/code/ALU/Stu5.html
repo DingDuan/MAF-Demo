@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 5</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+public class ALUTest {
+
+	@Test(timeout = 4000)
+	public void test() {
+		ALU alu = new ALU();
+        String num1 = alu.integerRepresentation("9", 8);
+        String num2 = alu.integerRepresentation("0", 8);
+        String num3 = alu.integerRepresentation("-5", 8);
+	}
+
+	@Test(expected = NumberFormatException.class)
+	public void test1() {
+		ALU alu = new ALU();
+        String num1 = alu.floatRepresentation("0", 4, 8);
+        String num2 = alu.floatRepresentation("+Inf", 8,12);
+        String num4 = alu.floatRepresentation("-Inf", 8,12);
+        String num7 = alu.floatRepresentation("NaN", 8,12);
+        String num3 = alu.floatRepresentation("0.11010001*210110", 8,12);
+        String num5 = alu.floatRepresentation("3.1415926", 8,12);
+        String num6 = alu.floatRepresentation("3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679", 8,1200);
+	}
+    @Test(timeout = 4000)
+	public void test2() {
+		ALU alu = new ALU();
+        String num1 = alu.ieee754("0", 32);
+        String num2 = alu.ieee754("-111111", 32);
+        String num3 = alu.ieee754("222", 32);
+        String num4 = alu.ieee754("111", 64);
+        String num5 = alu.ieee754("-888888", 64);
+        String num6 = alu.ieee754("0", 64);
+	}
+    @Test(timeout = 4000)
+	public void test3() {
+		ALU alu = new ALU();
+        String num1 = alu.integerTrueValue("00001001");
+        String num2 = alu.integerTrueValue("10000101");
+	}
+    @Test(timeout = 4000)
+	public void test4() {
+		ALU alu = new ALU();
+        String num1 = alu.leftShift("00001001", 2);
+        String num2 = alu.leftShift("10101011", 4);
+	}
+    @Test(timeout = 4000)
+	public void test5() {
+		ALU alu = new ALU();
+        String num1 = alu.negation("101110111");
+        String num2 = alu.negation("011010000");
+	}
+    @Test(timeout = 4000)
+	public void test6() {
+		ALU alu = new ALU();
+        String num1 = alu.oneAdder("00001001");
+        String num2 = alu.oneAdder("011011111");
+        String num3 = alu.oneAdder("1111111");
+        String num4 = alu.oneAdder("10000000");
+	}
+    @Test(timeout = 4000)
+	public void test7() {
+		ALU alu = new ALU();
+        String num1 = alu.adder("0100", "0011", '0', 8);
+        String num2 = alu.adder("1100", "0111", '0', 8);
+        String num3 = alu.adder("1001", "0011", '1', 8);
+        String num4 = alu.adder("1010", "0011", '1', 8);
+	}
+    @Test(timeout = 4000)
+	public void test8() {
+		ALU alu = new ALU();
+        String num1 = alu.fullAdder('0', '0', '0');
+        String num2 = alu.fullAdder('0', '1', '0');
+        String num3 = alu.fullAdder('0', '0', '1');
+        String num4 = alu.fullAdder('0', '1', '1');
+        String num5 = alu.fullAdder('1', '0', '0');
+        String num6 = alu.fullAdder('1', '1', '0');
+        String num7 = alu.fullAdder('1', '1', '1');
+        String num8 = alu.fullAdder('1', '0', '1');
+        String num8 = alu.floatTrueValue("01000001001101100000", 8, 11);
+    }
+    @Test(timeout = 4000)
+	public void test9() {
+		ALU alu = new ALU();
+        String num1 = alu.claAdder("1001", "0001", '1');
+        String num2 = alu.claAdder("1001", "1001", '1');
+        String num3 = alu.claAdder("1111", "1111", '1');
+        String num4 = alu.claAdder("0000", "0000", '0');
+        String num5 = alu.claAdder("1001", "0001", '0');
+        String num6 = alu.claAdder("1101", "1011", '0');
+        String num7 = alu.claAdder("1101", "1011", '0');
+        String num8 = alu.claAdder("1101", "0101", '1');
+        String num9 = alu.integerSubtraction("0100", "0011", 8);
+        String num10 = alu.integerSubtraction("1100", "0111", 8);
+        String num11 = alu.integerSubtraction("0100", "1011", 8);
+        int num12 = alu.normalize("10001010100.1010101110");
+        int num13 = alu.normalize("011101010101.0100011101");
+	}
+}
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

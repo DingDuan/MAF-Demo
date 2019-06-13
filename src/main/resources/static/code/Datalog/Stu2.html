@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 2</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+    Value value;
+    Variable variable;
+    Substitution sub;
+    Predicate predicate;
+    Fact fact;
+    Argument a1;
+    Argument a2;
+    Datalog datalog;
+    Rule rule;
+    Program program;
+
+    @org.junit.Rule
+    public ExpectedException thrown = ExpectedException.none();
+
+        @Test
+        public void testValueEquals() {
+        value = new Value("12");
+		boolean flagNull = value.equals(null);
+		assertEquals(false, flagNull);
+
+		boolean flagNotEqual = value.equals(new Value("1"));
+		assertEquals(false, flagNotEqual);
+
+		boolean flagEqual = value.equals(new Value("12"));
+		assertEquals(true, flagEqual);
+	}
+
+	@Test
+	public void testSetValue() {
+		thrown.expect(NullPointerException.class);
+		thrown.expectMessage("Value cannot be null");
+		value = new Value(null);
+	}
+
+	@Test
+	public void testValueToString() {
+		value = new Value("value");
+		String res = "value";
+		assertEquals(res, value.toString());
+	}
+
+	@Test
+	public void testSetVariable() {
+		thrown.expect(NullPointerException.class);
+		thrown.expectMessage("Identifier cannot be null");
+		variable = new Variable(null);
+	}
+
+	@Test
+	public void testVarEquals() {
+		variable = new Variable("var");
+		boolean flagNull = variable.equals(null);
+		assertEquals(false, flagNull);
+
+		boolean flagNotEqual = variable.equals(new Variable("v"));
+		assertEquals(false, flagNotEqual);
+
+		boolean flagEqual = variable.equals(new Variable("var"));
+		assertEquals(true, flagEqual);
+	}
+
+	@Test
+	public void testVarToString() {
+		variable = new Variable("var");
+		String res = "VAR:var";
+		assertEquals(res, variable.toString());
+	}
+
+	@Test
+	public void testSubExtend() {
+		Variable var1 = new Variable("var1");
+		Value v1 = new Value("v1");
+		Value v2 = new Value("v2");
+		sub = new Substitution();
+		Substitution sub2 = new Substitution();
+		sub.extend(var1, v1);
+
+		assertEquals(null, sub.extend(var1, v2));
+	}
+
+	@Test
+	public void testExtendAll() {
+		Variable var1 = new Variable("var1");
+		Variable var2 = new Variable("var2");
+		Variable var3 = new Variable("var3");
+		LinkedList<Variable> from = new LinkedList<Variable>();
+		LinkedList<Variable> from2 = new LinkedList<Variable>();
+
+		Value v1 = new Value("v1");
+		Value v2 = new Value("v2");
+		Value v3 = new Value("v3");
+		LinkedList<Value> to = new LinkedList<Value>();
+		LinkedList<Value> to2 = new LinkedList<Value>();
+
+		sub = new Substitution();
+		Substitution sub1 = new Substitution();
+		Substitution sub2 = new Substitution();
+		LinkedList<Substitution> subList = new LinkedList<Substitution>();
+		sub1.extend(var1, v1);
+		sub1.extend(var2, v2);
+		sub1.extend(var3, v3);
+		sub2.extend(var1, v1);
+		subList.add(sub1);
+		subList.add(sub2);
+		sub.extendAll(subList);
+
+		predicate = new Predicate("pre");
+		Argument[] args = { a1 };
+		Argument[] args2 = { a1, a2 };
+
+		datalog = new Datalog(predicate, args);
+//		sub.applyOn(datalog);
+
+	}
+
+	@Test
+	public void testPreGetname() {
+		predicate = new Predicate("pre");
+		assertEquals(predicate.getName(), "pre");
+	}
+
+	@Test
+	public void testPreSetname() {
+		thrown.expect(NullPointerException.class);
+		thrown.expectMessage("Name cannot be null");
+		predicate = new Predicate(null);
+	}
+
+	@Test
+	public void testPreEquals() {
+		predicate = new Predicate("pre");
+		assertEquals(false, predicate.equals(null));
+		assertEquals(true, predicate.equals(new Predicate("pre")));
+		assertEquals(false, predicate.equals(sub));
+		assertEquals(false, predicate.equals(new Predicate("pr")));
+	}
+
+	@Test
+	public void testPreToString() {
+		predicate = new Predicate("pre");
+		assertEquals("pre", predicate.toString());
+	}
+
+	@Test
+	public void testSetFact_nullPre() {
+		Value v = new Value("v");
+		Value[] vs = { v };
+		thrown.expect(NullPointerException.class);
+		thrown.expectMessage("Predicate cannot be null");
+		fact = new Fact(null, vs);
+	}
+
+	@Test
+	public void testSetFact_nullValue() {
+		predicate = new Predicate("pre");
+		thrown.expect(NullPointerException.class);
+		thrown.expectMessage("Values cannot be null");
+		fact = new Fact(predicate, null);
+	}
+
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testGetFact() {
+		predicate = new Predicate("pre");
+		Value v1 = new Value("v");
+		Value v2 = new Value("v");
+		Value v3 = new Value("v");
+		Value[] vs = { v1, v2, v3 };
+		fact = new Fact(predicate, vs);
+		assertEquals(predicate, fact.getPredicate());
+		assertEquals(vs, fact.getValues());
+	}
+
+	@Test
+	public void testFactEquals() {
+		predicate = new Predicate("pre");
+		Predicate pre2 = new Predicate("p");
+
+		Value v1 = new Value("v");
+		Value v2 = new Value("v");
+		Value v3 = new Value("v");
+		Value[] vs = { v1, v2, v3 };
+		Value[] vs2 = { v1, v2 };
+
+		fact = new Fact(predicate, vs);
+		Fact fact1 = new Fact(predicate, vs);
+		Fact fact2 = new Fact(predicate, vs2);
+		Fact fact3 = new Fact(pre2, vs);
+
+		assertEquals(false, fact.equals(null));
+		assertEquals(false, fact.equals(v1));
+		assertEquals(false, fact.equals(fact2));
+		assertEquals(false, fact.equals(fact3));
+		assertEquals(true, fact.equals(fact1));
+	}
+
+	@Test
+	public void testFactToString() {
+		predicate = new Predicate("pre");
+		Value v1 = new Value("v");
+		Value v2 = new Value("v");
+		Value[] vs = { v1, v2 };
+		fact = new Fact(predicate, vs);
+
+		assertEquals("pre(v,v)", fact.toString());
+
+	}
+
+	@Test
+	public void testSetDatalog_preNull() {
+		thrown.expect(NullPointerException.class);
+		thrown.expectMessage("Predicate cannot be null");
+		datalog = new Datalog(predicate, null);
+	}
+
+	@Test
+	public void testSetDatalog_argNull() {
+		thrown.expect(NullPointerException.class);
+		thrown.expectMessage("Predicate cannot be null");
+		Argument[] args = { a1 };
+		datalog = new Datalog(null, args);
+	}
+
+	@Test
+	public void testArgEquals() {
+		predicate = new Predicate("pre");
+		Argument[] args = { a1 };
+		Argument[] args2 = { a1, a2 };
+		datalog = new Datalog(predicate, args);
+		assertEquals(false, datalog.equals(null));
+		assertEquals(false, datalog.equals(new Datalog(predicate, args2)));
+		assertEquals(false,
+				datalog.equals(new Datalog(new Predicate("pr"), args)));
+	}
+
+	@Test
+	public void testSubTo() {
+		predicate = new Predicate("pre");
+		Argument[] args = { a1 };
+		Argument[] args2 = { a1, a2 };
+
+		datalog = new Datalog(predicate, args);
+		Datalog data2 =  new Datalog(predicate, args2);
+		Datalog[] dataBody = {datalog, data2};
+		rule = new Rule(datalog, dataBody);
+		rule.getHead();
+		rule.getBody();
+
+		Value v1 = new Value("v");
+		Value v2 = new Value("v");
+		Value v3 = new Value("v");
+		Value[] vs = { v1, v2, v3 };
+		Value[] vs2 = { v1, v2 };
+
+		fact = new Fact(predicate, vs);
+		datalog.substituteTo(fact);
+//		datalog.toString();
+
+	}
+
+	@Test
+	public void testApplyOn() {
+		Variable var1 = new Variable("var1");
+		Variable var2 = new Variable("var2");
+		Variable var3 = new Variable("var3");
+		LinkedList<Variable> from = new LinkedList<Variable>();
+		LinkedList<Variable> from2 = new LinkedList<Variable>();
+
+		Value v1 = new Value("v1");
+		Value v2 = new Value("v2");
+		Value v3 = new Value("v3");
+		LinkedList<Value> to = new LinkedList<Value>();
+		LinkedList<Value> to2 = new LinkedList<Value>();
+
+		sub = new Substitution();
+		Substitution sub1 = new Substitution();
+		Substitution sub2 = new Substitution();
+		LinkedList<Substitution> subList = new LinkedList<Substitution>();
+		sub1.extend(var1, v1);
+		sub1.extend(var2, v2);
+		sub1.extend(var3, v3);
+		sub2.extend(var1, v1);
+		subList.add(sub1);
+		subList.add(sub2);
+		sub.extendAll(subList);
+
+		Value[] vs = { v1, v2, v3 };
+		Value[] vs2 = { v1, v2 };
+		Argument[] args = { a1 };
+		Argument[] args2 = { a1, a2 };
+
+		predicate = new Predicate("p");
+		fact = new Fact(predicate, vs);
+		Fact fact1 = new Fact(predicate, vs);
+		Fact fact2 = new Fact(predicate, vs2);
+
+		datalog = new Datalog(predicate, args);
+		Datalog data2 =  new Datalog(predicate, args2);
+		Datalog[] dataBody = {datalog, data2};
+		rule = new Rule(datalog, dataBody);
+
+	}
+
+	@Test
+	public void test2() {
+		predicate = new Predicate("pre");
+		Argument[] args = { a1 };
+		Argument[] args2 = { a1, a2 };
+
+
+		Predicate pre2 = new Predicate("p");
+
+		Value v1 = new Value("v");
+		Value v2 = new Value("v");
+		Value v3 = new Value("v");
+		Value[] vs = { v1, v2, v3 };
+		Value[] vs2 = { v1, v2 };
+
+		fact = new Fact(predicate, vs);
+		Fact fact1 = new Fact(predicate, vs);
+		Fact fact2 = new Fact(predicate, vs2);
+
+		datalog = new Datalog(predicate, args);
+		Datalog data2 =  new Datalog(predicate, args2);
+		Datalog[] dataBody = {datalog, data2};
+		rule = new Rule(datalog, dataBody);
+		rule.getHead();
+		rule.getBody();
+
+		Collection<Fact> database = new ArrayList<Fact>();
+		database.add(fact1);
+		database.add(fact2);
+		rule.deriveOnce(database);
+		Rule r2 = rule;
+		program = new Program(rule,r2);
+		Fact[] fs = {fact1, fact2};
+		program.canDerive(fact2, fs);
+		program.getProgram();
+		program.query(datalog, fs);
+		program.deriveAll(fs);
+	}
+
+	@Test
+	public void test() {
+		predicate = new Predicate("pre");
+		Predicate pre2 = new Predicate("p");
+
+		Value v1 = new Value("v");
+		Value v2 = new Value("v");
+		Value v3 = new Value("v");
+		Value[] vs = { v1, v2, v3 };
+		Value[] vs2 = { v1, v2 };
+
+		fact = new Fact(predicate, vs);
+		Fact fact1 = new Fact(predicate, vs);
+		Fact fact2 = new Fact(predicate, vs2);
+
+
+	}
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predicate.java</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+
+public class Predicate {
+
+	private final String name;
+
+	public Predicate(String name) {
+		if (name == null) {
+			throw new NullPointerException("Name cannot be null");
+		}
+		this.name = name;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public boolean equals(Object o) {
+		if (o == null)
+			return false;
+		if (o instanceof Predicate) {
+			return ((Predicate) o).name.equals(this.name);
+		}
+		return false;
+	}
+
+	public int hashCode() {
+		return name.hashCode();
+	}
+
+	public String toString() {
+		return name;
+	}
+
+}
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

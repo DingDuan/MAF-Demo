@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 4</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+    @Test
+	public void testGetHead() {
+		Predicate predicate=new Predicate("predicate");
+
+		Value value1=new Value("value");
+//		Variable variable=new Variable("identifier");
+		Argument argument1=Argument.value(value1);
+		Argument arguments[]={argument1};
+
+		Datalog head=new Datalog(predicate, arguments);
+		Datalog bodys[]={new Datalog(predicate, arguments)};
+		Rule rule1=new Rule(head, bodys);
+
+		assertEquals(head,rule1.getHead());
+	}
+
+	@Test
+	public void testGetBody() {
+		Predicate predicate=new Predicate("predicate");
+
+		Value value1=new Value("value");
+//		Variable variable=new Variable("identifier");
+		Argument argument1=Argument.value(value1);
+		Argument arguments[]={argument1};
+
+		Datalog head=new Datalog(predicate, arguments);
+		Datalog bodys[]={new Datalog(predicate, arguments)};
+		Rule rule1=new Rule(head, bodys);
+
+		assertArrayEquals(bodys,rule1.getBody());
+	}
+
+	@Test
+	public void testDeriveOnce() {
+		Predicate predicate=new Predicate("predicate");
+
+		Value value1=new Value("value");
+//		Variable variable=new Variable("identifier");
+		Argument argument1=Argument.value(value1);
+		Argument arguments[]={argument1};
+
+		Datalog head=new Datalog(predicate, arguments);
+		Datalog bodys[]={new Datalog(predicate, arguments)};
+		Rule rule1=new Rule(head, bodys);
+		Rule rules[]={rule1};
+		Program program=new Program(rules);
+
+		Value values[]={value1};
+		Fact fact1=new Fact(predicate, values);
+		Fact facts[]={fact1};
+
+		Collection<Fact> facts2=new ArrayList<Fact>();
+		facts2.add(fact1);
+		assertNotEquals(facts,rule1.deriveOnce(facts2));
+	}
+
+	@Test
+	public void testToString() {
+		Predicate predicate=new Predicate("predicate");
+
+		Value value1=new Value("value");
+//		Variable variable=new Variable("identifier");
+		Argument argument1=Argument.value(value1);
+		Argument arguments[]={argument1};
+
+		Datalog head=new Datalog(predicate, arguments);
+		Datalog bodys[]={new Datalog(predicate, arguments)};
+		Rule rule1=new Rule(head, bodys);
+
+		assertEquals("predicate(value) :- predicate(value).", rule1.toString());
+	}
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

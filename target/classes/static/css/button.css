@@ -34,9 +34,11 @@
     border-radius: 5px;
     background-color: #0080ff;
     display: inline-block;
-    margin: 0 1%;
-    padding: 3px 11px;
+    /*margin: 0 1%;*/
+    /*padding: 4px 15px;*/
     font-size: 90%;
+    width: 80px;
+    /*text-align: center;*/
 }
 
 .button-blue:focus {
@@ -50,6 +52,37 @@
 }
 
 .button-blue:active {
+    color: #FFF;
+    background-color: #0080ff;
+    border: 1px solid #0080ff;
+}
+
+.button-blue2 {
+    cursor: pointer;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, "PingFang SC", sans-serif;
+    color: #FFF;
+    border: 1px solid #0080ff;
+    border-radius: 5px;
+    background-color: #0080ff;
+    display: inline-block;
+    margin: 0 1%;
+    padding: 3px 8px;
+    font-size: 90%;
+    width: 100px;
+    /*text-align: center;*/
+}
+
+.button-blue2:focus {
+    outline: none;
+}
+
+.button-blue2:hover {
+    color: #0080ff;
+    background-color: transparent;
+    border: 1px solid #0080ff;
+}
+
+.button-blue2:active {
     color: #FFF;
     background-color: #0080ff;
     border: 1px solid #0080ff;

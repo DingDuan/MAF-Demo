@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 5</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+public class RedBlackTreeTest {
+
+    @Test
+    public void testInsert() {
+        RedBlackTree tree = new RedBlackTree();
+
+        Node node = new Node(0, null, null, null);
+       assertTrue(node.isLeaf());
+
+       Node node1 = new Node(1, null, node, null);
+       Node node2 = new Node(0, null, null, node);
+       assertFalse(node1.isLeaf());
+       assertFalse(node2.isLeaf());
+       Node node3 = new Node(null, null, null, node);
+       assertTrue(node1.hashCode()==32);
+
+       assertTrue(node3.hashCode()==31);
+       Node node4 = new Node(1, null, null, node);
+       assertTrue(node.equals(node));
+       assertTrue(node.equals(node2));
+       assertFalse(node.equals(node1));
+       assertFalse(node.equals(tree));
+       assertFalse(node.equals(null));
+       assertFalse(node3.equals(node1));
+
+       Node node5 = new Node(null, null, null, node);
+       assertTrue(node3.equals(node5));
+
+    }
+    @Test
+    public void testRBT() {
+    	 RedBlackTree tree = new RedBlackTree();
+    	 tree.insert(0);
+    	 assertTrue( tree.contains(0));
+    	 RedBlackTree tree1 = new RedBlackTree();
+    	 assertFalse(tree1.contains(0));
+
+    	 RedBlackTree tree2 = new RedBlackTree();
+    	 Node node1=tree2.insert(50);
+    	 Node node2=tree2.insert(28);
+    	 Node node3=tree2.insert(10);
+    	 Node node4=tree2.insert(68);
+    	 Node node5=tree2.insert(76);
+    	 Node node6=tree2.insert(82);
+
+    	Node nodemax=tree2.getMaximum(node5);
+    	assertTrue(nodemax.value==82);
+    	Node nodemin=tree2.getMinimum(node2);
+    	assertTrue(nodemin.value==10);
+
+    	Node node7=tree2.insert(14);
+    	Node node8=tree2.insert(77);
+    	Node nodes=tree2.search(10);
+    	assertTrue(nodes.value==10);
+    	Node nodes1=tree2.search(82);
+    	assertTrue(nodes1.value==82);
+
+    	Node noded=tree2.delete(111);
+    	assertNull(noded);
+    	Node noded1=tree2.delete(node1);
+    	assertNull(noded1.value);
+    	assertTrue(tree2.size==7);
+    	assertTrue(tree2.getMaximum()==82);
+    	assertTrue(tree2.getMinimum()==10);
+    	assertTrue(tree2.getSize()==7);
+    	assertTrue(tree2.getSuccessor(10)==14);
+    	tree2.printTreeInOrder();
+    	tree2.printTree();
+    	tree2.printTreePostOrder();
+    	tree2.printTreePreOrder();
+    	Node role=tree2.rotateLeft(node3);
+    	Node rori=tree2.rotateRight(node7);
+
+    	assertTrue(role.value==14);
+    	assertTrue(rori.value==10);
+
+    	try {
+			Node role2=tree2.rotateLeft(node7);
+
+
+		} catch (Exception e) {
+			assertNull(e.getMessage());
+		}
+    	try {
+			Node role3=tree2.rotateRight(node7);
+
+
+		} catch (Exception e) {
+			assertNull(e.getMessage());
+		}
+    	//assertTrue(noded4.value);
+    	//System.out.println(node1.value);
+    	//assertTrue(noded1.value==50);
+    	//assertTrue(noded2.value==28);
+    }
+    @Test
+    public void testRBT1() {
+    	 RedBlackTree tree2 = new RedBlackTree();
+    	 Node node1=tree2.insert(50);
+    	 Node node2=tree2.insert(25);
+    	 Node node3=tree2.insert(68);
+    	 Node node4=tree2.insert(10);
+    	 Node node5=tree2.insert(76);
+    	 Node node6=tree2.insert(8);
+    	 Node node7=tree2.insert(82);
+    	 assertTrue(tree2.size==7);
+    	 assertTrue(tree2.root.value==50);
+    	 Node node8=tree2.insert(77);
+    	 Node noded1=tree2.delete(node7);
+    	 assertTrue(noded1.value==77);
+
+    	 Node node9=tree2.insert(77);
+    	 Node noded2=tree2.delete(node1);
+    	 assertNull(noded2.value);
+    }
+
+}
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

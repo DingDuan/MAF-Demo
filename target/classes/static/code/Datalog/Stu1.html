@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 1</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+    @Test
+	public void testRule() {
+		Predicate predicate = new Predicate("pred");
+		Argument argument = Argument.value(new Value("argu"));
+		Datalog datalog = new Datalog(predicate, new Argument[0]);
+		Rule rule = new Rule(datalog);
+	}
+
+	@Test
+	public void testGetHead() {
+		Predicate predicate = new Predicate("pred");
+		Argument argument = Argument.value(new Value("argu"));
+		Datalog datalog = new Datalog(predicate, new Argument[0]);
+		Rule rule = new Rule(datalog);
+		rule.getHead();
+	}
+
+	@Test
+	public void testGetBody() {
+		Predicate predicate = new Predicate("pred");
+		Argument argument = Argument.value(new Value("argu"));
+		Datalog datalog = new Datalog(predicate, new Argument[0]);
+		Rule rule = new Rule(datalog);
+		rule.getBody();
+	}
+
+	@Test
+	public void testDeriveOnce() {
+		Predicate predicate = new Predicate("pred");
+		Argument argument = Argument.value(new Value("argu"));
+		Datalog datalog = new Datalog(predicate, new Argument[0]);
+		Rule rule = new Rule(datalog,datalog,datalog);
+		rule.deriveOnce(null);
+	}
+
+	@Test
+	public void testToString() {
+		Predicate predicate = new Predicate("pred");
+		Argument argument = Argument.value(new Value("argu"));
+		Argument argument2 = Argument.value(new Value("argu2"));
+
+		Argument[] argus = new Argument[2];
+		argus[0] = argument;
+		argus[1] = argument2;
+		Datalog datalog = new Datalog(predicate, argus);
+		Rule rule = new Rule(datalog,datalog,datalog);
+		rule.toString();
+
+		Argument[] argus2 = new Argument[0];
+		Datalog datalog2 = new Datalog(predicate,argus2);
+		Rule rule2 = new Rule(datalog2);
+		rule2.toString();
+    }
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

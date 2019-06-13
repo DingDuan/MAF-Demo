@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 1</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+ public class RedBlackTreeTest {
+
+    @Test
+    public void testInsert() {
+        RedBlackTree tree = new RedBlackTree();
+    }
+
+
+    @Test(timeout = 4000)
+    public void test00()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        redBlackTree0.printTreePostOrder();
+        redBlackTree0.insert(2382);
+    }
+
+    @Test(timeout = 4000)
+    public void test01()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        Integer integer0 = new Integer((-1450));
+        Node node0 = new Node(integer0, (Node) null, (Node) null, (Node) null);
+        // Undeclared exception!
+        try {
+            redBlackTree0.delete(node0);
+            fail("Expecting exception: ClassCastException");
+        } catch(ClassCastException e) {
+            //
+            // Node cannot be cast to RedBlackTree$RedBlackNode
+            //
+
+        }
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void test02()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        Node node0 = redBlackTree0.insert(0);
+        node0.parent = redBlackTree0.root;
+        Node node1 = redBlackTree0.rotateRight(node0);
+        redBlackTree0.search((int) node1.value);
+        redBlackTree0.getSize();
+        RedBlackTree.RedBlackNode redBlackTree_RedBlackNode0 = RedBlackTree.nilNode;
+        Node node2 = redBlackTree0.rotateLeft(redBlackTree_RedBlackNode0);
+        redBlackTree0.createNode((-1), redBlackTree_RedBlackNode0, node2, node0);
+        // Undeclared exception!
+        redBlackTree0.getMinimum();
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void test03()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        RedBlackTree.RedBlackNode redBlackTree_RedBlackNode0 = RedBlackTree.nilNode;
+        Node node0 = redBlackTree0.createNode((-512), redBlackTree_RedBlackNode0, redBlackTree_RedBlackNode0, redBlackTree_RedBlackNode0);
+        redBlackTree0.rotateLeft(node0);
+        // Undeclared exception!
+        redBlackTree0.insert((int) node0.value);
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void test04()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        redBlackTree0.printTreePostOrder();
+        Node node0 = redBlackTree0.insert((-1));
+        redBlackTree0.delete((-1));
+        redBlackTree0.rotateRight(node0);
+    }
+
+    @Test(timeout = 4000)
+    public void test05()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        redBlackTree0.insert(1979);
+        // Undeclared exception!
+        redBlackTree0.delete(2649);
+    }
+
+
+    @Test(timeout = 4000)
+    public void test06()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        // Undeclared exception!
+        try {
+            redBlackTree0.getMinimum();
+            fail("Expecting exception: NullPointerException");
+
+        } catch(NullPointerException e) {
+            //
+            // no message in exception (getMessage() returned null)
+            //
+        }
+    }
+
+    @Test(timeout = 4000)
+    public void test07()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        Integer integer0 = new Integer((-1283));
+        redBlackTree0.delete((Node) null);
+        Node node0 = new Node(integer0, (Node) null, (Node) null, (Node) null);
+        // Undeclared exception!
+        try {
+            redBlackTree0.rotateLeft(node0);
+            fail("Expecting exception: NullPointerException");
+        } catch(NullPointerException e) {
+            //
+            // no message in exception (getMessage() returned null)
+            //
+
+        }
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void test08()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        int int0 = 31;
+        RedBlackTree.RedBlackNode redBlackTree_RedBlackNode0 = RedBlackTree.nilNode;
+        redBlackTree0.getMinimum((Node) redBlackTree_RedBlackNode0);
+    }
+
+    @Test(timeout = 4000)
+    public void test09()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        // Undeclared exception!
+        try {
+            redBlackTree0.getSuccessor((-1));
+            fail("Expecting exception: NullPointerException");
+
+        } catch(NullPointerException e) {
+            //
+            // no message in exception (getMessage() returned null)
+            //
+
+        }
+    }
+
+    @Test(timeout = 4000)
+    public void test10()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        redBlackTree0.contains((-1601));
+    }
+
+    @Test(timeout = 4000)
+    public void test11()  throws Throwable  {
+        RedBlackTree redBlackTree0 = new RedBlackTree();
+        RedBlackTree.RedBlackNode redBlackTree_RedBlackNode0 = RedBlackTree.nilNode;
+        RedBlackTree.ColorEnum redBlackTree_ColorEnum0 = RedBlackTree.ColorEnum.BLACK;
+        redBlackTree_RedBlackNode0.color = redBlackTree_ColorEnum0;
+        Node node0 = redBlackTree0.getSuccessor((Node) redBlackTree_RedBlackNode0);
+        node0.right = null;
+        // Undeclared exception!
+        try {
+            redBlackTree0.printTree();
+            fail("Expecting exception: NullPointerException");
+
+        } catch(NullPointerException e) {
+            //
+            // no message in exception (getMessage() returned null)
+            //
+
+        }
+    }
+
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

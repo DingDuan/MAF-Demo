@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Argument.java</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+
+import java.util.Arrays;
+
+public class Fact {
+
+	private final Predicate predicate;
+	private final Value[] values;
+
+	public Fact(Predicate predicate, Value... values) {
+		if (predicate == null) {
+			throw new NullPointerException("Predicate cannot be null");
+		}
+		if (values == null) {
+			throw new NullPointerException("Values cannot be null");
+		}
+		this.predicate = predicate;
+		this.values = values;
+	}
+
+	public Predicate getPredicate() {
+		return this.predicate;
+	}
+
+	public Value[] getValues() {
+		return this.values;
+	}
+
+	public boolean equals(Object o) {
+		if (o == null)
+			return false;
+		if (o instanceof Fact) {
+			return ((Fact) o).predicate.equals(this.predicate)
+					&& Arrays.equals(((Fact) o).values, this.values);
+		}
+		return false;
+	}
+
+	public int hashCode() {
+		return 17 * this.predicate.hashCode() + 13 * Arrays.hashCode(this.values);
+	}
+
+	public String toString() {
+		String res = this.predicate.toString();
+		res += "(";
+		for (int i = 0; i < values.length - 1; i++) {
+			res += values[i].toString();
+			res += ",";
+		}
+		if (values.length > 0) {
+			res += values[values.length - 1].toString();
+		}
+		res += ")";
+		return res;
+	}
+
+}
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

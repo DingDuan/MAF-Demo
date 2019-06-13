@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 5</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+    private Substitution substitution=new Substitution();
+	String identifier ;
+	String valu ;
+	private Variable variable;
+	private Value value ;
+	private LinkedList<Variable> from = new LinkedList<Variable>();
+	private LinkedList<Value> to = new LinkedList<Value>();
+	@Test
+	public void testExtend() {
+		identifier = "12345";
+		valu = "1";
+		variable = new Variable(identifier);
+		value = new Value(valu);
+		substitution.extend(variable, value);
+	}
+	@Test
+	public void testExtend2() {
+		identifier = "12345";
+		valu = "9";
+		variable = new Variable(identifier);
+		value = new Value(valu);
+		from.add(variable);
+		substitution.extend(variable, value);
+	}
+	@Test
+	public void testExtend3() {
+
+		identifier = "12345";
+		String identifier2 = "qqqq";
+		valu = "9";
+		variable = new Variable(identifier);
+		Variable variable2 = new Variable(identifier2);
+		value = new Value(valu);
+		from.add(variable2);
+		from.add(variable);
+		substitution.extend(variable, value);
+	}
+
+	@Test
+	public void testApplyOn() {
+
+		String name = "hao";
+		Predicate predicate = new Predicate(name) ;
+		valu="qw";
+		identifier = "as";
+		value = new Value(valu);
+		variable = new Variable(identifier);
+		Argument aa = Argument.value(value);
+		Datalog atom = new Datalog(predicate, aa);
+		substitution.applyOn(atom);
+
+	}
+	@Test
+	public void testApplyOn2() {
+
+		String name = "hao";
+		Predicate predicate = new Predicate(name) ;
+		valu="qw";
+		identifier = "as";
+		value = new Value(valu);
+		variable = new Variable(identifier);
+		Argument aa = Argument.value(value);
+		Argument bb = Argument.variable(variable);
+		Datalog atom = new Datalog(predicate, bb);
+		substitution.applyOn(atom);
+
+	}
+	@Test
+	public void testExtendAll() {
+		fail("Not yet implemented");
+	}
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>

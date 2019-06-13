@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student 4</title>
+
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+    <link href="http://www.uezxc.com/wp-content/themes/uezxc/include/prettify.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<pre>
+ public class ALUTest {
+	@Test(timeout = 4000)
+	public void test() {
+		ALU alu = new ALU();
+		assertEquals(alu.adder("123", "123", 'a', 4),"01001");
+		try {
+			alu.adder("123", "123", 'a', 3);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		//System.out.print(alu.integerSubtraction("123","23",4));
+		assertEquals(alu.integerSubtraction("123","23",4),"01110");
+		assertEquals(alu.floatRepresentation("123", 1, 2),"0110");
+		assertEquals(alu.floatRepresentation("-123.12", 1, 2),"1110");
+		assertEquals(alu.floatRepresentation("0", 1, 2),"0000");
+		assertEquals(alu.ieee754,,"01000001001101100000000000000000");
+		assertEquals(alu.ieee754("11.375", 64),"0100000000100110110000000000000000000001000000000000000000000000");
+		assertEquals(alu.ieee754("11.375", 128),"");
+		assertEquals(alu.integerTrueValue("123"),"3");
+		try {
+			alu.floatTrueValue("123",1,2);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		assertEquals(alu.floatTrueValue("0",0,0),"+Inf");
+		assertEquals(alu.floatTrueValue("01000001001101100000", 8, 11),"11.375");
+		assertEquals(alu.floatTrueValue("-01000001001101100000", 8, 11),"1.2109375");
+		assertEquals(alu.leftShift("123", 1),"230");
+		assertEquals(alu.oneAdder("00001001"),"000001010");
+		assertEquals(alu.oneAdder("111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"),"1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+		assertEquals(alu.normalize("23"),1);
+		assertEquals(alu.normalize("0203"),2);
+		assertEquals(alu.integerRepresentation("-123", 4),"0000101");
+		assertEquals(alu.floatTrueValue("-000000",2,4),"0");
+		assertEquals(alu.floatTrueValue("000000",5,4),"0.0");
+		//alu.floatRepresentation("213213132131313123.213123131", 4,5);
+	}
+   @Test
+	public void test1() {
+		ALU alu = new ALU();
+		alu.floatRepresentation(,"0.2131", 4,5);
+	}
+}
+
+</pre>
+
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>
+<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("pre").addClass("prettyprint linenums");
+        prettyPrint();
+    });
+</script>
+
+</body>
+</html>
