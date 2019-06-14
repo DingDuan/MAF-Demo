@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html style="width: 100%" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>Platform for Test Code Plagiarism Detection</title>
+
+    <link rel="stylesheet" href="../css/origin.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+
+    <script src="../js/setting-table.js"></script>
+    <script src="../js/task-table.js"></script>
+    <script src="../js/fileUpload.js"></script>
+
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <link rel="stylesheet" href="../css/lib/sidebar.css">
+    <link rel="stylesheet" href="../css/lib/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="../css/lib/themify-icons.css">-->
+
+
+
+    <link rel="stylesheet" type="text/css" href="../css/component.css" />
+    <link rel="stylesheet" type="text/css" href="../css/frame.css" />
+    <link rel="stylesheet" type="text/css" href="../css/home.css" />
+    <!--<link rel="stylesheet" type="text/css" href="../css/component2.css" />-->
+
+</head>
+
+<body>
+<header>
+    <div class="whole-page"></div>
+
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <div style="height: 10px"></div>
+                <ul>
+                    <li class="label" style="font-size: 20px">Navigation</li>
+
+                    <li class="active"><a href="../tool/home.html"><i class="ti-home"></i> HOME </a></li>
+                    <li ><a href="../tool/projects.html"><i class="ti-user"></i> PROJECT</a></li>
+                    <li><a href="../tool/contact.html"><i class="ti-user"></i> CONTACT</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-bar navbar-fixed-top" onselectstart="return false;">
+
+        <!--<img src="http://mooctest-webide.oss-cn-hangzhou.aliyuncs.com/logo.svg" class="logo" />-->
+        <img src="../img/logo.png" class="logo" />
+
+        <ul style="width: 1300px">
+            <p style="font-size: 32px">MAF</p>
+
+            <!--<a href="contact.html">-->
+            <!--<li id="contact-button" class="head-button">CONTACT</li>-->
+            <!--</a>-->
+            <a href="help.html">
+                <li id="help-button" class="head-button">HELP</li>
+            </a>
+            <!--<a href="projects.html">-->
+            <!--<li id="home-button" class="head-button">HOME</li>-->
+            <!--</a>-->
+        </ul>
+    </div>
+
+
+    <div style="height:80%">
+        <!--<section id="home-sec">-->
+        <!--<div class="overlay text-center">-->
+        <!--<h1 >Platform for Test Code Plagiarism Detection</h1>-->
+        <!--<hr class="hr-set"/>-->
+
+        <!--<p>Provides Java Test Code Plagiarism Detection </p>-->
+        <!--</div>-->
+        <!--</section>-->
+
+
+        <div id="wrapper">
+            <h1>Outline</h1>
+            <div class="outline">
+            <div class="font1">
+                MAF is a platform for test code plagiarism detection,which employs two key technologies：
+            </div>
+
+                <div class="font2">1. Test Fragment Extraction</div>
+                <div class="font3">
+                    Bidirectional static slicing  to  anchor  methods  under  test  and  extract  fragments  of  test  codes.
+                    Combined with similarity measures, MAF can achieve effective plagiarism detection by avoiding massive unrelated noisy test codes.
+                </div>
+                <div class="font2">2. Machine Learning</div>
+                <div class="font3">
+                    We use the Support Vector Machines(SVM) algorithm to train the classifier,then use the classifier for pairs of students.
+                </div>
+                </div>
+
+
+            <img src="../img/framework.png" class="framework"/>
+
+        </div>
+
+            <footer style="text-align: center; margin-top: 60px; margin-left: 200px">
+                <div class="container">
+                    <p> &copy;2019 Mooctest Copyright: Nanjing Mooctest Co. Ltd.</p>
+                </div>
+            </footer>
+
+    <script src="../js/jquery.ba-throttle-debounce.min.js"></script>
+
+    <script src="../js/jquery.stickyheader.js"></script>
+
+    <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+
+
+
+    </div>
+
+</header>
+
+<!--<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/commona.js"></script>-->
+<!--<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/main.js"></script>-->
+<!--<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/particles.js"></script>-->
+<!--<script src="http://www.uezxc.com/wp-content/themes/uezxc/js/app.js"></script>-->
+
+<!--<script type="text/javascript" src="http://tajs.qq.com/stats?sId=57764459" charset="UTF-8"></script>-->
+<!--<script type="text/javascript" src="http://www.uezxc.com/wp-content/themes/uezxc/js/prettify.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--jQuery(document).ready(function () {-->
+<!--jQuery("pre").addClass("prettyprint linenums");-->
+<!--prettyPrint();-->
+<!--});-->
+<!--</script>-->
+
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>-->
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+</body>
+
+</html>
+<script src="../layui/layui.js"></script>
+<script>
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //一些事件监听
+        element.on('tab(demo)', function(data){
+            console.log(data);
+        });
+    });
+</script>
+<script src="../js/echarts.js"></script>
+<!--<script src="js/similarity.js"></script>-->
+<script src="../js/PercentPie.js"></script>
+<script type="text/javascript">
+</script>
+<script src="../js/toolConfig.js"></script>
+<script src="../js/projects.js"></script>
+<!--<script src="../js/lib/sidebar.js"></script>-->
+
+

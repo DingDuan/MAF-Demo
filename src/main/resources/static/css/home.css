@@ -1,0 +1,44 @@
+.outline{
+    background-color: #E2FCFF;
+    padding: 1%;
+}
+
+.font1{
+    font-family: "Helvetica Neue";
+    font-size: 27.5px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.font2{
+    font-family: "Helvetica Neue";
+    font-size: 25px;
+    margin-left: 15px;
+    color: blue;
+}
+
+.font3{
+    font-family: "Helvetica Neue";
+    font-size: 20px;
+    margin-left: 50px;
+    color: #3a3a3a;
+    margin-bottom: 5px;
+}
+
+.framework{
+    width: 100%;
+    /*height: 60%;*/
+}
+
+#wrapper {
+    display: inline-block;
+    /*margin: 1.5% 0.5% 1.5% 0.5%;*/
+    margin-left: 260px;
+    margin-top: 60px;
+    width: 1190px;
+    height: 1050px;
+    color: #555;
+    background-color: #eee;
+    padding: 1%;
+    /*text-align: center;*/
+}

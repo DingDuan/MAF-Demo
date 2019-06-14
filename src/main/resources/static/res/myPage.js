@@ -18,11 +18,23 @@ function loadpage() {
         last: '<li class="last"><a href="javascript:;">末页</a></li>',
         page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
         onPageChange: function (num, type) {
-            if (type == "change") {
-                exeData(num, type);
+            if (type == "change"&& num==2) {
                 //num:当前页码
-                // console.log(num);
+                //console.log(num);
                 // console.log(type);
+                // var src = document.getElementById("src-code");
+                // // console.log(src_pre);
+                // src.innerHTML = "" +
+                //     "         Predicate(String name) {\n" +
+                //     "            if (name == null) {\n" +
+                //     "                throw new NullPointerException(\"Name cannot be null\");\n" +
+                //     "            }\n" +
+                //     "            this.name = name;\n" +
+                //     "        }";
+                exeData(num, type);
+                // jQuery("pre").addClass("prettyprint linenums");
+                // prettyPrint();
+                window.location.href="detail-2.html";
             }else {
                 //这里放ajax请求，亲测有效
                 //真实思路：首先获得num当前页码
