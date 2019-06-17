@@ -39,256 +39,242 @@
     <!--<h2 class="docs-header"> Opineo - User Documentation</h2>-->
   <!--</div>-->
 <!--</header>-->
+
 <div class="top-bar navbar-fixed-top" onselectstart="return false;">
 
     <!--<img src="http://mooctest-webide.oss-cn-hangzhou.aliyuncs.com/logo.svg" class="logo" />-->
     <img src="../img/logo.png" class="logo" />
 
-    <ul style="width: 1200px">
-        <!--<p>MAF</p>-->
+    <ul style="width: 1300px">
+        <p style="font-size: 32px">MAF</p>
 
-        <a href="contact.html">
-            <li id="contact-button" class="head-button">CONTACT</li>
-        </a>
+        <!--<a href="contact.html">-->
+        <!--<li id="contact-button" class="head-button">CONTACT</li>-->
+        <!--</a>-->
         <a href="help.html">
             <li id="help-button" class="head-button">HELP</li>
         </a>
-        <a href="oldToolConfig.html">
-            <li id="home-button" class="head-button">HOME</li>
-        </a>
+        <!--<a href="projects.html">-->
+        <!--<li id="home-button" class="head-button">HOME</li>-->
+        <!--</a>-->
     </ul>
 </div>
-<section style="margin-top: 50px">
+
+<section style="margin-top: 50px;font-size: 20px;">
   <div class="container">
     <ul class="docs-nav" id="menu-left">
       <li><strong>Getting Started</strong></li>
       <li><a href="#welcome" class=" ">Welcome</a></li>
-      <li><a href="#benefits" class=" ">Result</a></li>
-      <li><a href="#features" class=" ">Help</a></li>
-      <li><a href="#license" class=" ">Contact</a></li>
+      <li><a href="#home" class=" ">Home</a></li>
+      <li><a href="#project" class=" ">Project</a></li>
+      <li><a href="#contact" class=" ">Contact</a></li>
+      <li><a href="#references" class=" ">References</a></li>
       <li class="separator"></li>
-      <li><strong>Customizing Opineo</strong></li>
-      <li><a href="#view_type" class=" ">View Type</a></li>
-      <li><a href="#animation_style" class=" ">Animation Styles</a></li>
-      <li><a href="#bars_text" class=" ">Bars Text</a></li>
-      <li><a href="#vote_counter" class=" ">Vote Counter</a></li>
-      <li><a href="#rating_icons" class=" ">Rating Icons</a></li>
-      <li><a href="#rating_titles" class=" ">Rating Titles</a></li>
-      <li><a href="#bar_colors" class=" ">Bar Colors</a></li>
+      <!--<li><strong>Customizing Opineo</strong></li>-->
+      <!--<li><a href="#view_type" class=" ">View Type</a></li>-->
+      <!--<li><a href="#animation_style" class=" ">Animation Styles</a></li>-->
+      <!--<li><a href="#bars_text" class=" ">Bars Text</a></li>-->
+      <!--<li><a href="#vote_counter" class=" ">Vote Counter</a></li>-->
+      <!--<li><a href="#rating_icons" class=" ">Rating Icons</a></li>-->
+      <!--<li><a href="#rating_titles" class=" ">Rating Titles</a></li>-->
+      <!--<li><a href="#bar_colors" class=" ">Bar Colors</a></li>-->
     </ul>
     <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" title="模板之家">模板之家</a></div>
     <div class="docs-content">
       <h2> Getting Started</h2>
+        <hr>
       <h3 id="welcome"> Welcome</h3>
-      <p> How to use?</p>
-      
-      <p> As they say: You cannot improve what you cannot measure; but the paradox is you
-        cannot measure everything – happiness, hatred, anger… but you can measure customer
-        satisfaction. Yes, you can measure customer satisfaction by analyzing likes and
-        dislikes of your customers. You can gauge popularity of your website or products.
-        You can also:</p>
+      <p> As software engineering education develops rapidly, the learning process for students is required to be more efficient with lower cost. Therefore, universities and education agencies have deployed many online practice platforms in which students can be assigned new tasks and submit their work. However, code plagiarism is a highly intolerable act in this process that all these systems are trying to avoid. In our previous work, we have developed MAF, a test code plagiarism detection technology, which relies on a constant similarity threshold to determine whether there is plagiarism between two pieces of test code. But finding a appropriate threshold is never easy. We realize that a constant threshold cannot be used in every circumstance. To address this issue and make MAF more usable, we developed MAF-2 by applying a stable and reliable classifier based on Support Vector Machine classification algorithm. Experiments are conducted on three test code data sets and the results shows MAF-2 can achieve plagiarism detection effectively. </p>
+        <hr>
+        <h2> How to Use</h2>
+      <h3 id="home"> Home</h3>
+        <p>The Home page mainly includes an overview of MAF platform</p>
       <ul>
-        <li>See how many visitors like the new design of your website or logo</li>
-        <li>Analyze what your readers want to see on your blog</li>
-        <li>Understand how helpful the content on your support forum or website is</li>
-        <li>Know the latest trends and user’s opinion before launching a new product or service</li>
+        <li>The first part describes the brief introduction of MAF platform, mainly introduces two key technologies used in MAF platform: Test Fragment Extraction and Machine Learning.</li>
+        <li>The second part is a framework diagram of MAF system.The implementation of  the  MAF-2  platform  consists  of  two  phases.
+          <li> The  first phase is  responsible  for training  a  classifier.  It  treats  a  program  under  test and  students’  test  code  data  set as  inputs  and  finally outputs  a  classification  model,  also  known  as  the  classifier  which  could  be  used  to  classify  each  test code  pair  as  a  plagiarism  or  non-plagiarism  pair.  This  phase consists of two parts. In the first part, MAF-2 uses bidirectional static  slicing to  extract  valid  test  fragments  from  non-standard  student  test  code.  Each  test  fragment  is  a  minimum granularity unit test case for a specific program method under test. Then, the textual similarity of test fragments is measured.In  the  second  part,  we  regard  each  method  under  test  as  afeature  and  the  value  of  the  feature  is  the  textual  similarity of  its  corresponding  test  fragments.  Further,  we  convert  all similarities among test fragments to train data set for machine learning  algorithm.</li>
+          <li> The  second  phase describes  how  instructors  use  the  MAF-2  platform  to  detect the plagiarism among students’ test codes. MAF-2 provides an easy-to-use client page for instructors. The instructors are only required to select the program under test and the corresponding students who will be checked. The server side of MAF-2 first compares  these  students’  test  codes  in  pairs  to  generate  a matrix whose size is m∗n. Them is the value of CombinationC2M,  where presents  the  number  of  students  selected  to check.  Then is  the  number  of  features,  i.e.,  methods  under test.  Then,  the  classifier receives  the  matrix and returns the label 1 or 0 for each cell to represent plagiarism and non-plagiarism respectively. Finally, the detection results of the plagiarism are wrapped to detection reports and returned to the client page for instructors.</li>
+          </li>
+
       </ul>
-      <p> Opineo allows you to do all of this and much more without signing up for an account
-        or hire an expert. This DIY tool enables you to listen to your customers’ voice
-        easily and instantly. All you have to do is go online, design your widget and place
-        it on your website. </p>
-      <h3 id="benefits"> Benefits</h3>
+      <h3 id="project"> Project</h3>
+        <p>The project page includes main capabilities of MAF Platform: detect the plagiarism among students’ test codes and show the detection results which includes the detection reports and fragmentation details.</p>
       <ul>
-        <li>Use Opineo to conduct pre-release surveys before launching new products or services</li>
-        <li>Analyze new trends in the industry</li>
-        <li>Run crowd-sourced campaigns with Opineo to mature new ideas, website designs or
-          logos</li>
-        <li>Conduct popularity surveys with free Opineo widget</li>
-        <li>Create and host polling surveys with Opineo</li>
+        <li>Project Details: If the instructor wants to check the  program  “Datalog”,  he  is  only required to click the Button “Datalog”. After choosing a program, the project details and student list would be shown to  the  instructor. The project details include the ordinal number of each class ,the class name, the number of methods in each class and the detail code of each class. Instructor can click the Button “detail” to see the detail code of each class.</li>
+        <li>Student Codes: Instructors can  select  all  students  to  check. In addition, to make instructor’s work easier, MAF-2 lists all students’  scores so  that  the  instructor  can  select  some  students’test codes to check according to their scores.When  the  instructor  clicks  the  Button  “Check”,  the  server  of MAF-2  will  compare  the  test  code  of  the  selected  students in  pairs.  A  comparison  of  each  pair  of  test  code  produces a  one-dimensional  vector. Classifier receives  an  one-dimensional vector as an input and generates a value of 1 or 0 to indicate the classification result. Finally, the server returns the intermediate comparison result (i.e., the comparison of test fragments)  of  test  codes  and  the  final  plagiarism  detection results to the result page for the instructor to review.</li>
+        <li>Result: The result page includes a brief introduction of the number of pairs of students checked and the number of plagiarists among them. Then, here is a list of the results, including the ordinal number and student number, and plagiarism or not. Instructors can click on one of the rows to see the detail information of this pair of students in the row.</li>
+        <li>Detail: The detail page includes two parts. The first part is the top 3 similarity. The second part is the results of fragmentation.
+            The first part mainly shows the similarity values of the first three highs in three pie charts.
+            The second part mainly shows the test fragment code of each pair of students after fragmentation, as well as the source code they tested together. Teachers can click the page number button to see different test fragments and source code fragments, which can more intuitively see the results of fragmentation and similarity.
+        </li>
       </ul>
-      <h3 id="features"> Features</h3>
-      <ul>
-        <li>Facility to customize to match your website theme</li>
-        <li>Detailed and Compact view options</li>
-        <li>Comprehensive options to customize animation, colors, orientation and style</li>
-        <li>All the power and flexibility of jQuery</li>
-        <li>Easy install; 100% integration</li>
-        <li>Facility to customize rating icons</li>
-      </ul>
-      <h3 id="license"> License</h3>
-      <p> This Feedback Collection and Polling widget is free for personal and commercial
-        projects as long as you are providing a link back to this page. If you don’t want
-        to provide a link back, simply contribute to the development and improvement of
-        this tool. To contribute to this and many other interesting projects, go to Support
-        Efforts and become a patron.</p>
+      <h3 id="contact"> Contact</h3>
+      <p> The Contact page includes the location of us and the contact information of contributors.</p>
       <hr>
-      <h2> Customizing Opineo</h2>
-      <p> Before you make any cusomization or even start using Opineo create a 'div' element
-        and assign it some id. Now add references to necessary Javascrip files e.g.</p>
+      <h3 id="references"> References</h3>
       <ul>
-        <li>A reference to latest jQuery library </li>
-        <li>A reference to Opineo script file sudo nano opineo.js</li>
+        <li>Weisong Sun, Xingya Wang, Haoran Wu, Ding Duan, Zesong Sun, Zhenyu Chen. MAF: Method-anchored test fragmentation for test code plagiarism detection. ICSE 2019-SEET </li>
+        <li>MAF-2: An Enhanced Platform to Detect Test Code Plagiarism. ASE-Demo 2019</li>
       </ul>
-      <p> The following customization options are available in Opineo:</p>
-      <h3 id="view_type"> View Type</h3>
-      <ul>
-        <li>Detailed View</li>
-      </ul>
-     
-      <pre class="prettyprint">&lt;script&gt;
-      	$(document).ready(function (){
-        $('#DefaultOptions').opineo('results.php', {curvalue:3,
-            view: 'detailed',
-            animation_speed: 'super',
-            show_total_votes_counter: false,
-            show_overall_rating: true});
-         })
-&lt;/script&gt;</pre>
-      <ul>
-        <li>Compact View</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-	$(document).ready(function (){
-	$('#CompactView').opineo('results.php',
-    	    {curvalue:3, view: 'compact',
-    	    animation_speed: 'super'});
-	})
-&lt;/script&gt;</pre>
-      <ul>
-        <li>Mini View</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#MiniView').opineo('results.php', {curvalue:0, view: 'mini', callback: myCallback});
-    })	
-&lt;/script&gt;</pre>
-      <h3 id="animation_style"> Animation Style</h3>
-      <ul>
-        <li>Slow</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', animation_speed:'slow'});
-    })	
-&lt;/script&gt; </pre>
-      <ul>
-        <li>Medium</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', animation_speed:'mild'});
-    })	
-&lt;/script&gt; </pre>
-      <ul>
-        <li>Fast</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', animation_speed:'fast'});
-    })	
- &lt;/script&gt;</pre>
-      <ul>
-        <li>Super Fast</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', animation_speed:'super'});
-    })	
-&lt;/script&gt;</pre>
-      <ul>
-        <li>Ultra Fast</li>
-      </ul>
-      <pre class="prettyprint"> &lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', animation_speed:'ultra fast'});
-    })	
-&lt;/script&gt; </pre>
-      <h3 id="bars_text"> Bars Text</h3>
-      <ul>
-        <li>Show</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', votes_label:true});
-    })	
-&lt;/script&gt;</pre>
-      <ul>
-        <li>Hide</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', votes_label:false});
-    })	
- &lt;/script&gt;</pre>
-      <h3 id="vote_counter"> Vote Counter</h3>
-      <ul>
-        <li>Show</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', show_votes_counter:true});
-    })	
-&lt;/script&gt; </pre>
-      <ul>
-        <li>Hide</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', votes_label:false});
-    })	
-&lt;/script&gt;</pre>
-      <h3 id="rating_icons"> Rating Icons</h3>
-      <ul>
-        <li>Colored</li>
-        <li>Grey</li>
-      </ul>
-      <h3 id="rating_titles"> Rating Titles</h3>
-      <ul>
-        <li>Text For First Star</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', star_1_text:'Hate It'});
-    })	
-&lt;/script&gt;</pre>
-      <ul>
-        <li>Text For Second Star</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', star_2_text:'Don't Like It'});
-    })	
-&lt;/script&gt; </pre>
-      <ul>
-        <li>Text For Third Star</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', star_1_text:'Its OK'});
-    })	
-&lt;/script&gt;</pre>
-      <ul>
-        <li>Text For Fourth Star</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', star_1_text:'Like It'});
-    })	
-&lt;/script&gt;</pre>
-      <ul>
-        <li>Text For Fifth Star</li>
-      </ul>
-      <pre class="prettyprint">&lt;script&gt;
-    $(document).ready(function (){
-    $('#opineo').opineo('results.php', {curvalue:0, view: 'mini', star_1_text:'Love It'});
-    })	
-&lt;/script&gt;</pre>
-      <h3 id="bar_colors"> Bar Colors</h3>
-      <ul>
-        <li>Colors of Red Bar</li>
-        <li>Colors of Yellow Bar</li>
-        <li>Colors of Green Bar</li>
-      </ul>
+      <!--<h3 id="view_type"> View Type</h3>-->
+      <!--<ul>-->
+        <!--<li>Detailed View</li>-->
+      <!--</ul>-->
+     <!---->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+      	<!--$(document).ready(function (){-->
+        <!--$('#DefaultOptions').opineo('results.php', {curvalue:3,-->
+            <!--view: 'detailed',-->
+            <!--animation_speed: 'super',-->
+            <!--show_total_votes_counter: false,-->
+            <!--show_overall_rating: true});-->
+         <!--})-->
+<!--&lt;/script&gt;</pre>-->
+      <!--<ul>-->
+        <!--<li>Compact View</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+	<!--$(document).ready(function (){-->
+	<!--$('#CompactView').opineo('results.php',-->
+    	    <!--{curvalue:3, view: 'compact',-->
+    	    <!--animation_speed: 'super'});-->
+	<!--})-->
+<!--&lt;/script&gt;</pre>-->
+      <!--<ul>-->
+        <!--<li>Mini View</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#MiniView').opineo('results.php', {curvalue:0, view: 'mini', callback: myCallback});-->
+    <!--})	-->
+<!--&lt;/script&gt;</pre>-->
+      <!--<h3 id="animation_style"> Animation Style</h3>-->
+      <!--<ul>-->
+        <!--<li>Slow</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', animation_speed:'slow'});-->
+    <!--})	-->
+<!--&lt;/script&gt; </pre>-->
+      <!--<ul>-->
+        <!--<li>Medium</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', animation_speed:'mild'});-->
+    <!--})	-->
+<!--&lt;/script&gt; </pre>-->
+      <!--<ul>-->
+        <!--<li>Fast</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', animation_speed:'fast'});-->
+    <!--})	-->
+ <!--&lt;/script&gt;</pre>-->
+      <!--<ul>-->
+        <!--<li>Super Fast</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', animation_speed:'super'});-->
+    <!--})	-->
+<!--&lt;/script&gt;</pre>-->
+      <!--<ul>-->
+        <!--<li>Ultra Fast</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint"> &lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', animation_speed:'ultra fast'});-->
+    <!--})	-->
+<!--&lt;/script&gt; </pre>-->
+      <!--<h3 id="bars_text"> Bars Text</h3>-->
+      <!--<ul>-->
+        <!--<li>Show</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', votes_label:true});-->
+    <!--})	-->
+<!--&lt;/script&gt;</pre>-->
+      <!--<ul>-->
+        <!--<li>Hide</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', votes_label:false});-->
+    <!--})	-->
+ <!--&lt;/script&gt;</pre>-->
+      <!--<h3 id="vote_counter"> Vote Counter</h3>-->
+      <!--<ul>-->
+        <!--<li>Show</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', show_votes_counter:true});-->
+    <!--})	-->
+<!--&lt;/script&gt; </pre>-->
+      <!--<ul>-->
+        <!--<li>Hide</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', votes_label:false});-->
+    <!--})	-->
+<!--&lt;/script&gt;</pre>-->
+      <!--<h3 id="rating_icons"> Rating Icons</h3>-->
+      <!--<ul>-->
+        <!--<li>Colored</li>-->
+        <!--<li>Grey</li>-->
+      <!--</ul>-->
+      <!--<h3 id="rating_titles"> Rating Titles</h3>-->
+      <!--<ul>-->
+        <!--<li>Text For First Star</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', star_1_text:'Hate It'});-->
+    <!--})	-->
+<!--&lt;/script&gt;</pre>-->
+      <!--<ul>-->
+        <!--<li>Text For Second Star</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', star_2_text:'Don't Like It'});-->
+    <!--})	-->
+<!--&lt;/script&gt; </pre>-->
+      <!--<ul>-->
+        <!--<li>Text For Third Star</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', star_1_text:'Its OK'});-->
+    <!--})	-->
+<!--&lt;/script&gt;</pre>-->
+      <!--<ul>-->
+        <!--<li>Text For Fourth Star</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', star_1_text:'Like It'});-->
+    <!--})	-->
+<!--&lt;/script&gt;</pre>-->
+      <!--<ul>-->
+        <!--<li>Text For Fifth Star</li>-->
+      <!--</ul>-->
+      <!--<pre class="prettyprint">&lt;script&gt;-->
+    <!--$(document).ready(function (){-->
+    <!--$('#opineo').opineo('results.php', {curvalue:0, view: 'mini', star_1_text:'Love It'});-->
+    <!--})	-->
+<!--&lt;/script&gt;</pre>-->
+      <!--<h3 id="bar_colors"> Bar Colors</h3>-->
+      <!--<ul>-->
+        <!--<li>Colors of Red Bar</li>-->
+        <!--<li>Colors of Yellow Bar</li>-->
+        <!--<li>Colors of Green Bar</li>-->
+      <!--</ul>-->
     </div>
   </div>
 </section>

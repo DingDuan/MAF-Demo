@@ -160,7 +160,7 @@
     display: inline-block;
 }
 
-#setting-button{
+.setting-button{
     position:relative;
     bottom: -5%;
 }

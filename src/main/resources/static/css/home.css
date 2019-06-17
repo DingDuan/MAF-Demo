@@ -26,14 +26,14 @@
 }
 
 .framework{
-    width: 100%;
+    width: 63%;
     /*height: 60%;*/
 }
 
 #wrapper {
     display: inline-block;
     /*margin: 1.5% 0.5% 1.5% 0.5%;*/
-    margin-left: 260px;
+    margin-left: 255px;
     margin-top: 60px;
     width: 1190px;
     height: 1050px;

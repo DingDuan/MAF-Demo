@@ -29,7 +29,7 @@
     position: absolute;
 }
 
-#mut-tf-wrapper {
+.mut-tf-wrapper {
     width: 96%;
     color: #555;
     background-color: rgba(245, 231, 223, 0.8);

@@ -1,0 +1,12 @@
+#wrapper {
+    display: inline-block;
+    /*margin: 1.5% 0.5% 1.5% 0.5%;*/
+    margin-left: 255px;
+    margin-top: 60px;
+    width: 1190px;
+    height: 1000px;
+    color: #555;
+    background-color: #eee;
+    padding: 1%;
+    /*text-align: center;*/
+}
