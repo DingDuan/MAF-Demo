@@ -50,7 +50,7 @@ function fileUploadOne() {
             // }
             // // filesDiv.innerHTML = fileList.join('');
             // filesDiv.value=fileList.join(' ');
-            filesDiv.value='/Users/dd/Desktop/MAF-Data/junit/'+files[0].webkitRelativePath.substring(0,1);
+            filesDiv.value='/Users/dd/Desktop/MAF-Data/Datalog/junit/'+files[0].webkitRelativePath.substring(0,1);
         });
     // });
 }
@@ -72,7 +72,7 @@ function fileUploadTwo() {
         // }
         // // filesDiv.innerHTML = fileList.join('');
         // filesDiv.value=fileList.join(' ');
-        filesDiv.value='/Users/dd/Desktop/MAF-Data/junit/'+files[0].webkitRelativePath.substring(0,1);
+        filesDiv.value='/Users/dd/Desktop/MAF-Data/Datalog/junit/'+files[0].webkitRelativePath.substring(0,1);
 
     });
     // });

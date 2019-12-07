@@ -9,10 +9,10 @@ function clickAll(){
 
 function check() {
     // if($("#inside").css("display")=="none"){
-        setTimeout( function(){
-            // $("#inside").show();
-            window.open("result.html");
-        }, 1 * 1000 )
+    //     setTimeout( function(){
+    //         // $("#inside").show();
+    //         window.open("result.html");
+    //     }, 1 * 1000 )
 
     // }
 

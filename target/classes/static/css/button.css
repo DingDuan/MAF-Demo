@@ -1,6 +1,6 @@
 .button-red {
     cursor: pointer;
-    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, "PingFang SC", sans-serif;
+    font-family: Helvetica Neue;
     color: #FFF;
     border: 1px solid #cc0000;
     border-radius: 5px;
@@ -55,6 +55,37 @@
     color: #FFF;
     background-color: #0080ff;
     border: 1px solid #0080ff;
+}
+
+.button-green {
+    cursor: pointer;
+    font-family: Times New Roman;
+    color: #111;
+    border: 1px solid #a5ffa6;
+    border-radius: 5px;
+    background-color: #a5ffa6;
+    display: inline-block;
+    /*margin: 0 1%;*/
+    /*padding: 4px 15px;*/
+    font-size: 90%;
+    width: 80px;
+    /*text-align: center;*/
+}
+
+.button-green:focus {
+    outline: none;
+}
+
+.button-green:hover {
+    color: #d6d0ff;
+    background-color: transparent;
+    border: 1px solid #d6d0ff;
+}
+
+.button-green:active {
+    color: #FFF;
+    background-color: #d6d0ff;
+    border: 1px solid #d6d0ff;
 }
 
 .button-blue2 {

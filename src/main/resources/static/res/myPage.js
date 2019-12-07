@@ -12,10 +12,10 @@ function loadpage() {
         totalPages: parseInt($("#countindex").val()),
         visiblePages: parseInt($("#visiblePages").val()),
         currentPage: 1,
-        first: '<li class="first"><a href="javascript:;">首页</a></li>',
-        prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>上一页</a></li>',
-        next: '<li class="next"><a href="javascript:;">下一页<i class="arrow arrow3"></i></a></li>',
-        last: '<li class="last"><a href="javascript:;">末页</a></li>',
+        first: '<li class="first"><a href="javascript:;">First</a></li>',
+        prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>Prev</a></li>',
+        next: '<li class="next"><a href="javascript:;">Next<i class="arrow arrow3"></i></a></li>',
+        last: '<li class="last"><a href="javascript:;">Last</a></li>',
         page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
         onPageChange: function (num, type) {
             if (type == "change"&& num==2) {

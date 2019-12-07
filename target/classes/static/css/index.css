@@ -29,12 +29,12 @@
     position: absolute;
 }
 
-#mut-tf-wrapper {
+.mut-tf-wrapper {
     width: 96%;
     color: #555;
-    background-color: #eee;
+    background-color: rgba(245, 231, 223, 0.8);
     padding: 1%;
-    margin: 0.5% 3% 1.5% 1.5%;
+    margin: 0% 3% 1.5% 1%;
 }
 
 #description{

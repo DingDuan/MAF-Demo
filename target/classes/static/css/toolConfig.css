@@ -9,8 +9,9 @@
 #setting-wrapper {
     display: inline-block;
     margin: 1.5% 0.5% 1.5% 0.5%;
-    width: 98%;
-    height: 560px;
+    /*margin-top: 50px;*/
+    width: 99%;
+    height: 735px;
     color: #555;
     background-color: #eee;
     padding: 1%;
@@ -159,9 +160,9 @@
     display: inline-block;
 }
 
-#setting-button{
+.setting-button{
     position:relative;
-    bottom: -5%;
+    bottom: -6%;
 }
 
 #src{
@@ -229,6 +230,7 @@ body {
     background-size: cover;
     -moz-background-size:cover;
     color:#fff;
+    /*margin-left: 200px;*/
 }
 
 #home-sec .overlay {

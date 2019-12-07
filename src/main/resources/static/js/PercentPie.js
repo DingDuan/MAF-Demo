@@ -11,6 +11,10 @@ function PercentPie(option){
 PercentPie.prototype.init = function(){
     var _that = this;
     var option = {
+        tooltip: {
+            // trigger: 'item',
+            // formatter: ""
+        },
         backgroundColor:_that.backgroundColor,
         color:_that.color,
         title: {
@@ -26,11 +30,11 @@ PercentPie.prototype.init = function(){
             }
         },
         series: [{
-            name: '来源',
+            name: 'MUT: equals',
             type: 'pie',
             radius: ['60%', '75%'],
             avoidLabelOverlap: false,
-            hoverAnimation:false,
+            // hoverAnimation:true,
             label: {
                 normal: {
                     show: false,

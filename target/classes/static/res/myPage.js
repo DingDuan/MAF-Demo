@@ -12,17 +12,29 @@ function loadpage() {
         totalPages: parseInt($("#countindex").val()),
         visiblePages: parseInt($("#visiblePages").val()),
         currentPage: 1,
-        first: '<li class="first"><a href="javascript:;">首页</a></li>',
-        prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>上一页</a></li>',
-        next: '<li class="next"><a href="javascript:;">下一页<i class="arrow arrow3"></i></a></li>',
-        last: '<li class="last"><a href="javascript:;">末页</a></li>',
+        first: '<li class="first"><a href="javascript:;">First</a></li>',
+        prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>Prev</a></li>',
+        next: '<li class="next"><a href="javascript:;">Next<i class="arrow arrow3"></i></a></li>',
+        last: '<li class="last"><a href="javascript:;">Last</a></li>',
         page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
         onPageChange: function (num, type) {
-            if (type == "change") {
-                exeData(num, type);
+            if (type == "change"&& num==2) {
                 //num:当前页码
-                // console.log(num);
+                //console.log(num);
                 // console.log(type);
+                // var src = document.getElementById("src-code");
+                // // console.log(src_pre);
+                // src.innerHTML = "" +
+                //     "         Predicate(String name) {\n" +
+                //     "            if (name == null) {\n" +
+                //     "                throw new NullPointerException(\"Name cannot be null\");\n" +
+                //     "            }\n" +
+                //     "            this.name = name;\n" +
+                //     "        }";
+                exeData(num, type);
+                // jQuery("pre").addClass("prettyprint linenums");
+                // prettyPrint();
+                window.location.href="detail-2.html";
             }else {
                 //这里放ajax请求，亲测有效
                 //真实思路：首先获得num当前页码

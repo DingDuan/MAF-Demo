@@ -52,13 +52,13 @@ function displayDataOfTable(result) {
     }
 }
 
-function executeTask() {
+function execute() {
     if($("#inside").css("display")=="none"){
         $("#inside").show();
     }
 
     var data = getInputs();
-    // console.log(data);
+    console.log(data);
 
     $.ajax({
         type: "POST",

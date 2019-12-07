@@ -89,3 +89,17 @@
 #excel-path-input {
     width: 40%;
 }
+
+.result-wrapper {
+    display: inline-block;
+    margin: 4.5% 0.5% 1.5% 0.5%;
+    width: 1190px;
+    margin-left: 250px;
+    height: 850px;
+    /*height: 650px;*/
+    /*float: right;*/
+    color: #555;
+    background-color: #eee;
+    padding: 1%;
+    position: absolute;
+}
