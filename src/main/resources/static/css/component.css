@@ -10,7 +10,7 @@
 }
 .component {
 	line-height: 1.5em;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	/*padding: 2em 0 3em;*/
 	/*width: 90%;*/
 	max-width: 1200px;
