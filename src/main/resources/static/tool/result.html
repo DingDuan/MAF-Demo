@@ -79,7 +79,7 @@
             </li>
         </ol>
     </div>
-    <h1 style="float: left; width: 20%">Plagiarism Detection Results</h1>
+    <h1 style="float: left">Overview</h1>
 
     <div>
         <div class="statistic">
@@ -93,17 +93,19 @@
                         <table>
                             <thead>
                             <tr>
-                                <th style="text-align: center;width: 18%">No.</th>
-                                <th style="text-align: center;width: 18%">Stu 1</th>
-                                <th style="text-align: center;width: 18%">Stu 2</th>
-                                <th style="text-align: center;width: 18%">Plagiarism</th>
-                                <th style="text-align: center;width: 28%">Detail</th>
+                                <th style="text-align: center;width: 50px">No.</th>
+                                <th style="text-align: center;width: 50px">Stu 1</th>
+                                <th style="text-align: center;width: 50px">Stu 2</th>
+                                <th style="text-align: center;width: 50px">Max Similarity</th>
+                                <th style="text-align: center;width: 50px">Plagiarism</th>
+                                <th style="text-align: center;width: 50px">Detail</th>
                             </tr>
                             </thead>
                             <tbody id="correspond">
                             <tr onclick="{location.href='../tool/detail.html'}">
                                 <td style="text-align: center">1</td>
                                 <td style="text-align: center">1</td>
+                                <td style="text-align: center">2</td>
                                 <td style="text-align: center">2</td>
                                 <td style="text-align: center">Yes</td>
                                 <td style="text-align: center"><button class="button-green" id="Stu1" style="font-size: 20px;" onclick="{location.href='../tool/detail.html'}">detail</button></td>
@@ -112,6 +114,7 @@
                                 <td style="text-align: center">2</td>
                                 <td style="text-align: center">3</td>
                                 <td style="text-align: center">4</td>
+                                <td style="text-align: center">4</td>
                                 <td style="text-align: center">Yes</td>
                                 <td style="text-align: center"><button class="button-green" id="Stu2" style="font-size: 20px;" onclick="{location.href='../tool/detail.html'}">detail</button></td>
                             </tr>
@@ -119,12 +122,14 @@
                                 <td style="text-align: center">3</td>
                                 <td style="text-align: center">4</td>
                                 <td style="text-align: center">5</td>
+                                <td style="text-align: center">5</td>
                                 <td style="text-align: center">Yes</td>
                                 <td style="text-align: center"><button class="button-green" id="Stu3" style="font-size: 20px;" onclick="{location.href='../tool/detail.html'}">detail</button></td>
                             </tr>
                             <tr onclick="{location.href='../tool/detail.html'}">
                                 <td style="text-align: center">4</td>
                                 <td style="text-align: center">1</td>
+                                <td style="text-align: center">3</td>
                                 <td style="text-align: center">3</td>
                                 <td style="text-align: center">No</td>
                                 <td style="text-align: center"><button class="button-green" id="Stu4" style="font-size: 20px;" onclick="{location.href='../tool/detail.html'}">detail</button></td>
@@ -134,6 +139,7 @@
                                 <td style="text-align: center">5</td>
                                 <td style="text-align: center">1</td>
                                 <td style="text-align: center">4</td>
+                                <td style="text-align: center">4</td>
                                 <td style="text-align: center">No</td>
                                 <td style="text-align: center"><button class="button-green" id="Stu5" style="font-size: 20px;" onclick="{location.href='../tool/detail.html'}">detail</button></td>
 
@@ -141,6 +147,7 @@
                             <tr onclick="{location.href='../tool/detail.html'}">
                                 <td style="text-align: center">6</td>
                                 <td style="text-align: center">1</td>
+                                <td style="text-align: center">5</td>
                                 <td style="text-align: center">5</td>
                                 <td style="text-align: center">No</td>
                                 <td style="text-align: center"><button class="button-green" id="Stu6" style="font-size: 20px;" onclick="{location.href='../tool/detail.html'}">detail</button></td>
@@ -150,6 +157,7 @@
                                 <td style="text-align: center">7</td>
                                 <td style="text-align: center">2</td>
                                 <td style="text-align: center">3</td>
+                                <td style="text-align: center">3</td>
                                 <td style="text-align: center">No</td>
                                 <td style="text-align: center"><button class="button-green" id="Stu7" style="font-size: 20px;" onclick="{location.href='../tool/detail.html'}">detail</button></td>
 
@@ -157,6 +165,7 @@
                             <tr onclick="{location.href='../tool/detail.html'}">
                                 <td style="text-align: center">8</td>
                                 <td style="text-align: center">2</td>
+                                <td style="text-align: center">4</td>
                                 <td style="text-align: center">4</td>
                                 <td style="text-align: center">No</td>
                                 <td style="text-align: center"><button class="button-green" id="Stu8" style="font-size: 20px;" onclick="{location.href='../tool/detail.html'}">detail</button></td>
@@ -166,6 +175,7 @@
                                 <td style="text-align: center">9</td>
                                 <td style="text-align: center">2</td>
                                 <td style="text-align: center">5</td>
+                                <td style="text-align: center">5</td>
                                 <td style="text-align: center">No</td>
                                 <td style="text-align: center"><button class="button-green" id="Stu9" style="font-size: 20px;" onclick="{location.href='../tool/detail.html'}">detail</button></td>
 
@@ -173,6 +183,7 @@
                             <tr onclick="{location.href='../tool/detail.html'}">
                                 <td style="text-align: center">10</td>
                                 <td style="text-align: center">3</td>
+                                <td style="text-align: center">5</td>
                                 <td style="text-align: center">5</td>
                                 <td style="text-align: center">No</td>
                                 <td style="text-align: center"><button class="button-green" id="Stu10" style="font-size: 20px;" onclick="{location.href='../tool/detail.html'}">detail</button></td>
@@ -316,14 +327,17 @@
                         source: '1',
                         target: '2',
                         name: '抄袭',
+                        symbolSize: '1',
                     }, {
                         source: '3',
                         target: '4',
-                        name: '抄袭'
+                        name: '抄袭',
+                        symbolSize: '1',
                     }, {
                         source: '4',
                         target: '5',
-                        name: '抄袭'
+                        name: '抄袭',
+                        symbolSize: '1',
                     }
                 ]
             }
