@@ -25,7 +25,22 @@
     <link rel="stylesheet" href="../css/lib/sidebar.css">
     <link rel="stylesheet" href="../css/lib/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/frame.css"/>
-
+    <script type="text/css">
+        .statistic{
+            /*width:150px;*/
+            /*height: 100px;*/
+            position: relative;
+            /*border:1px solid #000;*/
+        }
+        img {
+            width: 92px;
+            height: 80px;
+            position: absolute;
+            top: 50%;
+            /*left: 50%;*/
+            transform: translateY(-50%);
+        }
+    </script>
 
 </head>
 <body>
@@ -83,164 +98,170 @@
 
     <div>
         <div class="statistic">
-            For project Datalog , 10 pairs of students are detected,3 of them exist plagiarism!
+            <img src="../img/warning.png">
+            For project Datalog , 10 students are detected,3 of them exist plagiarism!
         </div>
         <div class="mut-tf-wrapper">
-            <h2>Statistical Results</h2>
-            <div class="container">
-                <div class="col-lg-6">
-<!--                    <div class="component">-->
-                        <table style="width:300px">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center">No.</th>
-                                <th style="text-align: center">Stu 1</th>
-                                <th style="text-align: center">Stu 2</th>
-                                <th style="text-align: center">MaxSim</th>
-                                <th style="text-align: center">Plagiarism</th>
-                                <th style="text-align: center">Detail</th>
-                            </tr>
-                            </thead>
-                            <tbody id="correspond">
-                            <tr onclick="{location.href='../tool/detail.html'}">
-                                <td style="text-align: center">1</td>
-                                <td style="text-align: center">1</td>
-                                <td style="text-align: center">2</td>
-                                <td style="text-align: center">2</td>
-                                <td style="text-align: center">Yes</td>
-                                <td style="text-align: center">
-                                    <button class="button-green" id="Stu1" style="font-size: 20px;"
-                                            onclick="{location.href='../tool/detail.html'}">detail
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr onclick="{location.href='../tool/detail.html'}">
-                                <td style="text-align: center">2</td>
-                                <td style="text-align: center">3</td>
-                                <td style="text-align: center">4</td>
-                                <td style="text-align: center">4</td>
-                                <td style="text-align: center">Yes</td>
-                                <td style="text-align: center">
-                                    <button class="button-green" id="Stu2" style="font-size: 20px;"
-                                            onclick="{location.href='../tool/detail.html'}">detail
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr onclick="{location.href='../tool/detail.html'}">
-                                <td style="text-align: center">3</td>
-                                <td style="text-align: center">4</td>
-                                <td style="text-align: center">5</td>
-                                <td style="text-align: center">5</td>
-                                <td style="text-align: center">Yes</td>
-                                <td style="text-align: center">
-                                    <button class="button-green" id="Stu3" style="font-size: 20px;"
-                                            onclick="{location.href='../tool/detail.html'}">detail
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr onclick="{location.href='../tool/detail.html'}">
-                                <td style="text-align: center">4</td>
-                                <td style="text-align: center">1</td>
-                                <td style="text-align: center">3</td>
-                                <td style="text-align: center">3</td>
-                                <td style="text-align: center">No</td>
-                                <td style="text-align: center">
-                                    <button class="button-green" id="Stu4" style="font-size: 20px;"
-                                            onclick="{location.href='../tool/detail.html'}">detail
-                                    </button>
-                                </td>
+            <div class="col-lg-7">
+                <h2>Statistical Results</h2>
+                <div class="container">
+                    <!--                <div class="col-lg-6">-->
+                    <!--                    <div class="component">-->
+                    <table style="width:300px">
+                        <thead>
+                        <tr>
+                            <th style="text-align: center">No.</th>
+                            <th style="text-align: center">Stu 1</th>
+                            <th style="text-align: center">Stu 2</th>
+                            <th style="text-align: center">Max Similarity</th>
+                            <th style="text-align: center">Plagiarism</th>
+                            <th style="text-align: center">Detail</th>
+                        </tr>
+                        </thead>
+                        <tbody id="correspond">
+                        <tr onclick="{location.href='../tool/detail.html'}">
+                            <td style="text-align: center">1</td>
+                            <td style="text-align: center">19229</td>
+                            <td style="text-align: center">2843</td>
+                            <td style="text-align: center">91%</td>
+                            <td style="text-align: center">Yes</td>
+                            <td style="text-align: center">
+                                <button class="button-green" id="Stu1" style="font-size: 20px;"
+                                        onclick="{location.href='../tool/detail.html'}">detail
+                                </button>
+                            </td>
+                        </tr>
+                        <tr onclick="{location.href='../tool/detail.html'}">
+                            <td style="text-align: center">2</td>
+                            <td style="text-align: center">2843</td>
+                            <td style="text-align: center">12976</td>
+                            <td style="text-align: center">80%</td>
+                            <td style="text-align: center">Yes</td>
+                            <td style="text-align: center">
+                                <button class="button-green" id="Stu2" style="font-size: 20px;"
+                                        onclick="{location.href='../tool/detail.html'}">detail
+                                </button>
+                            </td>
+                        </tr>
+                        <tr onclick="{location.href='../tool/detail.html'}">
+                            <td style="text-align: center">3</td>
+                            <td style="text-align: center">19229</td>
+                            <td style="text-align: center">12976</td>
+                            <td style="text-align: center">69%</td>
+                            <td style="text-align: center">No</td>
+                            <td style="text-align: center">
+                                <button class="button-green" id="Stu3" style="font-size: 20px;"
+                                        onclick="{location.href='../tool/detail.html'}">detail
+                                </button>
+                            </td>
+                        </tr>
+                        <tr onclick="{location.href='../tool/detail.html'}">
+                            <td style="text-align: center">4</td>
+                            <td style="text-align: center">12976</td>
+                            <td style="text-align: center">20636</td>
+                            <td style="text-align: center">67%</td>
+                            <td style="text-align: center">No</td>
+                            <td style="text-align: center">
+                                <button class="button-green" id="Stu4" style="font-size: 20px;"
+                                        onclick="{location.href='../tool/detail.html'}">detail
+                                </button>
+                            </td>
 
-                            </tr>
-                            <tr onclick="{location.href='../tool/detail.html'}">
-                                <td style="text-align: center">5</td>
-                                <td style="text-align: center">1</td>
-                                <td style="text-align: center">4</td>
-                                <td style="text-align: center">4</td>
-                                <td style="text-align: center">No</td>
-                                <td style="text-align: center">
-                                    <button class="button-green" id="Stu5" style="font-size: 20px;"
-                                            onclick="{location.href='../tool/detail.html'}">detail
-                                    </button>
-                                </td>
+                        </tr>
+                        <tr onclick="{location.href='../tool/detail.html'}">
+                            <td style="text-align: center">5</td>
+                            <td style="text-align: center">2843</td>
+                            <td style="text-align: center">20636</td>
+                            <td style="text-align: center">62%</td>
+                            <td style="text-align: center">No</td>
+                            <td style="text-align: center">
+                                <button class="button-green" id="Stu5" style="font-size: 20px;"
+                                        onclick="{location.href='../tool/detail.html'}">detail
+                                </button>
+                            </td>
 
-                            </tr>
-                            <tr onclick="{location.href='../tool/detail.html'}">
-                                <td style="text-align: center">6</td>
-                                <td style="text-align: center">1</td>
-                                <td style="text-align: center">5</td>
-                                <td style="text-align: center">5</td>
-                                <td style="text-align: center">No</td>
-                                <td style="text-align: center">
-                                    <button class="button-green" id="Stu6" style="font-size: 20px;"
-                                            onclick="{location.href='../tool/detail.html'}">detail
-                                    </button>
-                                </td>
+                        </tr>
+                        <tr onclick="{location.href='../tool/detail.html'}">
+                            <td style="text-align: center">6</td>
+                            <td style="text-align: center">19229</td>
+                            <td style="text-align: center">20636</td>
+                            <td style="text-align: center">59%</td>
+                            <td style="text-align: center">No</td>
+                            <td style="text-align: center">
+                                <button class="button-green" id="Stu6" style="font-size: 20px;"
+                                        onclick="{location.href='../tool/detail.html'}">detail
+                                </button>
+                            </td>
 
-                            </tr>
-                            <tr onclick="{location.href='../tool/detail.html'}">
-                                <td style="text-align: center">7</td>
-                                <td style="text-align: center">2</td>
-                                <td style="text-align: center">3</td>
-                                <td style="text-align: center">3</td>
-                                <td style="text-align: center">No</td>
-                                <td style="text-align: center">
-                                    <button class="button-green" id="Stu7" style="font-size: 20px;"
-                                            onclick="{location.href='../tool/detail.html'}">detail
-                                    </button>
-                                </td>
+                        </tr>
+                        <tr onclick="{location.href='../tool/detail.html'}">
+                            <td style="text-align: center">7</td>
+                            <td style="text-align: center">15089</td>
+                            <td style="text-align: center">21082</td>
+                            <td style="text-align: center">54%</td>
+                            <td style="text-align: center">No</td>
+                            <td style="text-align: center">
+                                <button class="button-green" id="Stu7" style="font-size: 20px;"
+                                        onclick="{location.href='../tool/detail.html'}">detail
+                                </button>
+                            </td>
 
-                            </tr>
-                            <tr onclick="{location.href='../tool/detail.html'}">
-                                <td style="text-align: center">8</td>
-                                <td style="text-align: center">2</td>
-                                <td style="text-align: center">4</td>
-                                <td style="text-align: center">4</td>
-                                <td style="text-align: center">No</td>
-                                <td style="text-align: center">
-                                    <button class="button-green" id="Stu8" style="font-size: 20px;"
-                                            onclick="{location.href='../tool/detail.html'}">detail
-                                    </button>
-                                </td>
+                        </tr>
+                        <tr onclick="{location.href='../tool/detail.html'}">
+                            <td style="text-align: center">8</td>
+                            <td style="text-align: center">21082</td>
+                            <td style="text-align: center">19498</td>
+                            <td style="text-align: center">53%</td>
+                            <td style="text-align: center">No</td>
+                            <td style="text-align: center">
+                                <button class="button-green" id="Stu8" style="font-size: 20px;"
+                                        onclick="{location.href='../tool/detail.html'}">detail
+                                </button>
+                            </td>
 
-                            </tr>
-                            <tr onclick="{location.href='../tool/detail.html'}">
-                                <td style="text-align: center">9</td>
-                                <td style="text-align: center">2</td>
-                                <td style="text-align: center">5</td>
-                                <td style="text-align: center">5</td>
-                                <td style="text-align: center">No</td>
-                                <td style="text-align: center">
-                                    <button class="button-green" id="Stu9" style="font-size: 20px;"
-                                            onclick="{location.href='../tool/detail.html'}">detail
-                                    </button>
-                                </td>
+                        </tr>
+                        <tr onclick="{location.href='../tool/detail.html'}">
+                            <td style="text-align: center">9</td>
+                            <td style="text-align: center">19509</td>
+                            <td style="text-align: center">19229</td>
+                            <td style="text-align: center">51%</td>
+                            <td style="text-align: center">No</td>
+                            <td style="text-align: center">
+                                <button class="button-green" id="Stu9" style="font-size: 20px;"
+                                        onclick="{location.href='../tool/detail.html'}">detail
+                                </button>
+                            </td>
 
-                            </tr>
-                            <tr onclick="{location.href='../tool/detail.html'}">
-                                <td style="text-align: center">10</td>
-                                <td style="text-align: center">3</td>
-                                <td style="text-align: center">5</td>
-                                <td style="text-align: center">5</td>
-                                <td style="text-align: center">No</td>
-                                <td style="text-align: center">
-                                    <button class="button-green" id="Stu10" style="font-size: 20px;"
-                                            onclick="{location.href='../tool/detail.html'}">detail
-                                    </button>
-                                </td>
+                        </tr>
+                        <tr onclick="{location.href='../tool/detail.html'}">
+                            <td style="text-align: center">10</td>
+                            <td style="text-align: center">19509</td>
+                            <td style="text-align: center">2843</td>
+                            <td style="text-align: center">50%</td>
+                            <td style="text-align: center">No</td>
+                            <td style="text-align: center">
+                                <button class="button-green" id="Stu10" style="font-size: 20px;"
+                                        onclick="{location.href='../tool/detail.html'}">detail
+                                </button>
+                            </td>
 
-                            </tr>
-                            </tbody>
-                        </table>
+                        </tr>
+                        </tbody>
+                    </table>
 
-<!--                    </div>-->
+                    <!--                    </div>-->
+
+                    <!--                </div>-->
+
 
                 </div>
-                <div class="col-lg-6">
-                    <div id="forcechart" class="forcechart" style="height: 400px"></div>
+            </div>
+            <!-- /container -->
+            <div class="col-lg-5">
+                <h2>Plagiarism-Relationship Graph</h2>
+                <div id="forcechart" class="forcechart" style="height: 480px"></div>
 
-                </div>
-
-            </div><!-- /container -->
+            </div>
         </div><!-- /table-wrapper -->
 
         <!--<div style="text-align: center; margin-left: 33%">-->
@@ -277,7 +298,8 @@
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('forcechart'));
     option = {
-        title: {text: 'Plagiarism-Relationship Graph'},
+        backgroundColor:'#708090',
+        title: {text: ''},
         tooltip: {
             formatter: function (x) {
                 return x.data.des;
@@ -286,26 +308,26 @@
         series: [
             {
                 type: 'graph',
-                layout: 'circular',
+                layout: 'force',
                 symbolSize: 80,
                 roam: true,
-                edgeSymbol: ['circle', 'arrow'],
-                edgeSymbolSize: [4, 10],
+                edgeSymbol: ['circle'],
+                edgeSymbolSize: [20, 40],
                 edgeLabel: {
                     normal: {
                         textStyle: {
-                            fontSize: 20
+                            fontSize: 22
                         }
                     }
                 },
                 force: {
-                    repulsion: 2500,
-                    edgeLength: [10, 50]
+                    repulsion: 300,
+                    edgeLength: [70, 100]
                 },
                 draggable: true,
                 itemStyle: {
                     normal: {
-                        color: '#4b565b'
+                        color: '#00BFFF'
                     }
                 },
                 lineStyle: {
@@ -315,14 +337,7 @@
 
                     }
                 },
-                edgeLabel: {
-                    normal: {
-                        show: true,
-                        formatter: function (x) {
-                            return x.data.name;
-                        }
-                    }
-                },
+
                 label: {
                     normal: {
                         show: true,
@@ -331,52 +346,60 @@
                 },
                 data: [
                     {
-                        name: '1',
-                        symbolSize: 60,
+                        name: '19229',
+                        symbolSize: 50,
                         itemStyle: {
                             normal: {
-                                color: 'red'
+                                color: '#FFA500'
                             }
                         }
                     }, {
-                        name: '3',
-                        symbolSize: 60,
+                        name: '2843',
+                        symbolSize: 50,
                         itemStyle: {
                             normal: {
-                                color: 'red'
+                                color: '#FFA500'
                             }
                         }
                     }, {
-                        name: '4',
-                        symbolSize: 60,
+                        name: '12976',
+                        symbolSize: 50,
                         itemStyle: {
                             normal: {
-                                color: 'red'
+                                color: '#FFA500'
                             }
                         }
                     }, {
-                        name: '5',
-                        symbolSize: 60,
+                        name: '11337',
+                        symbolSize: 50,
                     }, {
-                        name: '2',
-                        symbolSize: 60,
+                        name: '15089',
+                        symbolSize: 50,
+                    }, {
+                        name: '21082',
+                        symbolSize: 50,
+                    }, {
+                        name: '19498',
+                        symbolSize: 50,
+                    }, {
+                        name: '19509',
+                        symbolSize: 50,
+                    }, {
+                        name: '2942',
+                        symbolSize: 50,
+                    }, {
+                        name: '20636',
+                        symbolSize: 50,
                     }
                 ],
                 links: [
                     {
-                        source: '1',
-                        target: '2',
-                        name: '抄袭',
+                        source: '2843',
+                        target: '19229',
                         symbolSize: '1',
                     }, {
-                        source: '3',
-                        target: '4',
-                        name: '抄袭',
-                        symbolSize: '1',
-                    }, {
-                        source: '4',
-                        target: '5',
-                        name: '抄袭',
+                        source: '12976',
+                        target: '2843',
                         symbolSize: '1',
                     }
                 ]
