@@ -8,18 +8,18 @@
 	font-weight: normal;
 	font-style: normal;
 }
-.component {
-	line-height: 1.5em;
-	/*margin: 0 auto;*/
-	/*padding: 2em 0 3em;*/
-	/*width: 90%;*/
-	max-width: 1200px;
-	overflow: hidden;
-}
-.component .filler {
-	font-family: "Blokk", Arial, sans-serif;
-	color: #d3d3d3;
-}
+/*.component {*/
+/*	line-height: 1.5em;*/
+/*	!*margin: 0 auto;*!*/
+/*	!*padding: 2em 0 3em;*!*/
+/*	!*width: 90%;*!*/
+/*	max-width: 1200px;*/
+/*	overflow: hidden;*/
+/*}*/
+/*.component .filler {*/
+/*	font-family: "Blokk", Arial, sans-serif;*/
+/*	color: #d3d3d3;*/
+/*}*/
 table {
     border-collapse: collapse;
     /*margin-bottom: 3em;*/
