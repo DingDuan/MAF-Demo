@@ -155,12 +155,17 @@
             <div class="nano-content">
                 <div style="height: 10px"></div>
                 <ul>
-                    <li class="label" style="font-size: 20px">Navigation</li>
+                    <!--<li class="label" style="font-size: 20px">Navigation</li>-->
+                    <li class="label" style="font-size: 22px">导航栏</li>
 
-                    <li><a href="../tool/home.html"><i class="ti-home"></i> HOME </a></li>
-                    <li class="active"><a href="../tool/projects.html"><i class="ti-user"></i> PROJECT</a></li>
-                    <li><a href="../tool/projects.html"><i class="ti-user"></i> EXPORT</a></li>
-                    <li><a href="../tool/contact.html"><i class="ti-user"></i> CONTACT</a></li>
+                    <!--<li><a href="../tool/home.html"><i class="ti-home"></i> HOME </a></li>-->
+                    <li><a href="../tool/home.html"><i class="ti-home"></i> 主页 </a></li>
+                    <!--<li class="active"><a href="../tool/projects.html"><i class="ti-user"></i> PROJECT</a></li>-->
+                    <li class="active"><a href="../tool/projects.html"><i class="ti-user"></i> 项目</a></li>
+                    <!--<li><a href="../tool/projects.html"><i class="ti-user"></i> EXPORT</a></li>-->
+                    <li><a href="../tool/projects.html"><i class="ti-user"></i> 报告</a></li>
+                    <!--<li><a href="../tool/contact.html"><i class="ti-user"></i> CONTACT</a></li>-->
+                    <li><a href="../tool/contact.html"><i class="ti-user"></i> 联系</a></li>
 
 
                 </ul>
@@ -174,13 +179,15 @@
         <img src="../img/logo.png" class="logo"/>
 
         <ul style="width: 1300px">
-            <p style="font-size: 32px">MAF</p>
+            <!--<p style="font-size: 32px">MAF</p>-->
+            <p style="font-size: 30px">测试代码抄袭检测系统</p>
 
             <!--<a href="contact.html">-->
             <!--<li id="contact-button" class="head-button">CONTACT</li>-->
             <!--</a>-->
             <a href="help.html">
-                <li id="help-button" class="head-button">HELP</li>
+                <!--<li id="help-button" class="head-button">HELP</li>-->
+                <li id="help-button" class="head-button">帮助</li>
             </a>
             <!--<a href="projects.html">-->
             <!--<li id="home-button" class="head-button">HOME</li>-->
@@ -231,12 +238,12 @@
             <!--<tbody id="correspond">-->
             <!--<tr>-->
             <div class="contest">
-                <h3>2017 CST</h3>
+                <h3>2019 CST</h3>
             </div>
             <!--</tr>-->
             <!--<tr onclick="{location.href='../tool/Datalog.html'}">-->
             <button class="project" onclick="showDatalog()">
-                <h4>Datalog</h4>
+                <h4>Tarjan</h4>
             </button>
             <!--</tr>-->
             <!--<tr>-->
@@ -244,8 +251,10 @@
             <div id="dataDetail" style="clear: both;display: none">
                 <div class="layui-tab layui-tab-card">
                     <ul class="layui-tab-title">
-                        <li class="layui-this">MUT List</li>
-                        <li>Contest Results</li>
+                        <!--<li class="layui-this">MUT List</li>-->
+                        <li class="layui-this">待测方法列表</li>
+                        <li>考试结果信息</li>
+                        <!--<li>Contest Result</li>-->
                     </ul>
                     <div class="layui-tab-content" style="height: 2000px;">
                         <div class="layui-tab-item layui-show">
@@ -259,19 +268,26 @@
 
                                         <tr>
 
-                                            <th style="text-align: center">No.</th>
+                                            <!--<th style="text-align: center">No.</th>-->
+                                            <th style="text-align: center">编号</th>
 
-                                            <th style="text-align: center">MID</th>
+                                            <!--<th style="text-align: center">MID</th>-->
+                                            <th style="text-align: center">方法ID</th>
 
-                                            <th style="text-align: center">Method Name</th>
+                                            <!--<th style="text-align: center">Method Name</th>-->
+                                            <th style="text-align: center">方法名</th>
 
-                                            <th style="text-align: center">Parameter Type</th>
+                                            <!--<th style="text-align: center">Parameter Type</th>-->
+                                            <th style="text-align: center">参数类型</th>
 
-                                            <th style="text-align: center">Class Name</th>
+                                            <!--<th style="text-align: center">Class Name</th>-->
+                                            <th style="text-align: center">类名</th>
 
-                                            <th style="text-align: center">Return Type</th>
+                                            <!--<th style="text-align: center">Return Type</th>-->
+                                            <th style="text-align: center">返回类型</th>
 
-                                            <th style="text-align: center">Details</th>
+                                            <!--<th style="text-align: center">Details</th>-->
+                                            <th style="text-align: center">详情</th>
 
 
                                         </tr>
@@ -300,7 +316,7 @@
                                                 <!--value="上传文件" onchange="upfileTwo.value=this.value">-->
                                                 <!--</div>-->
                                                 <button class="button-green" id="Argument" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Argument.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Argument.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -313,7 +329,7 @@
                                             <td style="text-align: center">int</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog1" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -326,7 +342,7 @@
                                             <td style="text-align: center">String</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog2" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -339,7 +355,7 @@
                                             <td style="text-align: center">boolean</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog3" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -352,7 +368,7 @@
                                             <td style="text-align: center">String</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog4" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -365,7 +381,7 @@
                                             <td style="text-align: center">boolean</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog5" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -378,7 +394,7 @@
                                             <td style="text-align: center">int</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog6" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -391,7 +407,7 @@
                                             <td style="text-align: center">boolean</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog7" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -404,7 +420,7 @@
                                             <td style="text-align: center">int</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog8" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -417,7 +433,7 @@
                                             <td style="text-align: center">String</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog9" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -430,7 +446,7 @@
                                             <td style="text-align: center">Datalog</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog10" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -443,7 +459,7 @@
                                             <td style="text-align: center">int</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog11" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -456,7 +472,7 @@
                                             <td style="text-align: center">String</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog12" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -469,7 +485,7 @@
                                             <td style="text-align: center">boolean</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog13" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -482,7 +498,7 @@
                                             <td style="text-align: center">Datalog</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog14" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -495,7 +511,7 @@
                                             <td style="text-align: center">int</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog15" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -508,7 +524,7 @@
                                             <td style="text-align: center">String</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog16" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -521,7 +537,7 @@
                                             <td style="text-align: center">int</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog17" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -534,7 +550,7 @@
                                             <td style="text-align: center">Datalog</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog18" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -547,7 +563,7 @@
                                             <td style="text-align: center">String</td>
                                             <td style="text-align: center">
                                                 <button class="button-green" id="Datalog19" style="font-size: 20px;"
-                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">detail
+                                                        onclick="{location.href='../code/Datalog/Datalog.html'}">详情
                                                 </button>
                                             </td>
                                         </tr>
@@ -571,12 +587,12 @@
                                                 <th style="padding-left: 50px;"><input class="checkAll"
                                                                                        name="selectFlag" type="checkbox"
                                                                                        onclick="clickAll()"></th>
-                                                <th style="text-align: center">Student No</th>
-                                                <th style="text-align: center">Branch Coverage</th>
-                                                <th style="text-align: center">Mutation Kill Rate</th>
-                                                <th style="text-align: center">MUT Coverage</th>
-                                                <th style="text-align: center">Score</th>
-                                                <th style="text-align: center">Details</th>
+                                                <th style="text-align: center">学生学号</th>
+                                                <th style="text-align: center">分支覆盖</th>
+                                                <th style="text-align: center">变异杀死率</th>
+                                                <th style="text-align: center">待测方法覆盖率</th>
+                                                <th style="text-align: center">得分</th>
+                                                <th style="text-align: center">详情</th>
                                             </tr>
                                             </thead>
 
@@ -603,7 +619,7 @@
                                                 <td style="text-align: center">83.99</td>
                                                 <td style="text-align: center">
                                                     <button class="button-green" id="Stu1" style="font-size: 20px;"
-                                                            onclick="{location.href='../code/Datalog/Stu1.html'}">detail
+                                                            onclick="{location.href='../code/Datalog/Stu1.html'}">详情
                                                     </button>
                                                 </td>
                                             </tr>
@@ -629,7 +645,7 @@
                                                 <td style="text-align: center">78.13</td>
                                                 <td style="text-align: center">
                                                     <button class="button-green" id="Stu2" style="font-size: 20px;"
-                                                            onclick="{location.href='../code/Datalog/Stu2.html'}">detail
+                                                            onclick="{location.href='../code/Datalog/Stu2.html'}">详情
                                                     </button>
                                                 </td>
                                             </tr>
@@ -656,7 +672,7 @@
                                                 <td style="text-align: center">75.44</td>
                                                 <td style="text-align: center">
                                                     <button class="button-green" id="Stu3" style="font-size: 20px;"
-                                                            onclick="{location.href='../code/Datalog/Stu3.html'}">detail
+                                                            onclick="{location.href='../code/Datalog/Stu3.html'}">详情
                                                     </button>
                                                 </td>
                                             </tr>
@@ -682,7 +698,7 @@
                                                 <td style="text-align: center">72.49</td>
                                                 <td style="text-align: center">
                                                     <button class="button-green" id="Stu4" style="font-size: 20px;"
-                                                            onclick="{location.href='../code/Datalog/Stu4.html'}">detail
+                                                            onclick="{location.href='../code/Datalog/Stu4.html'}">详情
                                                     </button>
                                                 </td>
                                             </tr>
@@ -708,7 +724,7 @@
                                                 <td style="text-align: center">71.56</td>
                                                 <td style="text-align: center">
                                                     <button class="button-green" id="Stu5" style="font-size: 20px;"
-                                                            onclick="{location.href='../code/Datalog/Stu5.html'}">detail
+                                                            onclick="{location.href='../code/Datalog/Stu5.html'}">详情
                                                     </button>
                                                 </td>
                                             </tr>
@@ -734,7 +750,7 @@
                                                 <td style="text-align: center">69.64</td>
                                                 <td style="text-align: center">
                                                     <button class="button-green" id="Stu6" style="font-size: 20px;"
-                                                            onclick="{location.href='../code/Datalog/Stu6.html'}">detail
+                                                            onclick="{location.href='../code/Datalog/Stu6.html'}">详情
                                                     </button>
                                                 </td>
                                             </tr>
@@ -760,7 +776,7 @@
                                                 <td style="text-align: center">68.88</td>
                                                 <td style="text-align: center">
                                                     <button class="button-green" id="Stu7" style="font-size: 20px;"
-                                                            onclick="{location.href='../code/Datalog/Stu7.html'}">detail
+                                                            onclick="{location.href='../code/Datalog/Stu7.html'}">详情
                                                     </button>
                                                 </td>
                                             </tr>
@@ -786,7 +802,7 @@
                                                 <td style="text-align: center">66.55</td>
                                                 <td style="text-align: center">
                                                     <button class="button-green" id="Stu8" style="font-size: 20px;"
-                                                            onclick="{location.href='../code/Datalog/Stu8.html'}">detail
+                                                            onclick="{location.href='../code/Datalog/Stu8.html'}">详情
                                                     </button>
                                                 </td>
                                             </tr>
@@ -812,7 +828,7 @@
                                                 <td style="text-align: center">66.09</td>
                                                 <td style="text-align: center">
                                                     <button class="button-green" id="Stu9" style="font-size: 20px;"
-                                                            onclick="{location.href='../code/Datalog/Stu9.html'}">detail
+                                                            onclick="{location.href='../code/Datalog/Stu9.html'}">详情
                                                     </button>
                                                 </td>
                                             </tr>
@@ -839,7 +855,7 @@
                                                 <td style="text-align: center">
                                                     <button class="button-green" id="Stu10" style="font-size: 20px;"
                                                             onclick="{location.href='../code/Datalog/Stu10.html'}">
-                                                        detail
+                                                        详情
                                                     </button>
                                                 </td>
                                             </tr>
@@ -890,7 +906,7 @@
                             <div class="setting-button">
                                 <!--<button class="button-red" id="clear" style="font-size: 25px; margin: 2% 15% 2% 5%;" onclick="">清空</button>-->
                                 <button class="button-red" style="float:right; font-size: 28px; margin: 0% 6% 2%;"
-                                        onclick="delayURL('../tool/result.html',1000)">check
+                                        onclick="delayURL('../tool/result.html',1000)">检测
                                     <!--<a href="tool/result.html" target="view_window"></a>-->
                                 </button>
                             </div>

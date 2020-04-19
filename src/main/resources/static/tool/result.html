@@ -49,13 +49,18 @@
         <div class="nano-content">
             <div style="height: 10px"></div>
             <ul>
-                <li class="label" style="font-size: 20px">Navigation</li>
+                <!--<li class="label" style="font-size: 20px">Navigation</li>-->
+                <li class="label" style="font-size: 22px">导航栏</li>
 
-                <li><a href="../tool/home.html"><i class="ti-home"></i> HOME </a></li>
-                <li class="active"><a href="../tool/projects.html"><i class="ti-user"></i> PROJECT</a></li>
-                <li><a href="../tool/projects.html"><i class="ti-user"></i> EXPORT</a></li>
+                <!--<li><a href="../tool/home.html"><i class="ti-home"></i> HOME </a></li>-->
+                <li><a href="../tool/home.html"><i class="ti-home"></i> 首页 </a></li>
+                <!--<li class="active"><a href="../tool/projects.html"><i class="ti-user"></i> PROJECT</a></li>-->
+                <li class="active"><a href="../tool/projects.html"><i class="ti-user"></i> 项目</a></li>
+                <!--<li><a href="../tool/projects.html"><i class="ti-user"></i> EXPORT</a></li>-->
+                <li><a href="../tool/projects.html"><i class="ti-user"></i> 报告</a></li>
 
-                <li><a href="../tool/contact.html"><i class="ti-user"></i> CONTACT</a></li>
+                <!--<li><a href="../tool/contact.html"><i class="ti-user"></i> CONTACT</a></li>-->
+                <li><a href="../tool/contact.html"><i class="ti-user"></i> 联系</a></li>
 
 
             </ul>
@@ -69,13 +74,15 @@
     <img src="../img/logo.png" class="logo"/>
 
     <ul style="width: 1300px">
-        <p style="font-size: 32px">MAF</p>
+        <!--<p style="font-size: 32px">MAF</p>-->
+        <p style="font-size: 30px">测试代码抄袭检测系统</p>
 
         <!--<a href="contact.html">-->
         <!--<li id="contact-button" class="head-button">CONTACT</li>-->
         <!--</a>-->
         <a href="help.html">
-            <li id="help-button" class="head-button">HELP</li>
+            <!--<li id="help-button" class="head-button">HELP</li>-->
+            <li id="help-button" class="head-button">帮助</li>
         </a>
         <!--<a href="projects.html">-->
         <!--<li id="home-button" class="head-button">HOME</li>-->
@@ -94,28 +101,37 @@
             </li>
         </ol>
     </div>
-    <h1 style="float: left">Overview</h1>
+    <!--<h1 style="float: left">Overview</h1>-->
+    <h1 style="float: left">检测结果</h1>
 
     <div>
         <div class="statistic">
             <img src="../img/warning.png">
-            For project Datalog , 10 students are detected,3 of them exist plagiarism!
+            <!--For project Datalog , 10 students are detected,3 of them exist plagiarism!-->
+            对项目Tarjan，共检测10名学生的测试代码，其中3名学生存在抄袭！
         </div>
         <div class="mut-tf-wrapper">
             <div class="col-lg-7">
-                <h2>Statistical Results</h2>
+                <!--<h2>Statistical Results</h2>-->
+                <h2>统计结果</h2>
                 <div class="container">
                     <!--                <div class="col-lg-6">-->
                     <!--                    <div class="component">-->
                     <table style="width:300px">
                         <thead>
                         <tr>
-                            <th style="text-align: center">No.</th>
-                            <th style="text-align: center">Stu 1</th>
-                            <th style="text-align: center">Stu 2</th>
-                            <th style="text-align: center">Max Similarity</th>
-                            <th style="text-align: center">Plagiarism</th>
-                            <th style="text-align: center">Detail</th>
+                            <!--<th style="text-align: center">No.</th>-->
+                            <th style="text-align: center">序号</th>
+                            <!--<th style="text-align: center">Stu 1</th>-->
+                            <th style="text-align: center">学生1</th>
+                            <!--<th style="text-align: center">Stu 2</th>-->
+                            <th style="text-align: center">学生2</th>
+                            <!--<th style="text-align: center">Max Similarity</th>-->
+                            <th style="text-align: center">最大相似度</th>
+                            <!--<th style="text-align: center">Plagiarism</th>-->
+                            <th style="text-align: center">是否抄袭</th>
+                            <!--<th style="text-align: center">Detail</th>-->
+                            <th style="text-align: center">详情</th>
                         </tr>
                         </thead>
                         <tbody id="correspond">
@@ -124,10 +140,11 @@
                             <td style="text-align: center">19229</td>
                             <td style="text-align: center">2843</td>
                             <td style="text-align: center">91%</td>
-                            <td style="text-align: center">Yes</td>
+                            <td style="text-align: center">是</td>
+                            <!--<td style="text-align: center">Yes</td>-->
                             <td style="text-align: center">
                                 <button class="button-green" id="Stu1" style="font-size: 20px;"
-                                        onclick="{location.href='../tool/detail.html'}">detail
+                                        onclick="{location.href='../tool/detail.html'}">详情
                                 </button>
                             </td>
                         </tr>
@@ -136,10 +153,11 @@
                             <td style="text-align: center">2843</td>
                             <td style="text-align: center">12976</td>
                             <td style="text-align: center">80%</td>
-                            <td style="text-align: center">Yes</td>
+                            <td style="text-align: center">是</td>
+                            <!--<td style="text-align: center">Yes</td>-->
                             <td style="text-align: center">
                                 <button class="button-green" id="Stu2" style="font-size: 20px;"
-                                        onclick="{location.href='../tool/detail.html'}">detail
+                                        onclick="{location.href='../tool/detail.html'}">详情
                                 </button>
                             </td>
                         </tr>
@@ -148,10 +166,11 @@
                             <td style="text-align: center">19229</td>
                             <td style="text-align: center">12976</td>
                             <td style="text-align: center">69%</td>
-                            <td style="text-align: center">No</td>
+                            <!--<td style="text-align: center">No</td>-->
+                            <td style="text-align: center">否</td>
                             <td style="text-align: center">
                                 <button class="button-green" id="Stu3" style="font-size: 20px;"
-                                        onclick="{location.href='../tool/detail.html'}">detail
+                                        onclick="{location.href='../tool/detail.html'}">详情
                                 </button>
                             </td>
                         </tr>
@@ -160,10 +179,11 @@
                             <td style="text-align: center">12976</td>
                             <td style="text-align: center">20636</td>
                             <td style="text-align: center">67%</td>
-                            <td style="text-align: center">No</td>
+                            <!--<td style="text-align: center">No</td>-->
+                            <td style="text-align: center">否</td>
                             <td style="text-align: center">
                                 <button class="button-green" id="Stu4" style="font-size: 20px;"
-                                        onclick="{location.href='../tool/detail.html'}">detail
+                                        onclick="{location.href='../tool/detail.html'}">详情
                                 </button>
                             </td>
 
@@ -173,10 +193,11 @@
                             <td style="text-align: center">2843</td>
                             <td style="text-align: center">20636</td>
                             <td style="text-align: center">62%</td>
-                            <td style="text-align: center">No</td>
+                            <!--<td style="text-align: center">No</td>-->
+                            <td style="text-align: center">否</td>
                             <td style="text-align: center">
                                 <button class="button-green" id="Stu5" style="font-size: 20px;"
-                                        onclick="{location.href='../tool/detail.html'}">detail
+                                        onclick="{location.href='../tool/detail.html'}">详情
                                 </button>
                             </td>
 
@@ -186,10 +207,11 @@
                             <td style="text-align: center">19229</td>
                             <td style="text-align: center">20636</td>
                             <td style="text-align: center">59%</td>
-                            <td style="text-align: center">No</td>
+                            <!--<td style="text-align: center">No</td>-->
+                            <td style="text-align: center">否</td>
                             <td style="text-align: center">
                                 <button class="button-green" id="Stu6" style="font-size: 20px;"
-                                        onclick="{location.href='../tool/detail.html'}">detail
+                                        onclick="{location.href='../tool/detail.html'}">详情
                                 </button>
                             </td>
 
@@ -199,10 +221,11 @@
                             <td style="text-align: center">15089</td>
                             <td style="text-align: center">21082</td>
                             <td style="text-align: center">54%</td>
-                            <td style="text-align: center">No</td>
+                            <!--<td style="text-align: center">No</td>-->
+                            <td style="text-align: center">否</td>
                             <td style="text-align: center">
                                 <button class="button-green" id="Stu7" style="font-size: 20px;"
-                                        onclick="{location.href='../tool/detail.html'}">detail
+                                        onclick="{location.href='../tool/detail.html'}">详情
                                 </button>
                             </td>
 
@@ -212,10 +235,11 @@
                             <td style="text-align: center">21082</td>
                             <td style="text-align: center">19498</td>
                             <td style="text-align: center">53%</td>
-                            <td style="text-align: center">No</td>
+                            <!--<td style="text-align: center">No</td>-->
+                            <td style="text-align: center">否</td>
                             <td style="text-align: center">
                                 <button class="button-green" id="Stu8" style="font-size: 20px;"
-                                        onclick="{location.href='../tool/detail.html'}">detail
+                                        onclick="{location.href='../tool/detail.html'}">详情
                                 </button>
                             </td>
 
@@ -225,10 +249,11 @@
                             <td style="text-align: center">19509</td>
                             <td style="text-align: center">19229</td>
                             <td style="text-align: center">51%</td>
-                            <td style="text-align: center">No</td>
+                            <!--<td style="text-align: center">No</td>-->
+                            <td style="text-align: center">否</td>
                             <td style="text-align: center">
                                 <button class="button-green" id="Stu9" style="font-size: 20px;"
-                                        onclick="{location.href='../tool/detail.html'}">detail
+                                        onclick="{location.href='../tool/detail.html'}">详情
                                 </button>
                             </td>
 
@@ -238,10 +263,11 @@
                             <td style="text-align: center">19509</td>
                             <td style="text-align: center">2843</td>
                             <td style="text-align: center">50%</td>
-                            <td style="text-align: center">No</td>
+                            <td style="text-align: center">否</td>
+                            <!--<td style="text-align: center">No</td>-->
                             <td style="text-align: center">
                                 <button class="button-green" id="Stu10" style="font-size: 20px;"
-                                        onclick="{location.href='../tool/detail.html'}">detail
+                                        onclick="{location.href='../tool/detail.html'}">详情
                                 </button>
                             </td>
 
@@ -258,7 +284,7 @@
             </div>
             <!-- /container -->
             <div class="col-lg-5">
-                <h2>Plagiarism-Relationship Graph</h2>
+                <h2>抄袭关系图</h2>
                 <div id="forcechart" class="forcechart" style="height: 480px"></div>
 
             </div>

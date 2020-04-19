@@ -45,13 +45,18 @@
             <div class="nano-content">
                 <div style="height: 10px"></div>
                 <ul>
-                    <li class="label" style="font-size: 20px">Navigation</li>
+                    <!--<li class="label" style="font-size: 20px">Navigation</li>-->
+                    <li class="label" style="font-size: 22px">导航栏</li>
 
-                    <li class="active"><a href="../tool/home.html"><i class="ti-home"></i> HOME </a></li>
-                    <li ><a href="../tool/projects.html"><i class="ti-user"></i> PROJECT</a></li>
-                    <li><a href="../tool/projects.html"><i class="ti-user"></i> EXPORT</a></li>
+                    <!--<li class="active"><a href="../tool/home.html"><i class="ti-home"></i> HOME </a></li>-->
+                    <li class="active"><a href="../tool/home.html"><i class="ti-home"></i> 首页 </a></li>
+                    <!--<li ><a href="../tool/projects.html"><i class="ti-user"></i> PROJECT</a></li>-->
+                    <li ><a href="../tool/projects.html"><i class="ti-user"></i> 项目</a></li>
+                    <!--<li><a href="../tool/projects.html"><i class="ti-user"></i> EXPORT</a></li>-->
+                    <li><a href="../tool/projects.html"><i class="ti-user"></i> 报告</a></li>
 
-                    <li><a href="../tool/contact.html"><i class="ti-user"></i> CONTACT</a></li>
+                    <!--<li><a href="../tool/contact.html"><i class="ti-user"></i> CONTACT</a></li>-->
+                    <li><a href="../tool/contact.html"><i class="ti-user"></i> 联系</a></li>
 
 
                 </ul>
@@ -65,13 +70,15 @@
         <img src="../img/logo.png" class="logo" />
 
         <ul style="width: 1300px">
-            <p style="font-size: 32px">MAF</p>
+            <!--<p style="font-size: 32px">MAF</p>-->
+            <p style="font-size: 30px">测试代码抄袭检测系统</p>
+
 
             <!--<a href="contact.html">-->
             <!--<li id="contact-button" class="head-button">CONTACT</li>-->
             <!--</a>-->
             <a href="help.html">
-                <li id="help-button" class="head-button">HELP</li>
+                <li id="help-button" class="head-button">帮助</li>
             </a>
             <!--<a href="projects.html">-->
             <!--<li id="home-button" class="head-button">HOME</li>-->
@@ -92,24 +99,29 @@
 
 
         <div id="wrapper">
-            <h1>Outline</h1>
+            <!--<h1>Outline</h1>-->
+            <h1>简介</h1>
             <div class="outline">
             <div class="font1">
-                MAF is a platform for test code plagiarism detection,which employs two key technologies：
+                <!--MAF is a platform for test code plagiarism detection,which employs two key technologies：-->
+                本系统是一个测试代码抄袭检测平台，它采用了一项关键技术：
             </div>
 
-                <div class="font2">1. Test Fragment Extraction</div>
+                <!--<div class="font2">1. Test Fragment Extraction</div>-->
+                <div class="font2">测试片段提取</div>
                 <div class="font3">
-                    Bidirectional static slicing  to  anchor  methods  under  test  and  extract  fragments  of  test  codes.
-                    Combined with similarity measures, MAF can achieve effective plagiarism detection by avoiding massive unrelated noisy test codes.
+                    <!--Bidirectional static slicing  to  anchor  methods  under  test  and  extract  fragments  of  test  codes.-->
+                    <!--Combined with similarity measures, MAF can achieve effective plagiarism detection by avoiding massive unrelated noisy test codes.-->
+                    锚定被测方法，采用双向静态切片技术提取测试代码片段。本系统可以避免大量无关的冗余测试代码，并结合相似性度量，从而实现有效的抄袭检测。
                 </div>
-                <div class="font2">2. Machine Learning</div>
-                <div class="font3">
-                    We use the Support Vector Machines(SVMs) algorithm to train the classifier,then use the classifier for pairs of students.
-                </div>
+                <!--<div class="font2">2. Machine Learning</div>-->
+                <!--<div class="font3">-->
+                    <!--We use the Support Vector Machines(SVMs) algorithm to train the classifier,then use the classifier for pairs of students.-->
+                <!--</div>-->
                 </div>
 
-            <div style="text-align: center"><img src="../img/framework.png" class="framework"/></div>
+            <div style="height: 50px"></div>
+            <div style="text-align: center"><img src="../img/architecture.png" class="framework"/></div>
 
         </div>
 

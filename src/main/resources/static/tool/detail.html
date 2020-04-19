@@ -52,8 +52,10 @@
 
             var option1 = {
                 value: 91,//百分比,必填
-                name: 'TF Similarity',//必填
-                title: 'Top Similarity ',
+                // name: 'TF Similarity',//必填
+                name: '片段相似度',//必填
+                // title: 'Top Similarity ',
+                title: '相似度前三',
 
                 backgroundColor: '#f0fff4',
                 color: ['#38a8da', '#d4effa'],
@@ -65,7 +67,8 @@
 
             var option2 = {
                 value: 80,//百分比,必填
-                name: 'TF Similarity',//必填
+                // name: 'TF Similarity',//必填
+                name: '片段相似度',//必填
                 // title:'相似度第一',
                 backgroundColor: '#f0fff4',
                 color: ['#38a8da', '#d4effa'],
@@ -77,7 +80,8 @@
 
             var option3 = {
                 value: 69,//百分比,必填
-                name: 'TF Similarity',//必填
+                // name: 'TF Similarity',//必填
+                name: '片段相似度',//必填
                 // title:'相似度第一',
                 backgroundColor: '#f0fff4',
                 color: ['#38a8da', '#d4effa'],
@@ -100,13 +104,18 @@
             <div class="nano-content">
                 <div style="height: 10px"></div>
                 <ul>
-                    <li class="label" style="font-size: 20px">Navigation</li>
+                    <!--<li class="label" style="font-size: 20px">Navigation</li>-->
+                    <li class="label" style="font-size: 22px">导航栏</li>
 
-                    <li><a href="../tool/home.html"><i class="ti-home"></i> HOME </a></li>
-                    <li class="active"><a href="../tool/projects.html"><i class="ti-user"></i> PROJECT</a></li>
-                    <li><a href="../tool/projects.html"><i class="ti-user"></i> EXPORT</a></li>
+                    <!--<li><a href="../tool/home.html"><i class="ti-home"></i> HOME </a></li>-->
+                    <li><a href="../tool/home.html"><i class="ti-home"></i> 首页 </a></li>
+                    <!--<li class="active"><a href="../tool/projects.html"><i class="ti-user"></i> PROJECT</a></li>-->
+                    <li class="active"><a href="../tool/projects.html"><i class="ti-user"></i> 项目</a></li>
+                    <!--<li><a href="../tool/projects.html"><i class="ti-user"></i> EXPORT</a></li>-->
+                    <li><a href="../tool/projects.html"><i class="ti-user"></i> 报告</a></li>
 
-                    <li><a href="../tool/contact.html"><i class="ti-user"></i> CONTACT</a></li>
+                    <!--<li><a href="../tool/contact.html"><i class="ti-user"></i> CONTACT</a></li>-->
+                    <li><a href="../tool/contact.html"><i class="ti-user"></i> 联系</a></li>
 
 
                 </ul>
@@ -121,13 +130,15 @@
         <img src="../img/logo.png" class="logo"/>
 
         <ul style="width: 1300px">
-            <p style="font-size: 32px">MAF</p>
+            <!--<p style="font-size: 32px">MAF</p>-->
+            <p style="font-size: 30px">测试代码抄袭检测系统</p>
 
             <!--<a href="contact.html">-->
             <!--<li id="contact-button" class="head-button">CONTACT</li>-->
             <!--</a>-->
             <a href="help.html">
-                <li id="help-button" class="head-button">HELP</li>
+                <!--<li id="help-button" class="head-button">HELP</li>-->
+                <li id="help-button" class="head-button">帮助</li>
             </a>
             <!--<a href="projects.html">-->
             <!--<li id="home-button" class="head-button">HOME</li>-->
@@ -149,7 +160,8 @@
                 </li>
             </ol>
         </div>
-        <h2>Detail</h2>
+        <!--<h2>Detail</h2>-->
+        <h2>详情</h2>
 
         <div id="chart-wrapper" class="result">
             <div id="chart1" style="float:left; width:33.3%;height: 233px;"></div>
@@ -158,7 +170,8 @@
         </div>
 
         <div id="src" class="wrapper1">
-            <h3>Test Target</h3>
+            <!--<h3>Test Target</h3>-->
+            <h3>测试目标</h3>
             <div>
                 <pre id="src-code">
 public Datalog getHead() {
@@ -171,10 +184,12 @@ public Datalog getHead() {
         </div>
 
         <div id="frag" class="wrapper1">
-            <h3>Test Fragments</h3>
+            <!--<h3>Test Fragments</h3>-->
+            <h3>测试片段</h3>
 
             <div class="frag-code-wrapper">
-                <h3>Student No.1</h3>
+                <!--<h3>Student No.1</h3>-->
+                <h3>学生 No.19229</h3>
                 <div class="frag-code">
                 <pre>
 Predicate p1 = new Predicate("p1");
@@ -184,7 +199,8 @@ Datalog d = r1.getHead();</pre>
             </div>
 
             <div class="frag-code-wrapper">
-                <h3>Student No.2</h3>
+                <!--<h3>Student No.2</h3>-->
+                <h3>学生 No.2843</h3>
                 <div class="frag-code">
                 <pre>
 Predicate p2 = new Predicate("p2");
