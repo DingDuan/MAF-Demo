@@ -93,7 +93,7 @@
         <counts>
           <entry key="css" value="2051" />
           <entry key="dummy" value="6" />
-          <entry key="html" value="12325" />
+          <entry key="html" value="12529" />
           <entry key="java" value="6198" />
           <entry key="js" value="4699" />
           <entry key="md" value="2" />
@@ -104,7 +104,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="2051" />
-          <entry key="HTML" value="12326" />
+          <entry key="HTML" value="12530" />
           <entry key="JAVA" value="6198" />
           <entry key="JavaScript" value="4698" />
           <entry key="Markdown" value="2" />
@@ -121,7 +121,7 @@
           <entry key="analysis" value="1" />
           <entry key="class" value="20" />
           <entry key="css" value="116" />
-          <entry key="html" value="180" />
+          <entry key="html" value="182" />
           <entry key="iml" value="5" />
           <entry key="java" value="432" />
           <entry key="jpg" value="4" />
@@ -139,7 +139,7 @@
         <counts>
           <entry key="CLASS" value="20" />
           <entry key="CSS" value="116" />
-          <entry key="HTML" value="179" />
+          <entry key="HTML" value="181" />
           <entry key="IDEA_MODULE" value="5" />
           <entry key="Image" value="16" />
           <entry key="JAVA" value="432" />
@@ -160,23 +160,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3268">
-              <caret line="172" column="75" selection-start-line="172" selection-start-column="75" selection-end-line="172" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index2.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
+            <state relative-caret-position="848">
               <caret line="122" column="44" lean-forward="true" selection-start-line="122" selection-start-column="44" selection-end-line="122" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -191,8 +182,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/projects.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="182" column="37" selection-start-line="182" selection-end-line="183" />
+            <state relative-caret-position="233">
+              <caret line="182" column="49" selection-start-line="182" selection-start-column="39" selection-end-line="182" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -614,6 +605,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/contact.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="125" column="29" selection-start-line="125" selection-start-column="29" selection-end-line="125" selection-end-column="29" />
+              <folding>
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/help.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="127" column="34" lean-forward="true" selection-start-line="127" selection-start-column="34" selection-end-line="127" selection-end-column="34" />
+              <folding>
+                <element signature="n#style#0;n#p#1;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/result.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1178">
@@ -685,7 +701,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>body</find>
       <find>慕测平台抄袭检测系统</find>
       <find>p{</find>
       <find>boot</find>
@@ -715,6 +730,7 @@
       <find>fu</find>
       <find>detail</find>
       <find>Yes</find>
+      <find>ALU</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -746,7 +762,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/res/myPage.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/res/myPage2.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/header.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/tool/help.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/home.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/toolConfig.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/PercentPie.js" />
@@ -759,7 +774,6 @@
         <option value="$PROJECT_DIR$/src/main/java/demo/com/tcsa/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/lib/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/projects.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/tool/contact.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/tool/detail-2.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/tool/result3.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/tool/projects-data.html" />
@@ -769,8 +783,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/css/button.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/tool/result.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/tool/detail.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/tool/projects.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/tool/home.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/tool/projects.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/tool/contact.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/tool/help.html" />
       </list>
     </option>
   </component>
@@ -898,7 +914,7 @@
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="img" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tool" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -1071,12 +1087,12 @@
       <workItem from="1582619193460" duration="3868000" />
       <workItem from="1584610980896" duration="23000" />
       <workItem from="1586793995681" duration="7830000" />
-      <workItem from="1587294642317" duration="2569000" />
+      <workItem from="1587294642317" duration="4086000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="558275000" />
+    <option name="totallyTimeSpent" value="559792000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1144,7 +1160,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/main/resources/static/tool/projects.html</url>
-          <line>571</line>
+          <line>578</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -1275,16 +1291,6 @@
           <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/help.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/oldToolConfig.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1474,10 +1480,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/framework.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="848">
+          <caret line="122" column="44" lean-forward="true" selection-start-line="122" selection-start-column="44" selection-end-line="122" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#ul#0;n#div#2;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/projects.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="182" column="37" selection-start-line="182" selection-end-line="183" />
+        <state relative-caret-position="233">
+          <caret line="182" column="49" selection-start-line="182" selection-start-column="39" selection-end-line="182" selection-end-column="49" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1897,18 +1919,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/framework.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/home.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/contact.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="122" column="44" lean-forward="true" selection-start-line="122" selection-start-column="44" selection-end-line="122" selection-end-column="44" />
+        <state relative-caret-position="441">
+          <caret line="125" column="29" selection-start-line="125" selection-start-column="29" selection-end-line="125" selection-end-column="29" />
           <folding>
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#ul#0;n#div#2;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/tool/help.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="127" column="34" lean-forward="true" selection-start-line="127" selection-start-column="34" selection-end-line="127" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#p#1;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
